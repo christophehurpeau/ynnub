@@ -1,0 +1,36 @@
+@import '../mixins/typography';
+@import '../variables/colors';
+
+:global {
+  mark {
+    background: $highlight-background-color;
+    padding: 0.1rem 0.3rem;
+  }
+
+  em, i {
+    @include regular-italic();
+  }
+
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+
+  sup {
+    top: -0.5em;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+
+  abbr[title], dfn[title] {
+    text-decoration: dotted underline;
+    cursor: help;
+  }
+
+  time[title] {
+    text-decoration: dotted underline
+  }
+}

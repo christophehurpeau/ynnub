@@ -1,0 +1,15 @@
+@import './base';
+
+$code-color: #000 !default;
+$code-background: #eee !default;
+$code-border-radius: $base-border-radius !default;
+
+$pre-color: #eee !default;
+$pre-background: #444 !default;
+$pre-border-radius: $base-border-radius !default;
+
+$kbd-color: #fff !default;
+$kbd-background: #222 !default;
+$kbd-border-radius: $base-border-radius !default;
+
+$blockquote-border-color: #333 !default;

@@ -1,0 +1,78 @@
+@import '../mixins/flex';
+
+.row {
+  @include flexRow();
+}
+
+.rowResponsive {
+  @include flexRowResponsive();
+}
+
+.justifyStart {
+  justify-content: flex-start;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.justifyEnd {
+  justify-content: flex-end;
+}
+
+.spaceBetween {
+  justify-content: space-between;
+}
+
+.spaceAround {
+  justify-content: space-around;
+}
+
+.itemsStart {
+  align-items: flex-start;
+}
+
+.itemsEnd {
+  align-items: flex-end;
+}
+
+.itemsCenter {
+  align-items: center;
+}
+
+.itemsStretch {
+  align-items: stretch;
+}
+
+
+.itemStart {
+  align-self: flex-start;
+  flex-grow: 0;
+}
+
+.itemEnd {
+  align-self: flex-end;
+  flex-grow: 0;
+}
+
+.itemCenter {
+  align-self: center;
+  flex-grow: 0;
+}
+
+.itemStretch {
+  align-self: stretch;
+}
+
+.spaced {
+  > * {
+    padding-left: .5rem;
+    padding-right: .5rem;
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}

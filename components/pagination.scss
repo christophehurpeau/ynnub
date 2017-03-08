@@ -1,0 +1,28 @@
+@import '../variables/colors';
+
+.pagination {
+  > * {
+    font-size: 1.2rem;
+    width: 2rem;
+    height: 2rem;
+    margin: 0 .5rem;
+    border-radius: 2px;
+    text-align: center;
+  }
+
+  a {
+    color: #444;
+  }
+
+  &.active a {
+    color: #fff;
+  }
+
+  &.active {
+    background-color: $primary-color;
+  }
+
+  &.disabled a {
+    color: #999;
+  }
+}

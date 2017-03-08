@@ -1,0 +1,17 @@
+@import '../../mixins/block';
+@import '../../variables/list';
+
+.vertical {
+  display: inline-block;
+  margin-bottom: $default-topBottom-margin;
+
+  > * {
+    display: inline-block;
+    border-right: $list-border;
+    padding: $list-item-vertical-padding;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+}

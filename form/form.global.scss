@@ -1,0 +1,21 @@
+@import '../mixins/typography';
+@import '../variables/base';
+@import '../variables/form';
+
+:global {
+  // noinspection CssInvalidPseudoSelector
+  ::placeholder {
+    color: $form-placeholder-color;
+  }
+
+  fieldset {
+    border: $form-fieldset-border;
+    margin: $default-topBottom-margin $default-leftRight-margin;
+    padding: $form-fieldset-padding;
+  }
+
+  legend {
+    @include medium();
+    padding: $form-legend-padding;
+  }
+}

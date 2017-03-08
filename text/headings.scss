@@ -1,0 +1,41 @@
+@import '../mixins/block';
+@import '../mixins/typography';
+@import '../variables/base';
+@import '../variables/headings';
+
+.pageTitle, .textTitle, .textHeadline, .textSubhead {
+  line-height: 1.2;
+  margin: $title-top-margin 0 $title-bottom-margin;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.pageTitle {
+  @include regular();
+  font-size: $page-title-fontsize;
+  color: $page-title-color;
+}
+
+.textHeadline {
+  @include regular();
+  font-size: $text-headline-fontsize;
+  color: $text-headline-color;
+}
+
+.textTitle {
+  @include medium();
+  font-size: $text-title-fontsize;
+  color: $text-title-color;
+}
+
+.textSubhead {
+  @include medium();
+  font-size: $text-subhead-fontsize;
+}
+
+.textParagraphTitle {
+  @include medium();
+  font-size: $text-paragraph-title-fontsize;
+}

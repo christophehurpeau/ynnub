@@ -1,0 +1,18 @@
+@import '../variables/responsive';
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+
+  @media only screen and (min-width: $small-screen) {
+    width: $small-screen;
+  }
+
+  @media only screen and (min-width: $medium-screen) {
+    width: $medium-screen;
+  }
+
+  @media only screen and (min-width: $large-screen) {
+    width: $large-screen;
+  }
+}

@@ -1,0 +1,32 @@
+@import '../variables/base';
+@import '../variables/text';
+@import '../mixins/position';
+
+:global {
+  blockquote {
+    background: change-color($blockquote-border-color, $lightness: 97%);
+    border-left: 5px solid $blockquote-border-color;
+    margin: $default-topBottom-margin 1rem $default-topBottom-margin 0;
+    padding: $default-topBottom-padding 1rem;
+    position: relative;
+
+    &::before, &::after {
+      color: $blockquote-border-color;
+      font-size: 40px;
+    }
+
+    &::before {
+      @include absolute($top: 0, $left: 1px);
+      content: "“";
+    }
+
+    &::after{
+      @include absolute($top: 0, $right: 1px);
+      content: "”";
+    }
+
+    footer:before {
+      content: "- ";
+    }
+  }
+}

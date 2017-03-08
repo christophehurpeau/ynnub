@@ -1,0 +1,31 @@
+@mixin light() {
+  font-weight: 300;
+}
+
+@mixin regular() {
+  font-weight: 400;
+}
+
+@mixin regular-italic() {
+  @include regular();
+  font-style: italic;
+}
+
+@mixin medium() {
+  font-weight: 500;
+}
+
+@mixin bold() {
+  font-weight: 700;
+}
+
+
+@mixin textButton {
+  @include medium();
+  text-transform: uppercase;
+}
+
+@mixin textCaption {
+  @include regular();
+  font-size: 0.8em;
+}

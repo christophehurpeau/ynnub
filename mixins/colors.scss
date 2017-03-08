@@ -1,0 +1,27 @@
+@import '../variables/colors';
+
+@mixin color($color: #fff) {
+  @if $color != null {
+    color: $color;
+    @if lightness($color) > 80% {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
+}
+
+@function find-best-opposite-color($color, $maxLightness, $black-color, $white-color) {
+  @if lightness($color) > $maxLightness {
+    @return $black-color;
+  }
+
+  @return $white-color;
+}
+
+@function find-best-fg-color($background-color, $maxLightness: 63%) {
+  @return find-best-opposite-color($background-color, $maxLightness, $black-foreground-color, $white-foreground-color)
+}
+
+@function find-best-bg-color($color, $maxLightness: 67%) {
+  @return find-best-opposite-color($color, $maxLightness, $black-background-color, $white-background-color);
+}

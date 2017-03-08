@@ -1,0 +1,5 @@
+@import '../mixins/block';
+
+.aside {
+  @include z-depth-1();
+}

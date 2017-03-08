@@ -1,0 +1,25 @@
+@import '../variables/responsive';
+
+@mixin flexRow() {
+  display: flex;
+  flex: 0 1 auto;
+  width: 100%;
+  flex-flow: row wrap;
+  align-items: stretch;
+
+  > * {
+    flex-grow: 1;
+    display: block;
+  }
+}
+
+@mixin flexRowResponsive() {
+  @media (max-width: $small-screen) {
+    display: block;
+
+    > * {
+      display: block;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@import '../variables/responsive';
+
+/* https://en.wikipedia.org/wiki/Holy_Grail_(web_design) */
+
+
+/*
+<body className={sHolyGrail.container}>
+  <header></header>
+  <div className={sHolyGrail.body}>
+    <main className={sHolyGrail.content}></main>
+    <aside className={[sHolyGrail.aside, s.aside].join(' ')}></aside>
+  </div>
+  <footer></footer>
+</body>
+
+.aside {
+  flex: 0 0 200px;
+}
+
+TODO example with order
+ */
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: $small-screen) {
+  .body {
+    flex: 1;
+    flex-direction: row;
+  }
+
+  .content {
+    flex: 1;
+  }
+
+  .aside {
+    flex: 0 0;
+  }
+}

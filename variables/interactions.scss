@@ -1,0 +1,14 @@
+$interaction-default-color: #0000EE !default;
+$interaction-hover-color: darken($interaction-default-color, 20%) !default;
+$interaction-current-color: lighten($interaction-default-color, 20%) !default;
+
+$interaction-default-border-color: $interaction-default-color !default;
+$interaction-default-text-shadow: null !default;
+$interaction-default-border-color: null !default;
+$interaction-hover-border-color: $interaction-hover-color !default;
+$interaction-current-border-color: $interaction-current-color !default;
+$interaction-hover-background: rgba(#ddd, .3) !default;
+$interaction-current-background: rgba(#ddd, .1) !default;
+
+$interaction-topBottom-padding: 0.4rem !default;
+$interaction-leftRight-padding: 0.8rem !default;

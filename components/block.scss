@@ -1,0 +1,23 @@
+@import '../mixins/block';
+@import '../mixins/colors';
+
+$block-background: #fff !default;
+$block-padding: 1rem !default;
+$block-border: 1px solid #E0E0E0 !default;
+$block-border-radius: null !default;
+
+.block {
+  @include block-margin();
+  padding: $block-padding;
+  background: $block-background;
+  border: $block-border;
+  border-radius: $block-border-radius;
+}
+
+.primary {
+  background: $primary-color;
+  color: find-best-fg-color($primary-color);
+  @if $block-border != null {
+    border: none;
+  }
+}

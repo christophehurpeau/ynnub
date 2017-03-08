@@ -1,0 +1,103 @@
+@import '../mixins/block';
+@import '../mixins/position';
+@import '../variables/buttons';
+
+.list {
+  @include absolute($left: 0, $right: 0, $top: 100%);
+  @include z-depth-1-hover();
+  margin: 0 !important; // override `.list .list` margin
+  border-left: none !important; // override `.list .list` border
+  border-right: none !important; // override `.list .list` border
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1;
+  // transition: property duration delay
+  // wait .2s before hiding the list
+  transition: visibility .1s .2s, opacity .3s;
+
+  // remove top box-shadow + separator
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: 0;
+    left:0;
+    height: 2px;
+    background: #ddd;
+  }
+}
+
+@mixin dropdownHover() {
+  @include z-depth-1-hover();
+  transition: box-shadow .4s .02s; // show box-shadow with a little delay
+}
+
+.dropdownContainer {
+  position: relative;
+  display: inline-block;
+
+  &:not(.disabled):hover {
+    > .list {
+      visibility: visible;
+      opacity: 1;
+      // run visibility transition to show without delay (remove box-shadow from parent)
+      transition: opacity .3s, visibility 0s 0s, box-shadow .4s .02s;
+    }
+
+    .dropdown {
+      @include dropdownHover();
+    }
+
+    .button {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+}
+
+.dropdown {
+  padding: 0 .2rem;
+  cursor: default;
+
+  &:not(.disabled):hover {
+    @include dropdownHover();
+  }
+
+  &::after {
+    display: inline-block;
+    content: "▼";
+    font-size: .7em;
+    vertical-align: middle;
+    margin-left: .3rem;
+    padding-left: .3rem;
+  }
+
+  &.disabled {
+    &::after {
+      color: $disabled-color;
+    }
+  }
+}
+
+.button {
+  padding: $button-topBottom-padding $button-leftRight-padding;
+
+  &::after {
+    border-left: 1px solid;
+  }
+}
+
+.dropdownContainerButton {
+  > .list {
+    // !important: see .list
+    margin-top: -$button-container-padding !important;
+    margin-left: $button-container-padding / 2 !important;
+    margin-right: $button-container-padding / 2 !important;
+  }
+}
+
+.flat {
+  &::after {
+    border-left: 0;
+  }
+}

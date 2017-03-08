@@ -1,0 +1,13 @@
+@import '../variables/colors';
+
+.spellingError {
+  text-decoration: underline; /* for backwards compatibility */
+  /*noinspection CssOverwrittenProperties*/
+  text-decoration: underline wavy $invalid-color;
+}
+
+.grammaticalError {
+  text-decoration: underline; /* for backwards compatibility */
+  /*noinspection CssOverwrittenProperties*/
+  text-decoration: underline wavy $valid-color;
+}

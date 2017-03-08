@@ -1,0 +1,12 @@
+@import './page';
+
+$title-top-margin: 2rem !default;
+$title-bottom-margin: 1.5rem !default;
+$page-title-color: change_color($body-color, $lightness: max(lightness($body-color), 30%)) !default;
+$page-title-fontsize: 2em !default;
+$text-headline-fontsize: 1.6em !default;
+$text-headline-color: null !default;
+$text-title-fontsize: 1.4em !default;
+$text-title-color: null !default;
+$text-subhead-fontsize: 1.2em !default;
+$text-paragraph-title-fontsize: 1.1em !default;

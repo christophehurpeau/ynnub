@@ -1,0 +1,16 @@
+@import 'base';
+
+.simpleList {
+  border: none;
+  list-style: disc;
+  padding-left: 1rem;
+
+  > * {
+    padding: 0;
+    border: none;
+  }
+}
+
+.orderedList {
+  list-style: decimal;
+}

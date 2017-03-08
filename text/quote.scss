@@ -1,0 +1,16 @@
+@import '../variables/text';
+
+:global {
+  q {
+    &::before, &::after {
+      color: $blockquote-border-color;
+      font-size: 1.2em;
+    }
+    &::before {
+      content: "“";
+    }
+    &::after {
+      content: "”";
+    }
+  }
+}

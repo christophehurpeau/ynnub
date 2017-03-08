@@ -1,0 +1,6 @@
+@import '../mixins/block';
+@import '../mixins/typography';
+
+.textCaption {
+  @include textCaption();
+}
