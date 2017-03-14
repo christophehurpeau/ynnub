@@ -1,5 +1,7 @@
 # ynnub
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/christophehurpeau/ynnub.svg)](https://greenkeeper.io/)
+
 A css module framework in less. Written for `react` and `webpack` with css modules.
 
 ## What does `ynnub` means ?
