@@ -1,5 +1,5 @@
 import s from './list/base.scss';
-import type { ReactNodeType } from '../types';
+import type { ReactElementType } from '../types';
 
 export ListItem from './ListItem';
 
@@ -8,7 +8,7 @@ type PropsType = {
   ordered: ?boolean,
   multiline: ?boolean,
   links: ?boolean,
-  children: Array<any>,
+  children: Array<ReactElementType> | ReactElementType,
 }
 
 export default ({

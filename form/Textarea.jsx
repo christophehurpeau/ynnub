@@ -1,4 +1,3 @@
-import '../reset.global.scss';
 import './form.global.scss';
 import sInput from './input.scss';
 

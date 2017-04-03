@@ -1,4 +1,3 @@
-import '../reset.global.scss';
 import '../interactions/interactions.global.scss';
 import s from './button.scss';
 import type { ReactNodeType } from '../types';
