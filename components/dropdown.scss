@@ -8,6 +8,7 @@
   margin: 0 !important; // override `.list .list` margin
   border-left: none !important; // override `.list .list` border
   border-right: none !important; // override `.list .list` border
+  text-align: left; // can override a wrong text-align
   visibility: hidden;
   opacity: 0;
   z-index: 1;
@@ -24,6 +25,10 @@
     left:0;
     height: ($button-container-padding / 5 * 2);
     background: #fff;
+  }
+
+  > * {
+
   }
 }
 
