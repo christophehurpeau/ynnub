@@ -1,3 +1,12 @@
+<a name="0.1.2"></a>
+## [0.1.2](https://github.com/christophehurpeau/ynnub/compare/v0.1.1...v0.1.2) (2017-04-09)
+
+
+### Bug Fixes
+
+* fixes and upgrade site dependencies ([80f599e](https://github.com/christophehurpeau/ynnub/commit/80f599e))
+
+
 <a name="0.1.1"></a>
 ## [0.1.1](https://github.com/christophehurpeau/ynnub/compare/v0.1.0...v0.1.1) (2017-04-03)
 
