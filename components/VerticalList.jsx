@@ -7,7 +7,7 @@ type PropsType = {
   className: ?string,
 }
 
-export default ({ className, children, props }: PropsType) => (
+export default ({ className, children, ...props }: PropsType) => (
   <List
     className={[s.vertical, className].filter(Boolean).join(' ')}
     {...props}
