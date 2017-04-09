@@ -19,11 +19,11 @@
   &::before {
     content: '';
     position: absolute;
-    top: -2px;
+    top: -($button-container-padding / 5 * 2);
     right: 0;
     left:0;
-    height: 2px;
-    background: #ddd;
+    height: ($button-container-padding / 5 * 2);
+    background: #fff;
   }
 }
 
@@ -90,9 +90,9 @@
 .dropdownContainerButton {
   > .list {
     // !important: see .list
-    margin-top: -$button-container-padding !important;
-    margin-left: $button-container-padding / 2 !important;
-    margin-right: $button-container-padding / 2 !important;
+    margin-top: -($button-container-padding / 5 * 3) !important;
+    margin-left: $button-container-padding !important;
+    margin-right: $button-container-padding !important;
   }
 }
 

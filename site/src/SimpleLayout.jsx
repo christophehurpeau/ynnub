@@ -1,4 +1,4 @@
-import { AlpHtml as Html, AlpHead, AlpBody, classNames, Helmet } from 'alp-react-redux/src';
+import { AlpHtml as Html, AlpHead, AlpBody, classNames } from 'alp-react-redux/src';
 import type { LayoutPropsType } from 'alp-react-redux/src/types';
 import 'ynnub/reset.global.scss';
 import 'ynnub/layout/page.global.scss';
@@ -10,7 +10,7 @@ import Sidebar from './Sidebar';
 
 export default ({ helmet, content, ...props }: LayoutPropsType): ReactElementType => (
   <Html helmet={helmet}>
-    <AlpHead helmet={helmet} {...props} />
+    <AlpHead helmet={helmet} {...props} styleName="styles" scriptName={false} />
     <AlpBody className={classNames(sHolyGrail.container, sHolyGrail.body)}>
       <Sidebar className={sHolyGrail.aside} />
       <div

@@ -9,9 +9,10 @@ import Routes from './Routes';
 let routes = createRoutes(Routes());
 if (process.env.NODE_ENV !== 'production' && module.hot) {
   module.hot.accept('./Routes', () => {
-    System.import('./Routes').then(module => {
-      routes = createRoutes(module.default())
-    });
+    routes = createRoutes(Routes());
+    // System.import('./Routes').then(module => {
+    //   routes = createRoutes(module.default())
+    // });
   });
 }
 

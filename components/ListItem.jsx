@@ -3,7 +3,7 @@ import Badge from './Badge';
 
 type PropsType = {
   badge: ?ReactNodeType,
-  children: Array<any>,
+  children: ReactNodeType,
 }
 
 export default ({
