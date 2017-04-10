@@ -2,11 +2,15 @@
 @import '../../variables/list';
 
 .vertical {
-  display: inline-block;
+  display: inline-flex;
+  //align-items: stretch;
+  //align-content: stretch;
   margin-bottom: $default-topBottom-margin;
 
   > * {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border-right: $list-border;
     padding: $list-item-vertical-padding;
 
