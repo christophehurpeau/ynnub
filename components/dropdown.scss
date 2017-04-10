@@ -40,6 +40,7 @@
 .dropdownContainer {
   position: relative;
   display: inline-block;
+  padding: 0;
 
   &:not(.disabled):hover {
     > .list {

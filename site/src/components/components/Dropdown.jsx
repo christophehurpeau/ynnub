@@ -38,7 +38,7 @@ import Dropdown from 'ynnub/components/Dropdown';
     <Code render={RenderCode}>
       <VerticalList>
         <li>Item 1</li>
-        <Dropdown tagName="li" label="Item 2">
+        <Dropdown as="li" label="Item 2">
           <li>Item 2.1</li>
           <li>Item 2.2</li>
           <li>Item 2.3</li>
@@ -52,7 +52,7 @@ import Dropdown from 'ynnub/components/Dropdown';
     <Code render={RenderCode}>
       <VerticalList>
           <li>Item 1</li>
-          <Dropdown disabled tagName="li" label="Item 2">
+          <Dropdown disabled as="li" label="Item 2">
             <li>Item 2.1</li>
             <li>Item 2.2</li>
           </Dropdown>

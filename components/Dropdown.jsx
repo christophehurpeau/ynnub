@@ -4,6 +4,7 @@ import s from './dropdown.scss';
 import type { ReactNodeType } from '../types';
 
 type PropsType = {
+  tagName: ?null,
   className: ?string,
   label: ReactNodeType,
   button: ?boolean,
@@ -14,7 +15,7 @@ type PropsType = {
 }
 
 export default ({
-  tagName: TagName = 'div',
+  as: AsType = 'div',
   className,
   label,
   button,
@@ -26,7 +27,7 @@ export default ({
 }: PropsType): ReactNodeType => {
   if (!button) {
     return (
-      <TagName
+      <AsType
         className={[
           s.dropdownContainer,
           s.dropdown,
@@ -39,11 +40,11 @@ export default ({
         <ul className={`${sList.list} ${s.list} ${links ? sList.links : ''}`}>
           {children}
         </ul>
-      </TagName>
+      </AsType>
     )
   } else {
     return (
-      <TagName
+      <AsType
         className={[
           s.dropdownContainer,
           s.dropdownContainerButton,
@@ -68,7 +69,7 @@ export default ({
         <ul className={`${sList.list} ${s.list} ${links ? sList.links : ''}`}>
           {children}
         </ul>
-      </TagName>
+      </AsType>
     )
   }
 };
