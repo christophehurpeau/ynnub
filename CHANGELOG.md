@@ -1,3 +1,12 @@
+<a name="0.2.5"></a>
+## [0.2.5](https://github.com/christophehurpeau/ynnub/compare/v0.2.4...v0.2.5) (2017-04-22)
+
+
+### Features
+
+* add icon option for button ([fd0ac36](https://github.com/christophehurpeau/ynnub/commit/fd0ac36))
+
+
 <a name="0.2.4"></a>
 ## [0.2.4](https://github.com/christophehurpeau/ynnub/compare/v0.2.3...v0.2.4) (2017-04-22)
 
