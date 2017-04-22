@@ -84,8 +84,8 @@
 
 .container:hover .flat {
   box-shadow: none;
-  background-color: transparent;
   color: $button-flat-hover-color;
+  background-color: rgba($button-flat-hover-color, .12);
 }
 
 .flat-disabled {
