@@ -1,3 +1,17 @@
+<a name="0.2.6"></a>
+## [0.2.6](https://github.com/christophehurpeau/ynnub/compare/v0.2.5...v0.2.6) (2017-04-22)
+
+
+### Bug Fixes
+
+* button align center icon ([b740a82](https://github.com/christophehurpeau/ynnub/commit/b740a82))
+
+### Features
+
+* add Roboto font in Head ([e563bd0](https://github.com/christophehurpeau/ynnub/commit/e563bd0))
+* loadingBar ([cb10ea7](https://github.com/christophehurpeau/ynnub/commit/cb10ea7))
+
+
 <a name="0.2.5"></a>
 ## [0.2.5](https://github.com/christophehurpeau/ynnub/compare/v0.2.4...v0.2.5) (2017-04-22)
 
