@@ -28,7 +28,8 @@
 }
 
 .button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   background: $button-background;
   @include textButton();
   @include z-depth-1();
