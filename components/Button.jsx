@@ -5,7 +5,8 @@ import type { ReactNodeType } from '../types';
 type PropsType = {
   className: ?string,
   containerClassName: ?string,
-  label: ReactNodeType,
+  icon: ?ReactNodeType,
+  label: ?ReactNodeType,
   href: ?string,
   flat: ?boolean,
   disabled: ?boolean,
@@ -14,6 +15,7 @@ type PropsType = {
 export default ({
   className,
   containerClassName,
+  icon,
   label,
   children,
   href,
@@ -23,6 +25,7 @@ export default ({
 }: PropsType): ReactNodeType => {
   const TagName = href ? 'a' : 'button';
   if (TagName === 'button' && disabled) otherProps = { disabled, ...otherProps };
+  if (!label) label = children;
   return (
     <TagName
       href={href}
@@ -41,7 +44,8 @@ export default ({
           className,
         ].filter(Boolean).join(' ')}
       >
-        {label || children}
+        {icon && <span className={s.icon}>{icon}</span>}
+        {label}
       </span>
     </TagName>
   );
