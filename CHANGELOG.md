@@ -1,3 +1,12 @@
+<a name="0.2.1"></a>
+## [0.2.1](https://github.com/christophehurpeau/ynnub/compare/v0.2.0...v0.2.1) (2017-04-22)
+
+
+### Bug Fixes
+
+* VerticalList force inline-flex ([01cb591](https://github.com/christophehurpeau/ynnub/commit/01cb591))
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/christophehurpeau/ynnub/compare/v0.1.3...v0.2.0) (2017-04-10)
 
