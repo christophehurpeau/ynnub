@@ -15,7 +15,6 @@
     "release": "pob-repository-check-clean && pob-release"
   },
   "dependencies": {
-    "error-html": "^0.2.2",
     "flow-runtime": "^0.10.0"
   },
   "devDependencies": {
