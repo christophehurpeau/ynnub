@@ -21,6 +21,7 @@
   @extend .resetButton;
   display: inline-block;
   padding: $button-container-padding;
+  text-decoration: none; // when a container is <a>
 }
 
 .containerDisabled {
