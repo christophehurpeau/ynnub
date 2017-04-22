@@ -1,13 +1,13 @@
-@import '../variables/colors';
-@import '../mixins/position';
-
 $loading-bar-height: 2px !default;
 $loading-bar-z-index: 2 !default;
 $loading-bar-background: #fff !default;
 $loading-bar-color: $primary-color !default;
 
-.loading-bar {
-  @include fixed($top: 0, $left: 0, $right: 0);
+.loadingBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: none;
   width: 100%;
   height: $loading-bar-height;
