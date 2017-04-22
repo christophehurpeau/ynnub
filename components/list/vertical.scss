@@ -8,7 +8,8 @@
   margin-bottom: $default-topBottom-margin;
 
   > * {
-    display: inline-flex;
+    display: inline-flex !important;
+    // important: override inline-block in dropdown for example
     align-items: center;
     justify-content: center;
     border-right: $list-border;
