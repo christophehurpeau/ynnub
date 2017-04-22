@@ -1,3 +1,13 @@
+<a name="0.2.4"></a>
+## [0.2.4](https://github.com/christophehurpeau/ynnub/compare/v0.2.3...v0.2.4) (2017-04-22)
+
+
+### Bug Fixes
+
+* flat button text-decoration ([ef50838](https://github.com/christophehurpeau/ynnub/commit/ef50838))
+* hover background ([32d0672](https://github.com/christophehurpeau/ynnub/commit/32d0672))
+
+
 <a name="0.2.3"></a>
 ## [0.2.3](https://github.com/christophehurpeau/ynnub/compare/v0.2.2...v0.2.3) (2017-04-22)
 
