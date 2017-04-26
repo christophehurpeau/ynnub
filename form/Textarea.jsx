@@ -13,6 +13,7 @@ export default ({ id, label, placeholder, ...props }) => (
       sInput.input,
       sInput.text,
       sInput.textarea,
+      !label && sInput.noMargin,
     ].filter(Boolean).join(' ')}
   >
     <textarea id={id} placeholder={placeholder || ''} {...props} />

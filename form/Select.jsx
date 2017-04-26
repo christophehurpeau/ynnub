@@ -14,6 +14,7 @@ export default ({ id, label, children, ...props }) => (
     className={[
       sInput.input,
       sInput.select,
+      !label && sInput.noMargin,
     ].filter(Boolean).join(' ')}
   >
     <select id={id} {...props}>
