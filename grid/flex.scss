@@ -1,5 +1,9 @@
 @import '../mixins/flex';
 
+.flex {
+  display: flex;
+}
+
 .row {
   @include flexRow();
 }
