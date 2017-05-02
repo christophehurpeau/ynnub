@@ -1,3 +1,17 @@
+<a name="0.2.7"></a>
+## [0.2.7](https://github.com/christophehurpeau/ynnub/compare/v0.2.6...v0.2.7) (2017-05-02)
+
+
+### Bug Fixes
+
+* Select and Textarea noMargin when no label ([0e427ff](https://github.com/christophehurpeau/ynnub/commit/0e427ff))
+* remove width 100% in flex row ([dba83ab](https://github.com/christophehurpeau/ynnub/commit/dba83ab))
+
+### Features
+
+* grid simple display flex ([7122233](https://github.com/christophehurpeau/ynnub/commit/7122233))
+
+
 <a name="0.2.6"></a>
 ## [0.2.6](https://github.com/christophehurpeau/ynnub/compare/v0.2.5...v0.2.6) (2017-04-22)
 
