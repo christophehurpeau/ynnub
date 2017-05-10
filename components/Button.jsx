@@ -9,6 +9,7 @@ type PropsType = {
   label: ?ReactNodeType,
   href: ?string,
   flat: ?boolean,
+  input: ?boolean,
   disabled: ?boolean,
 }
 
@@ -20,11 +21,13 @@ export default ({
   children,
   href,
   flat,
+  input,
   disabled,
   ...otherProps
 }: PropsType): ReactNodeType => {
-  const TagName = href ? 'a' : 'button';
-  if (TagName === 'button' && disabled) otherProps = { disabled, ...otherProps };
+  const TagName = href ? 'a' : (input ? 'input' : 'button');
+  if (TagName !== 'a' && disabled) otherProps = { disabled, ...otherProps };
+  if (TagName === 'input') otherProps = { type: 'button', ...otherProps };
   if (!label) label = children;
   return (
     <TagName
