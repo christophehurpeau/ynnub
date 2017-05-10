@@ -1,3 +1,12 @@
+<a name="0.2.8"></a>
+## [0.2.8](https://github.com/christophehurpeau/ynnub/compare/v0.2.7...v0.2.8) (2017-05-10)
+
+
+### Bug Fixes
+
+* grid flex itemStretch grow ([b280eac](https://github.com/christophehurpeau/ynnub/commit/b280eac))
+
+
 <a name="0.2.7"></a>
 ## [0.2.7](https://github.com/christophehurpeau/ynnub/compare/v0.2.6...v0.2.7) (2017-05-02)
 
