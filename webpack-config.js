@@ -11,7 +11,7 @@ exports.createModuleRule = function(ExtractTextPlugin, { global = false, plugins
           options: {
             sourceMap: false,
             modules: !global,
-            minimize: production !== false && { autoprefixer: false },
+            minimize: production !== false,
             importLoaders: 2,
             localIdentName: production !== false ? '[hash:base64]' :
               '[name]__[local]___[hash:base64:5]',
