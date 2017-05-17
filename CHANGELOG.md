@@ -1,3 +1,12 @@
+<a name="0.2.11"></a>
+## [0.2.11](https://github.com/christophehurpeau/ynnub/compare/v0.2.10...v0.2.11) (2017-05-17)
+
+
+### Bug Fixes
+
+* css modules minimize autoprefixer is already disabled ([425fa06](https://github.com/christophehurpeau/ynnub/commit/425fa06))
+
+
 <a name="0.2.10"></a>
 ## [0.2.10](https://github.com/christophehurpeau/ynnub/compare/v0.2.9...v0.2.10) (2017-05-10)
 
