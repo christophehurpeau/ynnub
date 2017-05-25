@@ -1,8 +1,10 @@
 import s from './label.scss';
 import { ReactNodeType } from '../types';
 
+type VariationType = 'success' | 'error' | 'warning';
+
 type PropsType = {
-  variation: 'success' | 'error' | 'warning',
+  variation: ?VariationType,
   children: ReactNodeType,
 }
 
