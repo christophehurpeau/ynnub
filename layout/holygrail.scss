@@ -43,5 +43,6 @@ TODO example with order
 
   .aside {
     flex: 0 0;
+    flex-basis: initial; /* reset user-defined flex-basis for aside for big screens */
   }
 }
