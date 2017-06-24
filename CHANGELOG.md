@@ -1,3 +1,14 @@
+<a name="0.2.12"></a>
+## [0.2.12](https://github.com/christophehurpeau/ynnub/compare/v0.2.11...v0.2.12) (2017-06-24)
+
+
+### Bug Fixes
+
+* aside reset flex-basis ([3d769db](https://github.com/christophehurpeau/ynnub/commit/3d769db))
+* label variation is optional ([1fdedcb](https://github.com/christophehurpeau/ynnub/commit/1fdedcb))
+* prevent color override in nav bar ([ae88771](https://github.com/christophehurpeau/ynnub/commit/ae88771))
+
+
 <a name="0.2.11"></a>
 ## [0.2.11](https://github.com/christophehurpeau/ynnub/compare/v0.2.10...v0.2.11) (2017-05-17)
 
