@@ -1,3 +1,12 @@
+<a name="0.2.13"></a>
+## [0.2.13](https://github.com/christophehurpeau/ynnub/compare/v0.2.12...v0.2.13) (2017-07-26)
+
+
+### Features
+
+* add polyfill for hidden attribute ([ad0a1ad](https://github.com/christophehurpeau/ynnub/commit/ad0a1ad))
+
+
 <a name="0.2.12"></a>
 ## [0.2.12](https://github.com/christophehurpeau/ynnub/compare/v0.2.11...v0.2.12) (2017-06-24)
 
