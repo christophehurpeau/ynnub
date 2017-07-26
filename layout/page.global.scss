@@ -23,4 +23,8 @@
     color: $body-color;
     background: $body-background;
   }
+
+  // polyfills
+
+  *[hidden] { display: none; }
 }
