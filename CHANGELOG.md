@@ -1,3 +1,12 @@
+<a name="0.2.14"></a>
+## [0.2.14](https://github.com/christophehurpeau/ynnub/compare/v0.2.13...v0.2.14) (2017-07-29)
+
+
+### Features
+
+* add Fieldset ([ce151c0](https://github.com/christophehurpeau/ynnub/commit/ce151c0))
+
+
 <a name="0.2.13"></a>
 ## [0.2.13](https://github.com/christophehurpeau/ynnub/compare/v0.2.12...v0.2.13) (2017-07-26)
 
