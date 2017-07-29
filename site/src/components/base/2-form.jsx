@@ -10,7 +10,7 @@ export default () => (
 
     <h2 className={sHeadings.textTitle}>Imports</h2>
 
-    <pre><code>{"import { InputText, Textarea, Select, Radio, Checkbox } from  'ynnub/form';"}</code></pre>
+    <pre><code>{"import { InputText, Textarea, Select, Radio, Checkbox, Fieldset } from  'ynnub/form';"}</code></pre>
 
     <h2 className={sHeadings.textTitle}>InputText</h2>
 
@@ -120,10 +120,9 @@ export default () => (
     <h2 className={sHeadings.textTitle}>Fieldset</h2>
 
     <Code render={RenderCode}>
-      <fieldset>
-        <legend>Legend</legend>
+      <Fieldset legend="Legend">
         <InputText id="fieldsetinput"/>
-      </fieldset>
+      </Fieldset>
     </Code>
 
 
