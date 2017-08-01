@@ -4,7 +4,7 @@
   display: flex;
   flex: 0 1 auto;
   // cause issues: width: 100%;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: stretch;
 
   > * {
@@ -16,6 +16,7 @@
 @mixin flexRowResponsive() {
   @media (max-width: $small-screen) {
     display: block;
+    // flex-wrap: wrap;
 
     > * {
       display: block;
