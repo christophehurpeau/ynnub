@@ -1,3 +1,12 @@
+<a name="0.2.16"></a>
+## [0.2.16](https://github.com/christophehurpeau/ynnub/compare/v0.2.15...v0.2.16) (2017-08-01)
+
+
+### Bug Fixes
+
+* loadingBar camelcase ([bd5f900](https://github.com/christophehurpeau/ynnub/commit/bd5f900))
+
+
 <a name="0.2.15"></a>
 ## [0.2.15](https://github.com/christophehurpeau/ynnub/compare/v0.2.14...v0.2.15) (2017-08-01)
 
