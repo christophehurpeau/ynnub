@@ -1,3 +1,12 @@
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/christophehurpeau/ynnub/compare/v0.2.17...v0.3.0) (2017-08-15)
+
+
+### Features
+
+* allow react 16 ([632f37f](https://github.com/christophehurpeau/ynnub/commit/632f37f))
+
+
 <a name="0.2.17"></a>
 ## [0.2.17](https://github.com/christophehurpeau/ynnub/compare/v0.2.15...v0.2.17) (2017-08-01)
 
