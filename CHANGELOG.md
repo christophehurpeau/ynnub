@@ -1,3 +1,12 @@
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/christophehurpeau/ynnub/compare/v0.3.0...v0.4.0) (2017-08-27)
+
+
+### Features
+
+* loading bar with state ([7e7e2bf](https://github.com/christophehurpeau/ynnub/commit/7e7e2bf))
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/christophehurpeau/ynnub/compare/v0.2.17...v0.3.0) (2017-08-15)
 
