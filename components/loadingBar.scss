@@ -1,4 +1,4 @@
-$loading-bar-height: 2px !default;
+$loading-bar-height: 4px !default;
 $loading-bar-z-index: 2 !default;
 $loading-bar-background: #fff !default;
 $loading-bar-color: $primary-color !default;
@@ -8,19 +8,19 @@ $loading-bar-color: $primary-color !default;
   top: 0;
   left: 0;
   right: 0;
-  display: none;
   width: 100%;
-  height: $loading-bar-height;
+  height: $loading-bar-height + 2px;
   z-index: $loading-bar-z-index;
   pointer-events: none;
   background: $loading-bar-background;
   border-radius: 0 1px 1px 0;
-  box-shadow: 1px 1px 1px rgba(0,0,0,0.4);
-  transition: width .4s;
+  box-shadow: 0 1px 6px rgba(25, 25, 25, .7);
+  transition: opacity .4s, height .4s;
+  opacity: 1;
 }
 
 .progress {
-  height: $loading-bar-height;
+  height: 100%;
   background: $loading-bar-color;
-  width: 1%;
+  transition: width .3s;
 }
