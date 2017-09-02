@@ -1,3 +1,12 @@
+<a name="0.4.1"></a>
+## [0.4.1](https://github.com/christophehurpeau/ynnub/compare/v0.4.0...v0.4.1) (2017-09-02)
+
+
+### Bug Fixes
+
+* flow types and label className ([a2bf15e](https://github.com/christophehurpeau/ynnub/commit/a2bf15e))
+
+
 <a name="0.4.0"></a>
 # [0.4.0](https://github.com/christophehurpeau/ynnub/compare/v0.3.0...v0.4.0) (2017-08-27)
 
