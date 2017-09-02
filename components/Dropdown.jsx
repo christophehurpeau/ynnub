@@ -4,13 +4,13 @@ import s from './dropdown.scss';
 import type { ReactNodeType } from '../types';
 
 type PropsType = {
-  tagName: ?null,
-  className: ?string,
+  tagName?: null,
+  className?: string,
   label: ReactNodeType,
-  button: ?boolean,
-  flat: ?boolean,
-  disabled: ?boolean,
-  links: ?boolean,
+  button?: ?boolean,
+  flat?: ?boolean,
+  disabled?: ?boolean,
+  links?: ?boolean,
   children: ReactNodeType,
 }
 

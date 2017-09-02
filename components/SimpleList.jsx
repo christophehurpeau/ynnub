@@ -4,8 +4,8 @@ import s from './list/simple.scss';
 export { ListItem } from './List';
 
 type PropsType = {
-  className: ?string,
-  ordered: ?boolean,
+  className?: string,
+  ordered?: ?boolean,
 }
 
 export default ({ className, ordered, children, props }: PropsType) => (

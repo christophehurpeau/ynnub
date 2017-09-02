@@ -4,10 +4,10 @@ import type { ReactNodeType } from '../types';
 export ListItem from './ListItem';
 
 type PropsType = {
-  className: ?string,
-  ordered: ?boolean,
-  multiline: ?boolean,
-  links: ?boolean,
+  className?: string,
+  ordered?: ?boolean,
+  multiline?: ?boolean,
+  links?: ?boolean,
   children: ReactNodeType,
 }
 

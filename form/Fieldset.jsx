@@ -1,7 +1,7 @@
 import type { ReactNodeType } from '../types';
 
 type PropsType = {
-  legend: ?ReactNodeType,
+  legend?: ?ReactNodeType,
   children: ReactNodeType,
 };
 

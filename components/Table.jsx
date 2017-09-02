@@ -2,10 +2,10 @@ import s from './table.scss';
 import type { ReactNodeType } from '../types';
 
 type PropsType = {
-  className: ?string,
-  centered: ?boolean,
-  bordered: ?boolean,
-  striped: ?boolean,
+  className?: string,
+  centered?: ?boolean,
+  bordered?: ?boolean,
+  striped?: ?boolean,
   children: Array<any>,
 }
 

@@ -4,7 +4,7 @@ import sHeadings from 'ynnub/text/headings.scss';
 import List from 'ynnub/components/List';
 
 type PropsType = {
-  className: ?string,
+  className?: ?string,
 };
 
 export default ({ className }: PropsType) => (

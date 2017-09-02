@@ -5,8 +5,8 @@ import sBlock from './block.scss';
 export { ListItem } from './List';
 
 type PropsType = {
-  className: ?string,
-  primary: ?boolean,
+  className?: string,
+  primary?: ?boolean,
 }
 
 export default ({ className, primary, children, props }: PropsType) => (

@@ -5,7 +5,7 @@ import type { ReactNodeType } from '../types';
 
 type PropsType = {
   id: string,
-  label: ?ReactNodeType,
+  label?: ?ReactNodeType,
   children: ReactNodeType,
 };
 

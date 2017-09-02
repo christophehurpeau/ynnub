@@ -5,8 +5,8 @@ import sSelectable from './selectable.scss';
 export { ListItem } from './List';
 
 type PropsType = {
-  className: ?string,
-  ordered: ?boolean,
+  className?: string,
+  ordered?: ?boolean,
 }
 
 export default ({ className, children, props }: PropsType) => (

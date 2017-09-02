@@ -4,7 +4,7 @@ import s from './list/vertical.scss';
 export { ListItem } from './List';
 
 type PropsType = {
-  className: ?string,
+  className?: string,
 }
 
 export default ({ className, children, ...props }: PropsType) => (

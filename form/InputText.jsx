@@ -5,10 +5,10 @@ import type { ReactNodeType } from '../types';
 
 type PropsType = {
   id: string,
-  type: ?string,
-  icon: ?ReactNodeType,
-  label: ?ReactNodeType,
-  placeholder: ?string,
+  type?: string,
+  icon?: ?ReactNodeType,
+  label?: ?ReactNodeType,
+  placeholder?: ?string,
 };
 
 export default ({ id, type, icon, label, placeholder, ...props }) => (

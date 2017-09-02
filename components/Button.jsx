@@ -3,13 +3,13 @@ import s from './button.scss';
 import type { ReactNodeType } from '../types';
 
 type PropsType = {
-  className: ?string,
-  containerClassName: ?string,
-  icon: ?ReactNodeType,
-  label: ?ReactNodeType,
-  href: ?string,
-  flat: ?boolean,
-  disabled: ?boolean,
+  className?: string,
+  containerClassName?: string,
+  icon?: ?ReactNodeType,
+  label?: ?ReactNodeType,
+  href?: string,
+  flat?: ?boolean,
+  disabled?: ?boolean,
 }
 
 export default ({

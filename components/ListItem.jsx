@@ -2,7 +2,7 @@ import type { ReactNodeType } from '../types';
 import Badge from './Badge';
 
 type PropsType = {
-  badge: ?ReactNodeType,
+  badge?: ?ReactNodeType,
   children: ReactNodeType,
 }
 

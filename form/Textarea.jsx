@@ -3,8 +3,8 @@ import sInput from './input.scss';
 
 type PropsType = {
   id: string,
-  label: ?ReactNodeType,
-  placeholder: ?string,
+  label?: ?ReactNodeType,
+  placeholder?: ?string,
 };
 
 export default ({ id, label, placeholder, ...props }) => (
