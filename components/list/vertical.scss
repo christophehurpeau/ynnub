@@ -1,8 +1,8 @@
-@import '../../mixins/block';
-@import '../../variables/list';
+@import '../../variables/base';
 
 .vertical {
   display: inline-flex;
+  flex-flow: row wrap;
   //align-items: stretch;
   //align-content: stretch;
   margin-bottom: $default-topBottom-margin;
@@ -12,11 +12,7 @@
     // important: override inline-block in dropdown for example
     align-items: center;
     justify-content: center;
-    border-right: $list-border;
-    padding: $list-item-vertical-padding;
-
-    &:last-child {
-      border-right: none;
-    }
+    padding: 0 24px;
+    white-space: nowrap;
   }
 }

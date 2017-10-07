@@ -2,13 +2,13 @@ import Code from 'babel-plugin-jsx-code/Component';
 import RenderCode from '../../RenderCode';
 import 'ynnub/text/blockquote.scss';
 import 'ynnub/text/quote.scss';
-import sHeadings from 'ynnub/text/headings.scss';
+import typography from 'ynnub/text/typography';
 
 export default () => (
   <div>
-    <h1 className={sHeadings.pageTitle}>Citations</h1>
+    <h1 className={typography.headline}>Citations</h1>
 
-    <h2 className={sHeadings.textTitle}>{'<blockquote>'}: block quotation</h2>
+    <h2 className={typography.title}>{'<blockquote>'}: block quotation</h2>
 
     <pre>
       {"import 'ynnub/text/blockquote.scss';"}
@@ -21,7 +21,7 @@ export default () => (
       </blockquote>
     </Code>
 
-    <h2 className={sHeadings.textTitle}>{'<cite>'}: cited title of a work</h2>
+    <h2 className={typography.title}>{'<cite>'}: cited title of a work</h2>
 
     <p>
       The <a href="http://www.w3.org/TR/html-markup/cite.html">cite element</a>
@@ -35,7 +35,7 @@ export default () => (
       <p>My favourite TV series is <cite>Game of Thrones</cite>.</p>
     </Code>
 
-    <h2 className={sHeadings.textTitle}>{'<q>'}: quoted text</h2>
+    <h2 className={typography.title}>{'<q>'}: quoted text</h2>
 
     <p>
       The <a href="http://www.w3.org/TR/html-markup/q.html">q element</a>

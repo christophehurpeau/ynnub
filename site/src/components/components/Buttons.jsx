@@ -1,41 +1,60 @@
 import Code from 'babel-plugin-jsx-code/Component';
 import Button from 'ynnub/components/Button';
+import { FlexGrid, FlexItems } from 'ynnub/grid/flex';
 import RenderCode from '../RenderCode';
-import sHeadings from 'ynnub/text/headings.scss';
+import typography from 'ynnub/text/typography';
 
 export default () => (
   <div>
-    <h1 className={sHeadings.pageTitle}>Buttons</h1>
+    <h1 className={typography.headline}>Buttons</h1>
 
-    <h2 className={sHeadings.textTitle}>Imports</h2>
+    <h2 className={typography.title}>Imports</h2>
 
     <pre><code>{`
 import Button from 'ynnub/components/Button';
 `.trim()}</code></pre>
 
 
-    <h2 className={sHeadings.textTitle}>Basic button</h2>
+    <h2 className={typography.title}>Basic Button (Raised)</h2>
 
     <Code render={RenderCode}>
-      <div>
-        <Button label="Click me !" />
-        <Button label="Disabled button" disabled />
-      </div>
+      <FlexGrid flow="row wrap">
+        <FlexItems padding="1rem">
+          <Button label="Click me !" />
+          <Button label="Disabled" disabled />
+          <Button label="Icon" icon="❤" />
+          <Button label="Compact" compact />
+          <Button label="Dense" dense />
+        </FlexItems>
+      </FlexGrid>
     </Code>
 
-    <h2 className={sHeadings.textTitle}>Link button</h2>
+    <h2 className={typography.title}>Link Button</h2>
 
     <Code render={RenderCode}>
-      <div>
-        <Button href="#" label="Link to something" onClick="return false" />
-        <Button disabled href="#" label="Disabled link" onClick="return false" />
-      </div>
+      <FlexGrid flow="row wrap">
+        <FlexItems padding="1rem">
+          <Button href="#" onClick="return false" label="Link to something" />
+          <Button href="#" onClick="return false" label="Icon" icon="❤" />
+          <Button href="#" onClick="return false" label="Compact" compact />
+          <Button href="#" onClick="return false" label="Dense" dense />
+          <Button href="#" onClick="return false" label="Compact Dense" compact dense />
+        </FlexItems>
+      </FlexGrid>
     </Code>
 
-    <h2 className={sHeadings.textTitle}>Flat button</h2>
+    <h2 className={typography.title}>Flat Button</h2>
 
     <Code render={RenderCode}>
-      <Button flat label="Close" href="#" onClick="return false" />
+      <FlexGrid flow="row wrap">
+        <FlexItems padding="1rem">
+          <Button flat label="Flat" />
+          <Button flat label="Disabled" disabled />
+          <Button flat label="Icon" icon="❤" />
+          <Button flat label="Compact" compact />
+          <Button flat label="Dense" dense />
+        </FlexItems>
+      </FlexGrid>
     </Code>
   </div>
 )

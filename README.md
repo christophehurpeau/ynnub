@@ -21,32 +21,36 @@ export default () => (
 ## Webpack Configuration
 
 ```bash
-yarn add ynnub extract-text-webpack-plugin css-loader postcss-loader sass-loader
+yarn add ynnub extract-text-webpack-plugin css-loader postcss-loader sass-loader optimize-css-assets-webpack-plugin
 ```
 
 ```js
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const { createModuleRule, createExtractPlugin } = require('ynnub/webpack-config');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const { createModuleRules, createExtractPlugin } = require('ynnub/webpack-config');
 
 module.exports = {
   moduleRules: [
     // js/jsx rule 
     { test: /jsx?$/ ... },
 
-    // scss rule
-    createModuleRule(ExtractTextPlugin, {
+    // css modules scss rule
+    ...createModuleRules({
+      ExtractTextPlugin,
+      // optional: global: true|false,
       // optional: production: true|false,
       // optional: themeFile: string,
       // optional: plugins: Array
       plugins: [
         // example: require('precss'),
       ]
-    })
+    }),
   ],
   
   plugins: [
     createExtractPlugin(ExtractTextPlugin, {
     }),
+    new OptimizeCssAssetsPlugin(),
   ]    
 }
 

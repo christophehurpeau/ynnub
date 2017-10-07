@@ -1,3 +1,5 @@
+@import "~@material/typography/_variables";
+@import "~@material/theme/_variables";
 @import '../variables/page';
 @import '../variables/responsive';
 
@@ -9,7 +11,7 @@
   }
 
   body {
-    font: normal 100% $font-family;
+    font: normal 100% $mdc-typography-font-family;
     font-display: block;
     line-height: 1.5;
     min-height: 100%;

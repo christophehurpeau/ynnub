@@ -1,36 +1,52 @@
-import s from './list/base.scss';
+import './list.global.scss';
 import type { ReactNodeType } from '../types';
 
 export ListItem from './ListItem';
 
+type ListDividerPropsType = {|
+  inset?: boolean,
+|};
+
+export const ListDivider = ({ inset }: ListDividerPropsType) =>
+  <li role="separator" className={`mdc-list-divider${!inset ? '' : ` mdc-list-divider--inset` }`} />;
+
 type PropsType = {
+  as?: string,
   className?: string,
-  ordered?: ?boolean,
-  multiline?: ?boolean,
-  links?: ?boolean,
+  twoLine?: ?boolean,
+  multiline?: null,
+  avatar?: ?boolean,
+  dense?: ?boolean,
+  links?: null,
   children: ReactNodeType,
 }
 
 export default ({
+  as: As = 'ul',
   className,
-  ordered,
-  multiline,
+  avatar,
+  dense,
+  twoLine,
   links,
   children,
   ...otherProps
 }: PropsType): ReactNodeType => {
-  const TagName = ordered ? 'ol' : 'ul';
-  return (
-    <TagName
-      className={[
-        s.list,
-        multiline && s.multiline,
-        links && s.links,
-        className,
-      ].filter(Boolean).join(' ')}
-      {...otherProps}
-    >
-      {children}
-    </TagName>
-  );
-}
+  const list = <As
+    className={[
+      'mdc-list',
+      avatar && 'mdc-list--avatar-list',
+      dense && 'mdc-list--dense',
+      twoLine && 'mdc-list--two-line',
+      className,
+    ].filter(Boolean).join(' ')}
+    {...otherProps}
+  >
+    {children}
+  </As>;
+
+  if (As !== 'ul' && As !== 'ol') {
+    return <li>{list}</li>;
+  }
+
+  return list;
+};

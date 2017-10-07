@@ -1,5 +1,5 @@
-import sList from './list/base.scss';
 import Button from './Button';
+import List from './List';
 import s from './dropdown.scss';
 import type { ReactNodeType } from '../types';
 
@@ -8,9 +8,7 @@ type PropsType = {
   className?: string,
   label: ReactNodeType,
   button?: ?boolean,
-  flat?: ?boolean,
   disabled?: ?boolean,
-  links?: ?boolean,
   children: ReactNodeType,
 }
 
@@ -19,9 +17,7 @@ export default ({
   className,
   label,
   button,
-  flat,
   disabled,
-  links,
   children,
   ...otherProps
 }: PropsType): ReactNodeType => {
@@ -37,9 +33,10 @@ export default ({
         {...otherProps}
       >
         {label}
-        <ul className={`${sList.list} ${s.list} ${links ? sList.links : ''}`}>
+        <span className={s.arrow}>▼</span>
+        <List className={s.list}>
           {children}
-        </ul>
+        </List>
       </AsType>
     )
   } else {
@@ -47,7 +44,6 @@ export default ({
       <AsType
         className={[
           s.dropdownContainer,
-          s.dropdownContainerButton,
           disabled && s.disabled,
           className,
         ].filter(Boolean).join(' ')}
@@ -55,20 +51,19 @@ export default ({
       >
         {!button ? label : (
           <Button
-            label={label}
-            flat={flat}
+            label={[label, <span className={s.arrow}>▼</span>]}
             disabled={disabled}
             className={[
               s.dropdown,
               s.button,
-              flat && s.flat,
               disabled && s.disabled,
             ].filter(Boolean).join(' ')}
+            {...otherProps}
           />
         )}
-        <ul className={`${sList.list} ${s.list} ${links ? sList.links : ''}`}>
+        <List className={s.list}>
           {children}
-        </ul>
+        </List>
       </AsType>
     )
   }

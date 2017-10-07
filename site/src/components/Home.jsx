@@ -1,23 +1,23 @@
-import sHeadings from 'ynnub/text/headings.scss';
+import typography from 'ynnub/text/typography';
 
 export default () => (
   <div>
-    <h1 className={sHeadings.pageTitle}>ynnub</h1>
+    <h1 className={typography.headline}>ynnub</h1>
 
     <p>
     A css module framework in scss. Written for <code>react</code> and <code>webpack</code> with css modules.
     </p>
 
-    <h2 className={sHeadings.textTitle}>Getting started</h2>
+    <h2 className={typography.title}>Getting started</h2>
 
-    <h3 className={sHeadings.textParagraphTitle}>Installation</h3>
+    <h3 className={typography.subheading2}>Installation</h3>
 
     <pre><code>{`
 npm install --save ynnub
 yarn add ynnub
     `.trim()}</code></pre>
 
-    <h3 className={sHeadings.textParagraphTitle}>Setup</h3>
+    <h3 className={typography.subheading2}>Setup</h3>
 
     Create a new webpack/react project. (TODO: steps with create-react-app)
 
@@ -43,7 +43,7 @@ module.exports = {
 }
     `.trim()}</code></pre>
 
-    <h3 className={sHeadings.textParagraphTitle}>Layout</h3>
+    <h3 className={typography.subheading2}>Layout</h3>
 
     Import only the global things you need in your layout:
 

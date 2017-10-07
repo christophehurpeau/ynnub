@@ -1,28 +1,28 @@
 import Code from 'babel-plugin-jsx-code/Component';
 import RenderCode from '../RenderCode';
-import { InputText, Textarea, Select, Radio, Checkbox } from  'ynnub/form';
-import sHeadings from 'ynnub/text/headings.scss';
-import sFlex from 'ynnub/grid/flex.scss';
+import { Fieldset, InputText, Textarea, Select, Radio, Checkbox } from  'ynnub/form';
+import typography from 'ynnub/text/typography';
+import { FlexGrid, FlexItem } from 'ynnub/grid/flex';
 
 export default () => (
   <div>
-    <h1 className={sHeadings.pageTitle}>Form</h1>
+    <h1 className={typography.headline}>Form</h1>
 
-    <h2 className={sHeadings.textTitle}>Imports</h2>
+    <h2 className={typography.title}>Imports</h2>
 
     <pre><code>{"import { InputText, Textarea, Select, Radio, Checkbox, Fieldset } from  'ynnub/form';"}</code></pre>
 
-    <h2 className={sHeadings.textTitle}>InputText</h2>
+    <h2 className={typography.title}>InputText</h2>
 
     <Code render={RenderCode}>
-      <div className={[sFlex.row, sFlex.spaceAround].join(' ')}>
-        <div style={{ flexGrow: 0, width: '45%' }}>
+      <FlexGrid justifyContent="space-around" flow="row wrap">
+        <FlexItem basis="45%">
           <InputText id="user-firstname" label="First Name" required />
-        </div>
-        <div style={{ flexGrow: 0, width: '45%' }}>
+        </FlexItem>
+        <FlexItem basis="45%">
           <InputText id="user-lastname" label="Last Name" required />
-        </div>
-        <div style={{ flexGrow: 0, width: '45%' }}>
+        </FlexItem>
+        <FlexItem basis="45%">
           <InputText
             id="user-email"
             type="email"
@@ -30,8 +30,8 @@ export default () => (
             required
             placeholder="Email (Placeholder)"
           />
-        </div>
-        <div style={{ flexGrow: 0, width: '45%' }}>
+        </FlexItem>
+        <FlexItem basis="45%">
           <InputText
             id="user-phone"
             type="phone"
@@ -39,15 +39,15 @@ export default () => (
             label="Phone"
             required
           />
-        </div>
-        <div style={{ flexGrow: 0, width: '45%' }}>
+        </FlexItem>
+        <FlexItem basis="45%">
           <InputText id="user-disabled" label="Disabled" disabled />
-        </div>
-      </div>
+        </FlexItem>
+      </FlexGrid>
     </Code>
 
 
-    <h2 className={sHeadings.textTitle}>Textarea</h2>
+    <h2 className={typography.title}>Textarea</h2>
 
     <Code render={RenderCode}>
       <Textarea
@@ -58,7 +58,7 @@ export default () => (
     </Code>
 
 
-    <h2 className={sHeadings.textTitle}>Select</h2>
+    <h2 className={typography.title}>Select</h2>
 
     <Code render={RenderCode}>
       <Select
@@ -80,7 +80,7 @@ export default () => (
     </Code>
 
 
-    <h2 className={sHeadings.textTitle}>Radio buttons</h2>
+    <h2 className={typography.title}>Radio buttons</h2>
 
     <Code render={RenderCode}>
       <div>
@@ -99,7 +99,7 @@ export default () => (
     </Code>
 
 
-    <h2 className={sHeadings.textTitle}>Checkboxes</h2>
+    <h2 className={typography.title}>Checkboxes</h2>
 
     <Code render={RenderCode}>
       <div>
@@ -117,7 +117,7 @@ export default () => (
       </div>
     </Code>
 
-    <h2 className={sHeadings.textTitle}>Fieldset</h2>
+    <h2 className={typography.title}>Fieldset</h2>
 
     <Code render={RenderCode}>
       <Fieldset legend="Legend">
@@ -126,7 +126,7 @@ export default () => (
     </Code>
 
 
-    <h2 className={sHeadings.textTitle}>With <code>redux-form</code></h2>
+    <h2 className={typography.title}>With <code>redux-form</code></h2>
 
     <pre><code>{`
 import { InputText } from 'ynnub';

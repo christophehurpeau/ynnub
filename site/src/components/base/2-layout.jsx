@@ -1,13 +1,13 @@
 import Code from 'babel-plugin-jsx-code/Component';
 import RenderCode from '../RenderCode';
-import sHeadings from 'ynnub/text/headings.scss';
+import typography from 'ynnub/text/typography';
 import sHolyGrail from 'ynnub/layout/holygrail.scss';
 
 export default () => (
   <div>
-    <h1 className={sHeadings.pageTitle}>Layouts</h1>
+    <h1 className={typography.headline}>Layouts</h1>
 
-    <h2 className={sHeadings.textTitle}><a href="https://en.wikipedia.org/wiki/Holy_Grail_(web_design)">Holy Grail</a></h2>
+    <h2 className={typography.title}><a href="https://en.wikipedia.org/wiki/Holy_Grail_(web_design)">Holy Grail</a></h2>
 
     <pre><code>{"import sHolyGrail from 'ynnub/layout/holygrail.scss';"}</code></pre>
 

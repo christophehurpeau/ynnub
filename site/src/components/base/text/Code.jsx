@@ -1,13 +1,13 @@
 import Code from 'babel-plugin-jsx-code/Component';
 import RenderCode from '../../RenderCode';
 import 'ynnub/text/code.scss';
-import sHeadings from 'ynnub/text/headings.scss';
+import typography from 'ynnub/text/typography';
 
 export default () => (
   <div>
-    <h1 className={sHeadings.pageTitle}>Code</h1>
+    <h1 className={typography.headline}>Code</h1>
 
-    <h2 className={sHeadings.textTitle}>{'<code>'}: computer code</h2>
+    <h2 className={typography.title}>{'<code>'}: computer code</h2>
 
     <p>The <a href="http://www.w3.org/TR/html-markup/code.html">code element</a>
       {' '}represents a fragment of computer code.</p>
@@ -16,7 +16,7 @@ export default () => (
       <p>For example, <code>{'<code>'}</code> is a HTML start tag.</p>
     </Code>
 
-    <h2 className={sHeadings.textTitle}>{'<kbd>'}: user imput</h2>
+    <h2 className={typography.title}>{'<kbd>'}: user imput</h2>
 
     <p>The <a href="http://www.w3.org/TR/html-markup/kbd.html">kbd element</a>
       {' '}represents user input, typically keyboard input, though it may also represent other input, such as voice commands.</p>
@@ -25,7 +25,7 @@ export default () => (
       <p>Save the document by pressing <kbd><kbd>Ctrl</kbd>+<kbd>S</kbd></kbd></p>
     </Code>
 
-    <h2 className={sHeadings.textTitle}>{'<pre>'}: Preformatted Text</h2>
+    <h2 className={typography.title}>{'<pre>'}: Preformatted Text</h2>
 
     <p>The <a href="http://www.w3.org/TR/html-markup/pre.html">pre element</a>
       {' '}represents a block of preformatted text, in which structure is represented
@@ -37,7 +37,7 @@ export default () => (
       </pre>
     </Code>
 
-    <h2 className={sHeadings.textTitle}>{'<var>'}: variable or placeholder text</h2>
+    <h2 className={typography.title}>{'<var>'}: variable or placeholder text</h2>
 
     <p>The <a href="http://www.w3.org/TR/html-markup/var.html">var element</a>
       {' '}represents either a variable in a mathematical expression or programming context,
@@ -47,7 +47,7 @@ export default () => (
       <p>A simple equation: <var>x</var> = <var>y</var> + 2</p>
     </Code>
 
-    <h2 className={sHeadings.textTitle}>{'<samp>'}: Sample output</h2>
+    <h2 className={typography.title}>{'<samp>'}: Sample output</h2>
 
     <p>The <a href="http://www.w3.org/TR/html-markup/samp.html">samp element</a>
       {' '}represents (sample) output from a program or computing system.</p>

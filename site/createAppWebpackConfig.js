@@ -4,11 +4,26 @@ const babelPresetReact = require('babel-preset-pob-react');
 const babelPresetStages = require('babel-preset-pob-stages');
 const babelPluginJSXCode = require('babel-plugin-jsx-code');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const { createModuleRule, createExtractPlugin } = require('../webpack-config');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const { createModuleRules, createExtractPlugin } = require('../webpack-config');
 
 module.exports = function (config, options) {
   const production = config.env === 'production';
-  const webpackConfig = config(Object.assign({}, options, {
+  return config({
+    ...options,
+
+    aliases: {
+      'ynnub': path.resolve('..'),
+    },
+    includePaths: [
+      path.resolve('../components'),
+      path.resolve('../form'),
+      path.resolve('../grid'),
+      path.resolve('../text'),
+      path.resolve('../utils'),
+      path.resolve('../Head'),
+    ],
+
     babel: {
       presets: [
         require('pobpack-node/babel').default,
@@ -22,24 +37,28 @@ module.exports = function (config, options) {
     },
 
     moduleRules: [
-      createModuleRule(ExtractTextPlugin, {
+      ...createModuleRules({
+        ExtractTextPlugin,
         production,
         publicPath: path.resolve('public'),
         themeFile: './src/theme.scss',
-        plugins: [
-          require('autoprefixer'),
-        ].filter(Boolean)
+        plugins: [require('autoprefixer')],
+        includePaths: [path.resolve('../node_modules')],
       }),
     ],
 
     plugins: [
       createExtractPlugin(ExtractTextPlugin, { filename: '../public/styles.css' }),
-    ]
-  }));
-
-  webpackConfig.resolve.alias = {
-    'ynnub': path.resolve('..'),
-  };
-
-  return webpackConfig;
+      new OptimizeCssAssetsPlugin({
+        cssProcessorOptions: {
+          zindex: false,
+          normalizeUrl: false,
+          discardUnused: false,
+          mergeIdents: false,
+          reduceIdents: false,
+          autoprefixer: false,
+        }
+      }),
+    ],
+  });
 };

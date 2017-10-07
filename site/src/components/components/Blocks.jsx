@@ -1,33 +1,33 @@
 import Code from 'babel-plugin-jsx-code/Component';
 import RenderCode from '../RenderCode';
-import sHeadings from 'ynnub/text/headings.scss';
-import sBlock from 'ynnub/components/block.scss';
+import typography from 'ynnub/text/typography';
+import Block from 'ynnub/components/Block';
 
 export default () => (
   <div>
-    <h1 className={sHeadings.pageTitle}>Blocks</h1>
+    <h1 className={typography.headline}>Blocks</h1>
 
-    <h2 className={sHeadings.textTitle}>Imports</h2>
+    <h2 className={typography.title}>Imports</h2>
 
     <pre><code>{`
-import sBlock from 'ynnub/components/block.scss';
+import Block from 'ynnub/components/Block';
 `.trim()}</code></pre>
 
 
-    <h2 className={sHeadings.textTitle}>Basic block</h2>
+    <h2 className={typography.title}>Basic block</h2>
 
     <Code render={RenderCode}>
-      <div className={sBlock.block}>
+      <Block>
           Block
-      </div>
+      </Block>
     </Code>
 
-    <h2 className={sHeadings.textTitle}>Primary block</h2>
+    <h2 className={typography.title}>Primary block</h2>
 
     <Code render={RenderCode}>
-      <div className={[sBlock.block, sBlock.primary].join(' ')}>
+      <Block primary>
           Block
-      </div>
+      </Block>
     </Code>
 
     See also: <a href="cards">Cards</a>

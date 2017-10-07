@@ -1,52 +1,52 @@
-import '../interactions/interactions.global.scss';
-import s from './button.scss';
+import './button.global.scss';
 import type { ReactNodeType } from '../types';
 
 type PropsType = {
   className?: string,
-  containerClassName?: string,
+  containerClassName?: null,
   icon?: ?ReactNodeType,
   label?: ?ReactNodeType,
   href?: string,
   flat?: ?boolean,
+  unelevated?: ?boolean,
+  stroked?: ?boolean,
+  compact?: ?boolean,
+  dense?: ?boolean,
   disabled?: ?boolean,
 }
 
 export default ({
   className,
-  containerClassName,
   icon,
   label,
   children,
   href,
+  unelevated,
   flat,
-  disabled,
+  stroked,
+  compact,
+  dense,
   ...otherProps
 }: PropsType): ReactNodeType => {
   const TagName = href ? 'a' : 'button';
-  if (TagName === 'button' && disabled) otherProps = { disabled, ...otherProps };
+  if (TagName !== 'button' && otherProps.disabled) throw new Error('Cannot disable a link');
   if (!label) label = children;
   return (
     <TagName
       href={href}
       className={[
-        s.container,
-        disabled && s.containerDisabled,
-        containerClassName,
+        'mdc-button',
+        unelevated && 'mdc-button--unelevated',
+        !flat && !unelevated && 'mdc-button--raised',
+        stroked && 'mdc-button--stroked',
+        compact && 'mdc-button--compact',
+        dense && 'mdc-button--dense',
+        className,
       ].filter(Boolean).join(' ')}
       {...otherProps}
     >
-      <span
-        className={[
-          s.button,
-          flat && s.flat,
-          disabled && s.disabled,
-          className,
-        ].filter(Boolean).join(' ')}
-      >
-        {icon && <span className={s.icon}>{icon}</span>}
-        {label}
-      </span>
+      {icon && <span className="mdc-button__icon">{icon}</span>}
+      {label}
     </TagName>
   );
 }

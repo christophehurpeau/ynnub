@@ -1,17 +1,17 @@
 import Code from 'babel-plugin-jsx-code/Component';
 import Table from 'ynnub/components/Table';
-import sHeadings from 'ynnub/text/headings.scss';
+import typography from 'ynnub/text/typography';
 import RenderCode from '../RenderCode';
 
 export default () => (
   <div>
-    <h1 className={sHeadings.pageTitle}>Tables</h1>
+    <h1 className={typography.headline}>Tables</h1>
 
-    <h2 className={sHeadings.textTitle}>Imports</h2>
+    <h2 className={typography.title}>Imports</h2>
 
     <pre><code>{`import Table from 'ynnub/components/Table';`}</code></pre>
 
-    <h2 className={sHeadings.textTitle}>Basic table</h2>
+    <h2 className={typography.title}>Basic table</h2>
 
     <Code render={RenderCode}>
       <Table>
@@ -25,7 +25,7 @@ export default () => (
       </Table>
     </Code>
 
-    <h2 className={sHeadings.textTitle}>Centered table</h2>
+    <h2 className={typography.title}>Centered table</h2>
 
     <Code render={RenderCode}>
       <Table centered>
@@ -39,7 +39,7 @@ export default () => (
       </Table>
     </Code>
 
-    <h2 className={sHeadings.textTitle}>Bordered table</h2>
+    <h2 className={typography.title}>Bordered table</h2>
 
     <Code render={RenderCode}>
       <Table bordered>
@@ -53,7 +53,7 @@ export default () => (
       </Table>
     </Code>
 
-    <h2 className={sHeadings.textTitle}>Striped table</h2>
+    <h2 className={typography.title}>Striped table</h2>
 
     <Code render={RenderCode}>
       <Table striped>

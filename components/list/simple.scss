@@ -1,6 +1,4 @@
-@import 'base';
-
-.simpleList {
+.simple {
   border: none;
   list-style: disc;
   padding-left: 1rem;
@@ -11,6 +9,6 @@
   }
 }
 
-.orderedList {
+.ordered {
   list-style: decimal;
 }

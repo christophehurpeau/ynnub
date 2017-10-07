@@ -1,7 +1,7 @@
 import { classNames } from 'alp-react-redux/src';
 import sAside from 'ynnub/layout/aside.scss';
-import sHeadings from 'ynnub/text/headings.scss';
-import List from 'ynnub/components/List';
+import typography from 'ynnub/text/typography';
+import List, { ListItem } from 'ynnub/components/List';
 
 type PropsType = {
   className?: ?string,
@@ -10,31 +10,31 @@ type PropsType = {
 export default ({ className }: PropsType) => (
   <aside className={classNames(className, sAside.aside)} style={{ flexBasis: '200px' }}>
     <nav>
-      <List links>
-        <li><a href="/" className={sHeadings.textTitle}><code>ynnub</code></a></li>
-        <li><a href="/base/layout">Layout</a></li>
+      <List>
+        <ListItem href="/" className={typography.title} text={<code>ynnub</code>} />
+        <ListItem href="/base/layout" text="Layout" />
         <li>
           Text
           <List links>
-            <li><a href="/base/text/headings">Headings</a></li>
-            <li><a href="/base/text/paragraphs">Paragraphs</a></li>
-            <li><a href="/base/text/citations">Citations</a></li>
-            <li><a href="/base/text/code">Code</a></li>
-            <li><a href="/base/text/inline">Inline</a></li>
+            <ListItem href="/base/text/typography" text="Typography" />
+            <ListItem href="/base/text/paragraphs" text="Paragraphs" />
+            <ListItem href="/base/text/citations" text="Citations" />
+            <ListItem href="/base/text/code" text="Code" />
+            <ListItem href="/base/text/inline" text="Inline" />
           </List>
         </li>
-        <li><a href="/base/form">Form</a></li>
+        <ListItem href="/base/form" text="Form" />
         <li>
           Components
-          <List links>
-            <li><a href="/components/badges">Badges</a></li>
-            <li><a href="/components/blocks">Blocks</a></li>
-            <li><a href="/components/buttons">Buttons</a></li>
-            <li><a href="/components/cards">Cards</a></li>
-            <li><a href="/components/dropdown">Dropdown</a></li>
-            <li><a href="/components/labels">Labels</a></li>
-            <li><a href="/components/lists">Lists</a></li>
-            <li><a href="/components/tables">Tables</a></li>
+          <List>
+            <ListItem href="/components/badges" text="Badges" />
+            <ListItem href="/components/blocks" text="Blocks" />
+            <ListItem href="/components/buttons" text="Buttons" />
+            <ListItem href="/components/cards" text="Cards" />
+            <ListItem href="/components/dropdown" text="Dropdown" />
+            <ListItem href="/components/labels" text="Labels" />
+            <ListItem href="/components/lists" text="Lists" />
+            <ListItem href="/components/tables" text="Tables" />
           </List>
         </li>
       </List>

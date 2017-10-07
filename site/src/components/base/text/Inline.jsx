@@ -2,18 +2,18 @@ import Code from 'babel-plugin-jsx-code/Component';
 import RenderCode from '../../RenderCode';
 import 'ynnub/text/blockquote.scss';
 import 'ynnub/text/quote.scss';
-import sHeadings from 'ynnub/text/headings.scss';
+import typography from 'ynnub/text/typography';
 import sTextSpellCheck from 'ynnub/text/spell-check.scss';
 
 export default () => (
   <div>
-    <h1 className={sHeadings.pageTitle}>Styling text: inline</h1>
+    <h1 className={typography.headline}>Styling text: inline</h1>
 
     <pre>
       {"import 'ynnub/text/inline.scss';"}
     </pre>
 
-    <h2 className={sHeadings.textTitle}>{'<mark>'}: marked (highlighted) text</h2>
+    <h2 className={typography.title}>{'<mark>'}: marked (highlighted) text</h2>
 
     <p>
       The <a href="http://www.w3.org/TR/html-markup/mark.html">mark element</a>
@@ -29,7 +29,7 @@ export default () => (
       </p>
     </Code>
 
-    <h2 className={sHeadings.textTitle}>{'<del>'}: deleted text</h2>
+    <h2 className={typography.title}>{'<del>'}: deleted text</h2>
 
     <p>
       The <a href="http://www.w3.org/TR/html-markup/del.html">del element</a>
@@ -45,7 +45,7 @@ export default () => (
     </Code>
 
 
-    <h2 className={sHeadings.textTitle}>{'<s>'}: struck text</h2>
+    <h2 className={typography.title}>{'<s>'}: struck text</h2>
 
     <p>
       The <a href="http://www.w3.org/TR/html-markup/s.html">s element</a>
@@ -60,7 +60,7 @@ export default () => (
     </Code>
 
 
-    <h2 className={sHeadings.textTitle}>{'<ins>'}: inserted text</h2>
+    <h2 className={typography.title}>{'<ins>'}: inserted text</h2>
 
     <p>
       The <a href="http://www.w3.org/TR/html-markup/ins.html">ins element</a>
@@ -74,7 +74,7 @@ export default () => (
       <p>This is an example of <ins>inserted</ins> text.</p>
     </Code>
 
-    <h2 className={sHeadings.textTitle}>{'<em>'}: emphatic stress</h2>
+    <h2 className={typography.title}>{'<em>'}: emphatic stress</h2>
 
     <p>
       The <a href="http://www.w3.org/TR/html-markup/em.html">em element</a>
@@ -88,7 +88,7 @@ export default () => (
       <p>Just <em>do</em> it already!</p>
     </Code>
 
-    <h2 className={sHeadings.textTitle}>{'<small>'}: small print</h2>
+    <h2 className={typography.title}>{'<small>'}: small print</h2>
 
     <p>
       The <a href="http://www.w3.org/TR/html-markup/small.html">small element</a>
@@ -107,7 +107,7 @@ export default () => (
             independent of its styled presentation.</small>
     </Code>
 
-    <h2 className={sHeadings.textTitle}>{'<u>'}: offset text conventionally styled with an underline</h2>
+    <h2 className={typography.title}>{'<u>'}: offset text conventionally styled with an underline</h2>
 
     <p>
       The <a href="http://www.w3.org/TR/html-markup/u.html">u element</a>
@@ -117,7 +117,7 @@ export default () => (
 
     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/u">MDN: u element</a>
 
-    <h3 className={sHeadings.textTitle}>{'<u>'}: Chinese proper name marks</h3>
+    <h3 className={typography.title}>{'<u>'}: Chinese proper name marks</h3>
 
     <blockquote>
       <p>In Chinese writing, a proper name mark (Simplified Chinese: <span lang="Hans">专名号</span>, <span lang="zh-Latn">zhuānmínghào</span>; Traditional Chinese: <span lang="Hant">專名號</span>) is an underline used to mark proper names, such as the names of people, places, dynasties, organizations. … This method of recognizing proper names in text is similar to the English use of a capital letter.</p>
@@ -132,7 +132,7 @@ export default () => (
       </p>
     </Code>
 
-    <h3 className={sHeadings.textTitle}>{'<u>'}: Spell-checking feedback</h3>
+    <h3 className={typography.title}>{'<u>'}: Spell-checking feedback</h3>
 
     <pre>
       {"import sTextSpellCheck 'ynnub/text/spell-check.scss';"}
@@ -146,7 +146,7 @@ export default () => (
     <p>Source: <a href="http://html5doctor.com/u-element/">http://html5doctor.com/u-element/</a></p>
 
 
-    <h2 className={sHeadings.textTitle}>{'<i>'}: offset text conventionally styled with an italic</h2>
+    <h2 className={typography.title}>{'<i>'}: offset text conventionally styled with an italic</h2>
 
     <p>
       The <a href="http://www.w3.org/TR/html-markup/i.html">i element</a>
@@ -161,7 +161,7 @@ export default () => (
       <p>The Latin phrase <i>Veni, vidi, vici</i> is often mentioned in music, art, and literature.</p>
     </Code>
 
-    <h2 className={sHeadings.textTitle}>{'<b>'}: offset text conventionally styled in bold</h2>
+    <h2 className={typography.title}>{'<b>'}: offset text conventionally styled in bold</h2>
 
     <p>
       The <a href="http://www.w3.org/TR/html-markup/b.html">b element</a>
@@ -183,7 +183,7 @@ export default () => (
 /*
 
  TODO:
- <h2 className={sHeadings.textTitle}>{'<dfn>'}/{'<abbr>'}: dfn importance</h2>
+ <h2 className={typography.title}>{'<dfn>'}/{'<abbr>'}: dfn importance</h2>
 
 
  <p>I do <abbr title="Hypertext Markup Language">HTML</abbr></p>

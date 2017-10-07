@@ -1,46 +1,146 @@
 import Code from 'babel-plugin-jsx-code/Component';
-import List, { ListItem } from 'ynnub/components/List';
+import { FlexGrid, FlexItems } from 'ynnub/grid/flex';
+import List, { ListItem, ListDivider } from 'ynnub/components/List';
 import SimpleList from 'ynnub/components/SimpleList';
-import BlockList from 'ynnub/components/BlockList';
 import VerticalList from 'ynnub/components/VerticalList';
-import SelectableList from 'ynnub/components/SelectableList';
-import sHeadings from 'ynnub/text/headings.scss';
-import { textCaption as textCaptionClassName } from 'ynnub/text/caption.scss';
+import Block from 'ynnub/components/Block';
+import typography from 'ynnub/text/typography';
+import WifiIcon from 'react-icons/lib/md/wifi';
+import BluetoothIcon from 'react-icons/lib/md/bluetooth';
+
 import RenderCode from '../RenderCode';
+
+const GreyBackground = (props) => <span {...props} style={{ backgroundColor: 'rgba(0, 0, 0, .26)' }} />;
 
 export default () => (
   <div>
-    <h1 className={sHeadings.pageTitle}>Lists</h1>
+    <h1 className={typography.headline}>Lists</h1>
 
-    <h2 className={sHeadings.textTitle}>Imports</h2>
+    <h2 className={typography.title}>Imports</h2>
 
     <pre><code>{`import List, { ListItem } from 'ynnub/components/List';`}</code></pre>
 
 
-    <h2 className={sHeadings.textTitle}>Basic list</h2>
+    <h2 className={typography.title}>Text only</h2>
 
     <Code render={RenderCode}>
-      <List>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-      </List>
+      <FlexGrid flow="row wrap">
+        <FlexItems padding="1rem">
+          <List>
+            <ListItem text="Item 1" />
+            <ListItem text="Item 2" />
+            <ListDivider />
+            <ListItem text="Item 3" />
+          </List>
+
+          <List dense>
+            <ListItem text="Item 1" />
+            <ListItem text="Item 2" />
+            <ListItem text="Item 3" />
+          </List>
+
+          <List twoLine>
+            <ListItem text="Item 1" secondaryText="Secondary Text 1" />
+            <ListItem text="Item 2" secondaryText="Secondary Text 2" />
+            <ListDivider inset />
+            <ListItem text="Item 3" secondaryText="Secondary Text 3" />
+          </List>
+
+          <List twoLine dense>
+            <ListItem text="Item 1" secondaryText="Secondary Text 1" />
+            <ListItem text="Item 2" secondaryText="Secondary Text 2" />
+            <ListItem text="Item 3" secondaryText="Secondary Text 3" />
+          </List>
+        </FlexItems>
+      </FlexGrid>
     </Code>
 
-    <h2 className={sHeadings.textTitle}>Multiline list</h2>
+    <h2 className={typography.title}>Start Detail</h2>
 
     <Code render={RenderCode}>
-      <List multiline>
-        {[1, 2, 3].map(idx => (
-          <li key={idx}>
-            Item {idx}<br />
-            <span className={textCaptionClassName}>This is item {idx}</span>
-          </li>
-        ))}
-      </List>
+      <FlexGrid flow="row wrap">
+        <FlexItems padding="1rem">
+          <List>
+            <ListItem startDetail={GreyBackground} text="Item 1" />
+            <ListItem startDetail={GreyBackground} text="Item 2" />
+            <ListItem startDetail={GreyBackground} text="Item 3" />
+          </List>
+
+          <List dense>
+            <ListItem startDetail={GreyBackground} text="Item 1" />
+            <ListItem startDetail={GreyBackground} text="Item 2" />
+            <ListItem startDetail={GreyBackground} text="Item 3" />
+          </List>
+
+          <List>
+            <ListItem startDetail={WifiIcon} text="Wifi" />
+            <ListItem startDetail={BluetoothIcon} text="Bluetooth" />
+          </List>
+
+          <List dense>
+            <ListItem startDetail={WifiIcon} text="Wifi" />
+            <ListItem startDetail={BluetoothIcon} text="Bluetooth" />
+          </List>
+
+          <List avatar>
+            <ListItem startDetail={GreyBackground} text="Item 1" />
+            <ListItem startDetail={GreyBackground} text="Item 2" />
+            <ListItem startDetail={GreyBackground} text="Item 3" />
+          </List>
+
+          <List avatar dense>
+            <ListItem startDetail={GreyBackground} text="Item 1" />
+            <ListItem startDetail={GreyBackground} text="Item 2" />
+            <ListItem startDetail={GreyBackground} text="Item 3" />
+          </List>
+        </FlexItems>
+      </FlexGrid>
     </Code>
 
-    <h2 className={sHeadings.textTitle}>Simple list</h2>
+
+    <h2 className={typography.title}>End Detail</h2>
+
+    <Code render={RenderCode}>
+      <FlexGrid flow="row wrap">
+        <FlexItems padding="1rem">
+          <List>
+            <ListItem endDetail={GreyBackground} text="Item 1" />
+            <ListItem endDetail={GreyBackground} text="Item 2" />
+            <ListItem endDetail={GreyBackground} text="Item 3" />
+          </List>
+
+          <List dense>
+            <ListItem endDetail={GreyBackground} text="Item 1" />
+            <ListItem endDetail={GreyBackground} text="Item 2" />
+            <ListItem endDetail={GreyBackground} text="Item 3" />
+          </List>
+
+          <List>
+            <ListItem endDetail={WifiIcon} text="Wifi" />
+            <ListItem endDetail={BluetoothIcon} text="Bluetooth" />
+          </List>
+
+          <List dense>
+            <ListItem endDetail={WifiIcon} text="Wifi" />
+            <ListItem endDetail={BluetoothIcon} text="Bluetooth" />
+          </List>
+
+          <List avatar>
+            <ListItem endDetail={GreyBackground} text="Item 1" />
+            <ListItem endDetail={GreyBackground} text="Item 2" />
+            <ListItem endDetail={GreyBackground} text="Item 3" />
+          </List>
+
+          <List avatar dense>
+            <ListItem endDetail={GreyBackground} text="Item 1" />
+            <ListItem endDetail={GreyBackground} text="Item 2" />
+            <ListItem endDetail={GreyBackground} text="Item 3" />
+          </List>
+        </FlexItems>
+      </FlexGrid>
+    </Code>
+
+    <h2 className={typography.title}>Simple list</h2>
 
     <pre><code>{`import List, { ListItem } from 'ynnub/components/List';`}</code></pre>
 
@@ -62,32 +162,18 @@ export default () => (
       </div>
     </Code>
 
-    <h2 className={sHeadings.textTitle}>Link list</h2>
+    <h2 className={typography.title}>Link list</h2>
 
     <Code render={RenderCode}>
-      <List links>
-        <li><a href="#">Item 1</a></li>
-        <li><a href="#">Item 2</a></li>
-        <li><a href="#" className="current">Item 3</a></li>
-        <li><a href="#">Item 4</a></li>
+      <List>
+        <ListItem href="#" text="Item 1" />
+        <ListItem href="#" text="Item 2" />
+        <ListItem href="#" text="Item 3" className="current" />
+        <ListItem href="#" text="Item 4" />
       </List>
     </Code>
 
-    <pre><code>{`
-import SelectableList from 'ynnub/components/SelectableList';
-`.trim()}</code></pre>
-
-
-    <Code render={RenderCode}>
-      <SelectableList>
-        <li><a href="#">Item 1</a></li>
-        <li><a href="#">Item 2</a></li>
-        <li><a href="#" className="current">Item 3</a></li>
-        <li><a href="#">Item 4</a></li>
-      </SelectableList>
-    </Code>
-
-    <h2 className={sHeadings.textTitle}>Vertical list</h2>
+    <h2 className={typography.title}>Vertical list</h2>
 
     <pre><code>{`
 import VerticalList from 'ynnub/components/VerticalList';
@@ -95,41 +181,22 @@ import VerticalList from 'ynnub/components/VerticalList';
 
     <Code render={RenderCode}>
       <VerticalList>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-        <li>Item 4</li>
+        <ListItem text="Item 1" />
+        <ListItem text="Item 2" />
+        <ListItem text="Item 3" />
+        <ListItem text="Item 4" />
       </VerticalList>
     </Code>
 
-    <h2 className={sHeadings.textTitle}>List with borders</h2>
+    <h2 className={typography.title}>List with borders</h2>
 
     <pre><code>{`import BlockList from 'ynnub/components/BlockList';`}</code></pre>
 
     <Code render={RenderCode}>
-      <BlockList>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-      </BlockList>
-    </Code>
-
-    <Code render={RenderCode}>
-      <BlockList primary>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-      </BlockList>
-    </Code>
-
-
-    <h2 className={sHeadings.textTitle}>ListItem</h2>
-
-    <Code render={RenderCode}>
-      <List>
-        <ListItem badge={0}>Item 1</ListItem>
-        <ListItem badge={1}>Item 2</ListItem>
-        <ListItem badge={2}>Item 3</ListItem>
+      <List as={Block}>
+        <ListItem text="Item 1" />
+        <ListItem text="Item 2" />
+        <ListItem text="Item 3" />
       </List>
     </Code>
   </div>

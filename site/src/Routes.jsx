@@ -1,6 +1,6 @@
 import { Route, IndexRoute } from 'react-router';
 import HomePage from './components/Home';
-import Headings from './components/base/1-headings';
+import typography from './components/base/1-typography';
 import Layout from './components/base/2-layout';
 import Form from './components/base/2-form';
 import Paragraphs from './components/base/text/Paragraphs';
@@ -22,7 +22,7 @@ export default () => (
     <Route path="base">
       <Route path="layout" components={Layout} />
       <Route path="text">
-        <Route path="headings" components={Headings} />
+        <Route path="typography" components={typography} />
         <Route path="paragraphs" components={Paragraphs} />
         <Route path="citations" component={Citations} />
         <Route path="code" component={Code} />
