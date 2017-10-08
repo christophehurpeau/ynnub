@@ -1,3 +1,15 @@
+<a name="0.5.2"></a>
+## [0.5.2](https://github.com/christophehurpeau/ynnub/compare/v0.5.1...v0.5.2) (2017-10-08)
+
+
+### Bug Fixes
+
+* dropdown ListItem ([08a00aa](https://github.com/christophehurpeau/ynnub/commit/08a00aa))
+* flex children type ([d950190](https://github.com/christophehurpeau/ynnub/commit/d950190))
+* ListItem propTypes ([ce9a956](https://github.com/christophehurpeau/ynnub/commit/ce9a956))
+* types ([45ce1e1](https://github.com/christophehurpeau/ynnub/commit/45ce1e1))
+
+
 <a name="0.5.1"></a>
 ## [0.5.1](https://github.com/christophehurpeau/ynnub/compare/v0.5.0...v0.5.1) (2017-10-08)
 
