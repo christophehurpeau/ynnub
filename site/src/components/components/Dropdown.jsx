@@ -2,7 +2,7 @@ import Code from 'babel-plugin-jsx-code/Component';
 import RenderCode from '../RenderCode';
 import { FlexGrid, FlexItems } from 'ynnub/grid/flex';
 import typography from 'ynnub/text/typography';
-import Dropdown from 'ynnub/components/Dropdown';
+import Dropdown, { ListItem } from 'ynnub/components/Dropdown';
 import VerticalList from 'ynnub/components/VerticalList';
 
 export default () => (
@@ -12,7 +12,7 @@ export default () => (
     <h2 className={typography.title}>Imports</h2>
 
     <pre><code>{`
-import Dropdown from 'ynnub/components/Dropdown';
+import Dropdown, { ListItem } from 'ynnub/components/Dropdown';
 `.trim()}</code></pre>
 
     <h2 className={typography.title}>Dropdown Button</h2>
@@ -21,36 +21,36 @@ import Dropdown from 'ynnub/components/Dropdown';
       <FlexGrid flow="row wrap">
         <FlexItems padding="1rem">
           <Dropdown button label="Actions">
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-            <li>Item 4</li>
-            <li>Item 5</li>
+            <ListItem text="Item 1" />
+            <ListItem text="Item 2" />
+            <ListItem text="Item 3" />
+            <ListItem text="Item 4" />
+            <ListItem text="Item 5" />
           </Dropdown>
 
           <Dropdown button disabled label="Disabled">
-            <li>Item 1</li>
-            <li>Item 2</li>
+            <ListItem text="Item 1" />
+            <ListItem text="Item 2" />
           </Dropdown>
 
           <Dropdown button flat label="Flat">
-            <li>Item 1</li>
-            <li>Item 2</li>
+            <ListItem text="Item 1" />
+            <ListItem text="Item 2" />
           </Dropdown>
 
           <Dropdown button flat disabled label="Flat Disabled">
-            <li>Item 1</li>
-            <li>Item 2</li>
+            <ListItem text="Item 1" />
+            <ListItem text="Item 2" />
           </Dropdown>
 
           <Dropdown button compact label="Compact">
-            <li>Item 1</li>
-            <li>Item 2</li>
+            <ListItem text="Item 1" />
+            <ListItem text="Item 2" />
           </Dropdown>
 
           <Dropdown button dense label="Dense">
-            <li>Item 1</li>
-            <li>Item 2</li>
+            <ListItem text="Item 1" />
+            <ListItem text="Item 2" />
           </Dropdown>
         </FlexItems>
       </FlexGrid>
@@ -62,22 +62,22 @@ import Dropdown from 'ynnub/components/Dropdown';
       <FlexGrid flow="row wrap">
         <FlexItems padding="1rem">
           <VerticalList>
-            <li>Item 1</li>
+            <ListItem text="Item 1" />
             <Dropdown as="li" label="Item 2">
-              <li>Item 2.1</li>
-              <li>Item 2.2</li>
-              <li>Item 2.3</li>
-              <li>Item 2.4</li>
-              <li>Item 2.5</li>
+              <ListItem text="Item 2.1" />
+              <ListItem text="Item 2.2" />
+              <ListItem text="Item 2.3" />
+              <ListItem text="Item 2.4" />
+              <ListItem text="Item 2.5" />
             </Dropdown>
-            <li>Item 3</li>
+            <ListItem text="Item 3" />
           </VerticalList>
 
           <VerticalList>
-              <li>Item 1</li>
+            <ListItem text="Item 1" />
               <Dropdown disabled as="li" label="Item 2">
-                <li>Item 2.1</li>
-                <li>Item 2.2</li>
+                <ListItem text="Item 2.1" />
+                <ListItem text="Item 2.2" />
               </Dropdown>
           </VerticalList>
         </FlexItems>

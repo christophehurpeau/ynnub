@@ -3,6 +3,8 @@ import List from './List';
 import s from './dropdown.scss';
 import type { ReactNodeType } from '../types';
 
+export { ListItem } from './List';
+
 type PropsType = {
   tagName?: null,
   className?: string,
