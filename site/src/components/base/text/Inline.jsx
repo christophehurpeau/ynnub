@@ -128,7 +128,7 @@ export default () => (
 
     <Code render={RenderCode}>
       <p>
-        <u class="pnm">屈原</u>放逐，乃賦<cite class="bnm">離騒</cite>。<u class="pnm">左丘</u>失明，厥有<cite class="bnm">國語</cite>。（司馬遷 《<cite>報任安書</cite>》
+        <u className="pnm">屈原</u>放逐，乃賦<cite className="bnm">離騒</cite>。<u className="pnm">左丘</u>失明，厥有<cite className="bnm">國語</cite>。（司馬遷 《<cite>報任安書</cite>》
       </p>
     </Code>
 

@@ -1,8 +1,8 @@
 import './tabbar.global.scss';
-import type { ReactNodeType } from '../types';
+import type { TagNameOrReactComponentType, ReactNodeType } from '../types';
 
 type PropsType = {
-  as?: string,
+  as?: TagNameOrReactComponentType,
   className?: string,
   children: ReactNodeType,
 }
@@ -25,7 +25,7 @@ export default ({
 );
 
 type TabItemPropsType = {
-  as?: string,
+  as?: TagNameOrReactComponentType,
   className?: string,
   label: ReactNodeType,
   active?: ?boolean,

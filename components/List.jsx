@@ -1,5 +1,5 @@
 import './list.global.scss';
-import type { ReactNodeType } from '../types';
+import type { TagNameOrReactComponentType, ReactNodeType } from '../types';
 
 export ListItem from './ListItem';
 
@@ -11,7 +11,7 @@ export const ListDivider = ({ inset }: ListDividerPropsType) =>
   <li role="separator" className={`mdc-list-divider${!inset ? '' : ` mdc-list-divider--inset` }`} />;
 
 type PropsType = {
-  as?: string,
+  as?: TagNameOrReactComponentType,
   className?: string,
   twoLine?: ?boolean,
   multiline?: null,

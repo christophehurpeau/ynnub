@@ -45,7 +45,7 @@ export default ({
       ].filter(Boolean).join(' ')}
       {...otherProps}
     >
-      {icon && <span className="mdc-button__icon">{icon}</span>}
+      {icon && <span key="icon" className="mdc-button__icon">{icon}</span>}
       {label}
     </TagName>
   );

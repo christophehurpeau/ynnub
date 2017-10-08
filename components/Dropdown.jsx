@@ -32,11 +32,10 @@ export default ({
           disabled && s.disabled,
           className,
         ].filter(Boolean).join(' ')}
-        {...otherProps}
       >
         {label}
-        <span className={s.arrow}>▼</span>
-        <List className={s.list}>
+        <span key="arrow" className={s.arrow}>▼</span>
+        <List className={s.list} {...otherProps}>
           {children}
         </List>
       </AsType>
@@ -49,11 +48,10 @@ export default ({
           disabled && s.disabled,
           className,
         ].filter(Boolean).join(' ')}
-        {...otherProps}
       >
         {!button ? label : (
           <Button
-            label={[label, <span className={s.arrow}>▼</span>]}
+            label={[label, <span key="arrow" className={s.arrow}>▼</span>]}
             disabled={disabled}
             className={[
               s.dropdown,

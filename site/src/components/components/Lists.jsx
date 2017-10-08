@@ -142,7 +142,7 @@ export default () => (
 
     <h2 className={typography.title}>Simple list</h2>
 
-    <pre><code>{`import List, { ListItem } from 'ynnub/components/List';`}</code></pre>
+    <pre><code>{`import SimpleList from 'ynnub/components/SimpleList';`}</code></pre>
 
     <Code render={RenderCode}>
       <div>

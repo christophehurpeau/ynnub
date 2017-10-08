@@ -23,6 +23,7 @@ module.exports = function (config, options) {
       path.resolve('../text'),
       path.resolve('../utils'),
       path.resolve('../Head'),
+      path.resolve('../types'),
     ],
 
     babel: {
@@ -33,7 +34,7 @@ module.exports = function (config, options) {
         babelPresetStages,
       ],
       plugins: [
-        !production && [babelPluginFlowRuntime.default, { assert: true, annotate: true }],
+        !production && [babelPluginFlowRuntime.default, { assert: true, annotate: false }],
         babelPluginJSXCode.default,
       ].filter(Boolean),
     },

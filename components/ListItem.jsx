@@ -1,15 +1,15 @@
 import React from 'react';
 import './list.global.scss';
-import type { ReactNodeType } from '../types';
+import type { TagNameOrReactComponentType, ReactNodeType, ReactComponentType } from '../types';
 import wrapWithClassName from '../utils/wrapWithClassName';
 
 type PropsType = {
-  as?: string,
+  as?: TagNameOrReactComponentType,
   className?: ?string,
-  startDetail?: ?ReactNodeType,
-  endDetail?: ?ReactNodeType,
-  text?: string,
-  secondaryText?: ?string,
+  startDetail?: ?ReactNodeType | ReactComponentType,
+  endDetail?: ?ReactNodeType | ReactComponentType,
+  text: ReactNodeType,
+  secondaryText?: ?ReactNodeType,
   badge?: null,
   children?: ?ReactNodeType,
 }
