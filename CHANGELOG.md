@@ -1,3 +1,12 @@
+<a name="0.5.1"></a>
+## [0.5.1](https://github.com/christophehurpeau/ynnub/compare/v0.5.0...v0.5.1) (2017-10-08)
+
+
+### Features
+
+* add TabBar ([22d61f6](https://github.com/christophehurpeau/ynnub/commit/22d61f6))
+
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/christophehurpeau/ynnub/compare/v0.4.1...v0.5.0) (2017-10-07)
 
