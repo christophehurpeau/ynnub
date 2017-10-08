@@ -2,6 +2,7 @@ const path = require('path');
 const babelPresetPob = require('babel-preset-pob');
 const babelPresetReact = require('babel-preset-pob-react');
 const babelPresetStages = require('babel-preset-pob-stages');
+const babelPluginFlowRuntime = require('babel-plugin-flow-runtime');
 const babelPluginJSXCode = require('babel-plugin-jsx-code');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -32,8 +33,9 @@ module.exports = function (config, options) {
         babelPresetStages,
       ],
       plugins: [
+        !production && [babelPluginFlowRuntime.default, { assert: true, annotate: true }],
         babelPluginJSXCode.default,
-      ],
+      ].filter(Boolean),
     },
 
     moduleRules: [

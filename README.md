@@ -42,8 +42,10 @@ module.exports = {
       // optional: themeFile: string,
       // optional: plugins: Array
       plugins: [
+        // example: require('autoprefixer'),
         // example: require('precss'),
-      ]
+      ],
+      includePaths: [path.resolve('./node_modules')],
     }),
   ],
   

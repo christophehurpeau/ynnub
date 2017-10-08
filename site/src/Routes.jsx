@@ -15,6 +15,7 @@ import Dropdown from './components/components/Dropdown';
 import Labels from './components/components/Labels';
 import Lists from './components/components/Lists';
 import Tables from './components/components/Tables';
+import Tabs from './components/components/Tabs';
 
 export default () => (
   <Route path="/">
@@ -39,6 +40,7 @@ export default () => (
       <Route path="labels" component={Labels} />
       <Route path="lists" component={Lists} />
       <Route path="tables" component={Tables} />
+      <Route path="tabs" component={Tabs} />
     </Route>
   </Route>
 )

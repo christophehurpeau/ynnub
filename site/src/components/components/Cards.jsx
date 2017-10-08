@@ -14,7 +14,7 @@ import sCard from 'ynnub/components/card.scss';
 `.trim()}</code></pre>
 
 
-    <h2 className={typography.title}>Basic block</h2>
+    <h2 className={typography.title}>Basic card</h2>
 
     <Code render={RenderCode}>
       <div className={sCard.card}>

@@ -15,7 +15,7 @@ export default ({ className }: PropsType) => (
         <ListItem href="/base/layout" text="Layout" />
         <li>
           Text
-          <List links>
+          <List>
             <ListItem href="/base/text/typography" text="Typography" />
             <ListItem href="/base/text/paragraphs" text="Paragraphs" />
             <ListItem href="/base/text/citations" text="Citations" />
@@ -35,6 +35,7 @@ export default ({ className }: PropsType) => (
             <ListItem href="/components/labels" text="Labels" />
             <ListItem href="/components/lists" text="Lists" />
             <ListItem href="/components/tables" text="Tables" />
+            <ListItem href="/components/tabs" text="Tabs" />
           </List>
         </li>
       </List>
