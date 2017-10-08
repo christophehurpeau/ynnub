@@ -8,10 +8,10 @@ type PropsType = {
   className?: ?string,
   startDetail?: ?ReactNodeType,
   endDetail?: ?ReactNodeType,
-  text?: ?ReactNodeType,
-  secondaryText?: ?ReactNodeType,
+  text?: string,
+  secondaryText?: ?string,
   badge?: null,
-  children?: null,
+  children?: ?ReactNodeType,
 }
 
 export default ({
