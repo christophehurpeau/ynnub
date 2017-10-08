@@ -8,7 +8,7 @@ type PropsType = {
   basis?: string,
   order?: Number,
   padding?: string,
-  children: Array<ReactNodeType>,
+  children: ReactNodeType,
 }
 
 const valueToNumber = value => {

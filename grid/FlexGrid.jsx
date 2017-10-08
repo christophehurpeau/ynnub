@@ -11,7 +11,7 @@ type PropsType = {
     'row-reverse nowrap' | 'row-reverse wrap' | 'row-reverse wrap-reverse' |
     'column nowrap' | 'column wrap' | 'column wrap-reverse' |
     'column-reverse nowrap' | 'column-reverse wrap' | 'column-reverse wrap-reverse',
-  children: Array<ReactNodeType>,
+  children: ReactNodeType,
 }
 
 export default ({
