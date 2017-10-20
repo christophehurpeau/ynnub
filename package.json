@@ -1,33 +1,25 @@
 {
-  "name": "ynnub",
-  "version": "0.5.2",
-  "description": "A css module framework in less. Written for `react` and `webpack` with css modules.",
-  "main": "index.js",
-  "repository": "git://github.com/christophehurpeau/ynnub.git",
-  "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/christophehurpeau/ynnub/issues"
-  },
-  "homepage": "https://github.com/christophehurpeau/ynnub",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "version": "pob-version",
-    "release": "pob-repository-check-clean && pob-release"
+    "release": "lerna publish --conventional-commits -m 'chore: publish'",
+    "lint": "lerna run lint",
+    "build": "lerna run build",
+    "watch": "lerna exec --parallel --ignore \"*-example\" -- yarn run watch -- --no-spinner",
+    "preversion": "pob-repository-check-clean",
+    "postcheckout": "./git-hooks/post-checkout",
+    "postmerge": "./git-hooks/post-merge",
+    "precommit": "./git-hooks/pre-commit",
+    "preparecommitmsg": "./git-hooks/prepare-commit-msg ${GIT_PARAMS}"
   },
   "devDependencies": {
-    "babel-plugin-flow-runtime": "^0.11.1",
-    "flow-runtime": "0.14.0",
+    "husky": "^0.14.3",
+    "komet": "^0.1.4",
+    "komet-karma": "^0.2.5",
+    "lerna": "^2.4.0",
     "pob-release": "^3.1.0",
-    "react": "^16.0.0"
-  },
-  "peerDependencies": {
-    "react": "^16.0.0"
-  },
-  "dependencies": {
-    "@material/button": "^0.7.0",
-    "@material/list": "^0.2.19",
-    "@material/tabs": "^0.3.1",
-    "@material/theme": "^0.4.0",
-    "@material/typography": "^0.3.0"
+    "ynnub": "^0.5.2"
   }
 }
