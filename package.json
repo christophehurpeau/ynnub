@@ -1,8 +1,5 @@
 {
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
     "release": "lerna publish --conventional-commits -m 'chore: publish'",
     "lint": "lerna run lint",
@@ -12,7 +9,8 @@
     "postcheckout": "./git-hooks/post-checkout",
     "postmerge": "./git-hooks/post-merge",
     "precommit": "./git-hooks/pre-commit",
-    "preparecommitmsg": "./git-hooks/prepare-commit-msg ${GIT_PARAMS}"
+    "preparecommitmsg": "./git-hooks/prepare-commit-msg ${GIT_PARAMS}",
+    "postinstall": "lerna bootstrap"
   },
   "devDependencies": {
     "husky": "^0.14.3",

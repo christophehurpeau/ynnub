@@ -7,7 +7,9 @@
 .list {
   @include absolute($left: 0, $right: 0, $top: 100%);
   @include mdc-elevation(2);
-  background: #fff;
+  @include mdc-theme-prop(background-color, background);
+
+  text-transform: none; // override mdc-list inherit for mdc-tab uppercase
   margin: 0 !important; // override `.list .list` margin
   border-left: none !important; // override `.list .list` border
   border-right: none !important; // override `.list .list` border
@@ -27,8 +29,8 @@
 
 .dropdownContainer {
   position: relative;
-  display: inline-block;
   padding: 0;
+  overflow: auto !important; // override .mdc-tab overflow hidden
 
   &:not(.disabled):hover {
     > .list {
