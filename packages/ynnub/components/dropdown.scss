@@ -30,7 +30,6 @@
 .dropdownContainer {
   position: relative;
   padding: 0;
-  overflow: auto !important; // override .mdc-tab overflow hidden
 
   &:not(.disabled):hover {
     > .list {
@@ -49,6 +48,11 @@
       border-bottom-right-radius: 0;
     }
   }
+}
+
+// when not a button
+.dropdownContainer.dropdown {
+  overflow: auto !important; // override .mdc-tab overflow hidden
 }
 
 .dropdown {
