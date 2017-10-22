@@ -62,7 +62,7 @@ export default ({
             {...otherProps}
           />
         )}
-        <List className={s.list}>
+        <List className={s.list} dense={otherProps.dense}>
           {children}
         </List>
       </AsType>
