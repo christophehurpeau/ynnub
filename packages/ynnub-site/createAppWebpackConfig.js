@@ -13,6 +13,7 @@ module.exports = function (config, options) {
   return config({
     ...options,
 
+    includeModules: ['ynnub'],
     includePaths: [
       path.resolve('../ynnub')
     ],
@@ -38,8 +39,8 @@ module.exports = function (config, options) {
         themeFile: './src/theme.scss',
         plugins: [require('autoprefixer')],
         includePaths: [
+          path.resolve('../ynnub/node_modules'),
           path.resolve('./node_modules'),
-          path.resolve('../../node_modules'),
         ],
       }),
     ],

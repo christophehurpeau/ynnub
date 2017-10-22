@@ -17,7 +17,6 @@
     "komet": "^0.1.4",
     "komet-karma": "^0.2.5",
     "lerna": "^2.4.0",
-    "pob-release": "^3.1.0",
-    "ynnub": "^0.5.2"
+    "pob-release": "^3.1.0"
   }
 }
