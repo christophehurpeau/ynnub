@@ -27,9 +27,12 @@
   transition: box-shadow .4s .02s; // show box-shadow with a little delay
 }
 
+.resetButton {
+  padding: 0;
+}
+
 .dropdownContainer {
   position: relative;
-  padding: 0;
 
   &:not(.disabled):hover {
     > .list {
@@ -52,7 +55,7 @@
 
 // when not a button
 .dropdownContainer.dropdown {
-  overflow: auto !important; // override .mdc-tab overflow hidden
+  overflow: visible !important; // override .mdc-tab overflow hidden
 }
 
 .dropdown {

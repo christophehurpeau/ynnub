@@ -44,7 +44,7 @@ export default ({
   </As>;
 
   if (As !== 'ul' && As !== 'ol') {
-    return <li>{list}</li>;
+    return <ul>{list}</ul>;
   }
 
   return list;

@@ -46,6 +46,7 @@ export default ({
       <AsType
         className={[
           s.dropdownContainer,
+          s.resetButton,
           disabled && s.disabled,
           className,
         ].filter(Boolean).join(' ')}
