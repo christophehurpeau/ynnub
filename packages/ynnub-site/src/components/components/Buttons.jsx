@@ -22,7 +22,7 @@ import Button from 'ynnub/components/Button';
         <FlexItems padding="1rem">
           <Button label="Click me !" />
           <Button label="Disabled" disabled />
-          <Button label="Icon" icon="❤" />
+          <Button label="Icon" icon="favorite" />
           <Button label="Compact" compact />
           <Button label="Dense" dense />
         </FlexItems>
@@ -35,7 +35,7 @@ import Button from 'ynnub/components/Button';
       <FlexGrid flow="row wrap">
         <FlexItems padding="1rem">
           <Button href="#" onClick="return false" label="Link to something" />
-          <Button href="#" onClick="return false" label="Icon" icon="❤" />
+          <Button href="#" onClick="return false" label="Icon" icon="favorite" />
           <Button href="#" onClick="return false" label="Compact" compact />
           <Button href="#" onClick="return false" label="Dense" dense />
           <Button href="#" onClick="return false" label="Compact Dense" compact dense />
@@ -50,7 +50,7 @@ import Button from 'ynnub/components/Button';
         <FlexItems padding="1rem">
           <Button flat label="Flat" />
           <Button flat label="Disabled" disabled />
-          <Button flat label="Icon" icon="❤" />
+          <Button flat label="Icon" icon="favorite" />
           <Button flat label="Compact" compact />
           <Button flat label="Dense" dense />
         </FlexItems>

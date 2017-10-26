@@ -4,7 +4,7 @@ import './button.global.scss';
 type PropsType = {
   className?: string,
   containerClassName?: null,
-  icon?: ?Node,
+  icon?: ?string,
   label?: ?Node,
   href?: string,
   flat?: ?boolean,
@@ -45,7 +45,7 @@ export default ({
       ].filter(Boolean).join(' ')}
       {...otherProps}
     >
-      {icon && <span key="icon" className="mdc-button__icon">{icon}</span>}
+      {icon && <span key="icon" className="material-icons mdc-button__icon">{icon}</span>}
       {label}
     </TagName>
   );

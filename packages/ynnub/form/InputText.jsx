@@ -23,6 +23,6 @@ export default ({ id, type, icon, label, placeholder, ...props }): Element<'div'
   >
     <input id={id} type={type || 'text'} placeholder={placeholder || ''} {...props} />
     {!label ? null : <label htmlFor={id}>{label}</label>}
-    {!icon ? null : <label className={sInput.icon} htmlFor={id}>{icon}</label>}
+    {!icon ? null : <label className={`material-icons ${sInput.icon}`} htmlFor={id}>{icon}</label>}
   </div>
 );

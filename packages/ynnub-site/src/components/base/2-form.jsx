@@ -35,7 +35,7 @@ export default () => (
           <InputText
             id="user-phone"
             type="phone"
-            icon="☏"
+            icon="phone"
             label="Phone"
             required
           />
@@ -120,9 +120,17 @@ export default () => (
     <h2 className={typography.title}>Fieldset</h2>
 
     <Code render={RenderCode}>
-      <Fieldset legend="Legend">
-        <InputText id="fieldsetinput"/>
-      </Fieldset>
+      <div>
+        <Fieldset legend="Fieldset 1">
+          <InputText id="fieldsetinput" placeholder="Input 1"/>
+          <InputText id="fieldsetinput2" placeholder="Input 2"/>
+        </Fieldset>
+
+        <Fieldset legend="Fieldset 2">
+          <InputText id="fieldsetinput" placeholder="Input 1"/>
+          <InputText id="fieldsetinput2" placeholder="Input 2"/>
+        </Fieldset>
+      </div>
     </Code>
 
 

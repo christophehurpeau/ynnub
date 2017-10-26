@@ -9,13 +9,15 @@
   }
 
   fieldset {
-    border: $form-fieldset-border;
-    margin: $default-topBottom-margin $default-leftRight-margin;
+    border: none;
+    border-top: $form-fieldset-border;
+    margin: $default-topBottom-margin 0;
     padding: $form-fieldset-padding;
   }
 
   legend {
     @include medium();
+    margin: $form-legend-margin;
     padding: $form-legend-padding;
   }
 }
