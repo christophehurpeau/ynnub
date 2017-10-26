@@ -1,6 +1,6 @@
 import Code from 'babel-plugin-jsx-code/Component';
 import RenderCode from '../RenderCode';
-import { Fieldset, InputText, Textarea, Select, Radio, Checkbox } from  'ynnub/form';
+import { Fieldset, InputText, Textarea, Select, Radio, Checkbox, RadioSelect } from  'ynnub/form';
 import typography from 'ynnub/text/typography';
 import { FlexGrid, FlexItem } from 'ynnub/grid/flex';
 
@@ -83,12 +83,12 @@ export default () => (
     <h2 className={typography.title}>Radio buttons</h2>
 
     <Code render={RenderCode}>
-      <div>
-        <Radio id="radio1" name="radiobutton" value="value1" label="Value 1" />
-        <Radio id="radio2" name="radiobutton" value="value2" label="Value 2" />
-        <Radio id="radio3" name="radiobutton" value="value3" label="Value 3" />
-        <Radio id="radio4" name="radiobutton" value="value4" label="Value 4" />
-      </div>
+      <RadioSelect name="radiobutton" label="Radio buttons" icon="favorite">
+        <Radio id="radio1" value="value1" label="Value 1" />
+        <Radio id="radio2" value="value2" label="Value 2" />
+        <Radio id="radio3" value="value3" label="Value 3" />
+        <Radio id="radio4" value="value4" label="Value 4" />
+      </RadioSelect>
     </Code>
 
     <Code render={RenderCode}>

@@ -6,7 +6,7 @@ import sInput from './input.scss';
 type PropsType = {
   id: string,
   type?: string,
-  icon?: ?Node,
+  icon?: ?string,
   label?: ?Node,
   placeholder?: ?string,
 };
