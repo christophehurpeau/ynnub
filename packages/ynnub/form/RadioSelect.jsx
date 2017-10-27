@@ -1,5 +1,5 @@
 import { Children, cloneElement } from 'react';
-import Label from './Label';
+import Heading from '../components/Heading';
 
 export Radio from './Radio';
 
@@ -13,7 +13,7 @@ export default ({ icon, label, children, ...props}) => {
 
   return (
     <div>
-      <Label icon={icon} value={label} />
+      <Heading icon={icon} value={label} type="subheading2" />
       {children}
     </div>
   )
