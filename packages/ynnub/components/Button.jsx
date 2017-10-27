@@ -1,7 +1,8 @@
-import type { Element, Node } from 'react';
+import type { Element, Node, ElementType } from 'react';
 import './button.global.scss';
 
 type PropsType = {
+  as?: ElementType,
   className?: string,
   containerClassName?: null,
   icon?: ?string,
@@ -16,11 +17,12 @@ type PropsType = {
 }
 
 export default ({
+  href,
+  as: As = href ? 'a' : 'button',
   className,
   icon,
   label,
   children,
-  href,
   unelevated,
   flat,
   stroked,
@@ -28,11 +30,10 @@ export default ({
   dense,
   ...otherProps
 }: PropsType): Element => {
-  const TagName = href ? 'a' : 'button';
-  if (TagName !== 'button' && otherProps.disabled) throw new Error('Cannot disable a link');
+  if (As !== 'button' && otherProps.disabled) throw new Error('Cannot disable a link');
   if (!label) label = children;
   return (
-    <TagName
+    <As
       href={href}
       className={[
         'mdc-button',
@@ -47,6 +48,6 @@ export default ({
     >
       {icon && <span key="icon" className="material-icons mdc-button__icon">{icon}</span>}
       {label}
-    </TagName>
+    </As>
   );
 }
