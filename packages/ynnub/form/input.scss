@@ -189,13 +189,20 @@
 
 .input {
   @at-root {
-    .radio, .checkbox {
+    .radio ~ .radio, .checkbox ~ .checkbox {
       margin: .5rem 0;
+    }
+
+    .radio {
+      margin: 1rem 0 .5rem;
+    }
+
+    .radio, .checkbox {
       &:first-child {
         margin-top: 0;
       }
       &:last-child {
-        margin-top: 0;
+        margin-bottom: 0;
       }
     }
   }
