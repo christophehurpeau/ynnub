@@ -83,12 +83,20 @@ export default () => (
     <h2 className={typography.title}>Radio buttons</h2>
 
     <Code render={RenderCode}>
-      <RadioSelect name="radiobutton" label="Radio buttons" icon="favorite">
-        <Radio id="radio1" value="value1" label="Value 1" />
-        <Radio id="radio2" value="value2" label="Value 2" />
-        <Radio id="radio3" value="value3" label="Value 3" />
-        <Radio id="radio4" value="value4" label="Value 4" />
-      </RadioSelect>
+      <FlexGrid flow="row wrap">
+        <RadioSelect name="radiobutton" label="Radio buttons" prefixId="radioselect">
+          <Radio value="value1" label="Value 1" />
+          <Radio value="value2" label="Value 2" />
+          <Radio value="value3" label="Value 3" />
+          <Radio value="value4" label="Value 4" />
+        </RadioSelect>
+        <RadioSelect flex name="radiobuttonvertical" label="Vertical Radio buttons" prefixId="radioselectvertical">
+          <Radio value="value1" label="Value 1" />
+          <Radio value="value2" label="Value 2" />
+          <Radio value="value3" label="Value 3" />
+          <Radio value="value4" label="Value 4" />
+        </RadioSelect>
+      </FlexGrid>
     </Code>
 
     <Code render={RenderCode}>

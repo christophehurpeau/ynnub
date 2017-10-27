@@ -1,27 +1,32 @@
 import { Children, cloneElement } from 'react';
+import { FlexGrid } from '../grid/flex';
 import Heading from '../components/Heading';
 import s from './RadioSelect.scss';
 
 export Radio from './Radio';
 
 type PropsType = {
-  icon?: ?string,
   label?: ?Node,
+  headingType?: ?string,
   prefixId: string,
+  flex?: boolean,
+  flexFlow?: ?string,
+  name: string,
 };
 
-export default ({ icon, label, children, value, prefixId, ...props}) => {
+export default ({ label, headingType = "subheading2", children, value, prefixId, flex, flexFlow = 'row wrap', ...props}) => {
   children = Children.map(children, child => cloneElement(child, {
-    selected: value === child.props.value,
-    id: `${prefixId}-${value}`,
+    checked: value === child.props.value,
+    id: `${prefixId}-${child.props.value}`,
     ...props,
     ...child.props,
+    className: `${s.radio} ${child.props.className || ''}`
   }));
 
   return (
-    <div className={s.container}>
-      <Heading icon={icon} value={label} type="subheading2" />
-      {children}
+    <div className={`${s.container} ${flex ? s.flexContainer : ''}`}>
+      {label && <Heading className={s.heading} value={label} type={headingType} />}
+      {!flex ? children : <FlexGrid flow={flexFlow}>{children}</FlexGrid>}
     </div>
   )
 };

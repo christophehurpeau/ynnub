@@ -3,3 +3,13 @@
 .container {
   @include block-margin();
 }
+
+.heading {
+  margin-bottom: 1rem;
+}
+
+.flexContainer {
+  .radio {
+    margin: .5rem;
+  }
+}

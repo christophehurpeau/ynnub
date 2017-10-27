@@ -9,9 +9,10 @@ type PropsType = {
   icon?: ?string,
   label?: ?Node,
   placeholder?: ?string,
+  className?: ?string,
 };
 
-export default ({ id, type, icon, label, placeholder, ...props }): Element<'div'> => (
+export default ({ id, type, icon, label, placeholder, className, ...props }): Element<'div'> => (
   <div
     className={[
       sInput.input,
@@ -19,6 +20,7 @@ export default ({ id, type, icon, label, placeholder, ...props }): Element<'div'
       type && sInput[type],
       icon && sInput.withIcon,
       !label && sInput.noMargin,
+      className,
     ].filter(Boolean).join(' ')}
   >
     <input id={id} type={type || 'text'} placeholder={placeholder || ''} {...props} />
