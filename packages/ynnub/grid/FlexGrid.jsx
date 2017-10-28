@@ -17,6 +17,7 @@ type PropsType = {
 export default ({
   className,
   responsive,
+  withGutter,
   justifyContent = 'flex-start',
   alignItems = 'stretch',
   alignContent = 'stretch',
@@ -27,6 +28,7 @@ export default ({
   <div
     className={[
       s.flex,
+      withGutter && s.withGutter,
       responsive && s.responsive,
       className,
     ].filter(Boolean).join(' ')}

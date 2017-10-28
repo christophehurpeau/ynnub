@@ -24,9 +24,9 @@ export default ({ label, headingType = "subheading2", children, value, prefixId,
   }));
 
   return (
-    <div className={`${s.container} ${flex ? s.flexContainer : ''}`}>
+    <div className={s.container}>
       {label && <Heading className={s.heading} value={label} type={headingType} />}
-      {!flex ? children : <FlexGrid flow={flexFlow}>{children}</FlexGrid>}
+      {!flex ? children : <FlexGrid className={s.flexContainer} flow={flexFlow}>{children}</FlexGrid>}
     </div>
   )
 };

@@ -4,6 +4,14 @@
   display: flex;
 }
 
+.withGutter {
+  margin: -1rem;
+
+  > * {
+    margin: 1rem;
+  }
+}
+
 .responsive {
   @media (max-width: $small-screen) {
     display: block;
@@ -14,24 +22,4 @@
       width: 100%;
     }
   }
-}
-
-.itemStart {
-  align-self: flex-start;
-  flex-grow: 0;
-}
-
-.itemEnd {
-  align-self: flex-end;
-  flex-grow: 0;
-}
-
-.itemCenter {
-  align-self: center;
-  flex-grow: 0;
-}
-
-.itemStretch {
-  align-self: stretch;
-  flex-grow: 1;
 }
