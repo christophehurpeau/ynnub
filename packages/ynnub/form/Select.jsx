@@ -9,17 +9,19 @@ type PropsType = {
   children: Node,
 };
 
-export default ({ id, label, children, ...props }): Element<'div'> => (
+export default ({ id, icon, label, children, ...props }): Element<'div'> => (
   <div
     className={[
       sInput.input,
       sInput.select,
+      icon && sInput.withIcon,
       !label && sInput.noMargin,
     ].filter(Boolean).join(' ')}
   >
     <select id={id} {...props}>
       {children}
     </select>
-    {!label ? null : <label htmlFor={id}>{label}</label>}
+    {!label ? null : <label className={sInput.label} htmlFor={id}>{label}</label>}
+    {!icon ? null : <label className={`material-icons ${sInput.icon}`} htmlFor={id}>{icon}</label>}
   </div>
 );

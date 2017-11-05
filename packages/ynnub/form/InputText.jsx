@@ -24,7 +24,7 @@ export default ({ id, type, icon, label, placeholder, className, ...props }): El
     ].filter(Boolean).join(' ')}
   >
     <input id={id} type={type || 'text'} placeholder={placeholder || ''} {...props} />
-    {!label ? null : <label htmlFor={id}>{label}</label>}
+    {!label ? null : <label className={sInput.label} htmlFor={id}>{label}</label>}
     {!icon ? null : <label className={`material-icons ${sInput.icon}`} htmlFor={id}>{icon}</label>}
   </div>
 );

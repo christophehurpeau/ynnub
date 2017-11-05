@@ -17,6 +17,6 @@ export default ({ id, label, placeholder, ...props }) => (
     ].filter(Boolean).join(' ')}
   >
     <textarea id={id} placeholder={placeholder || ''} {...props} />
-    {!label ? null : <label htmlFor={id}>{label}</label>}
+    {!label ? null : <label className={sInput.label} htmlFor={id}>{label}</label>}
   </div>
 );

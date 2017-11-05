@@ -2,7 +2,7 @@ import Code from 'babel-plugin-jsx-code/Component';
 import RenderCode from '../RenderCode';
 import { Fieldset, InputText, Textarea, Select, Radio, Checkbox, RadioSelect } from  'ynnub/form';
 import typography from 'ynnub/text/typography';
-import { FlexGrid, FlexItem } from 'ynnub/grid/flex';
+import { FlexGrid, FlexItems, FlexItem } from 'ynnub/grid/flex';
 
 export default () => (
   <div>
@@ -61,13 +61,35 @@ export default () => (
     <h2 className={typography.title}>Select</h2>
 
     <Code render={RenderCode}>
-      <Select
-        id="select"
-      >
-        <option>Value1</option>
-        <option>Value2</option>
-        <option>Value3</option>
-      </Select>
+      <FlexGrid withGutter>
+        <FlexItems>
+          <Select
+            id="select"
+          >
+            <option>Value1</option>
+            <option>Value2</option>
+            <option>Value3</option>
+          </Select>
+
+          <Select
+            id="select"
+            label="Select Label"
+          >
+            <option>Value1</option>
+            <option>Value2</option>
+            <option>Value3</option>
+          </Select>
+
+          <Select
+            id="select-withIcon"
+            icon="favorite"
+          >
+            <option>Value1</option>
+            <option>Value2</option>
+            <option>Value3</option>
+          </Select>
+        </FlexItems>
+      </FlexGrid>
     </Code>
 
     <Code render={RenderCode}>
