@@ -1,11 +1,12 @@
 import type { Element, Node, ElementType } from 'react';
+import Icon, { type IconType } from './Icon';
 import './button.global.scss';
 
 type PropsType = {
   as?: ElementType,
   className?: string,
   containerClassName?: null,
-  icon?: ?string,
+  icon?: ?IconType,
   label?: ?Node,
   href?: string,
   flat?: ?boolean,
@@ -46,7 +47,7 @@ export default ({
       ].filter(Boolean).join(' ')}
       {...otherProps}
     >
-      {icon && <span key="icon" className="material-icons mdc-button__icon">{icon}</span>}
+      {icon && <Icon key="icon" value={icon} className="mdc-button__icon" />}
       {label}
     </As>
   );

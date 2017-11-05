@@ -3,6 +3,7 @@ import Button from 'ynnub/components/Button';
 import { FlexGrid, FlexItems } from 'ynnub/grid/flex';
 import RenderCode from '../RenderCode';
 import typography from 'ynnub/text/typography';
+import GoogleIcon from 'react-icons/lib/fa/google';
 
 export default () => (
   <div>
@@ -23,6 +24,7 @@ import Button from 'ynnub/components/Button';
           <Button label="Click me !" />
           <Button label="Disabled" disabled />
           <Button label="Icon" icon="favorite" />
+          <Button label="Icon" icon={<GoogleIcon />} />
           <Button label="Compact" compact />
           <Button label="Dense" dense />
         </FlexItems>
