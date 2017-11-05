@@ -25,8 +25,11 @@ import Button from 'ynnub/components/Button';
           <Button label="Disabled" disabled />
           <Button label="Icon" icon="favorite" />
           <Button label="Icon" icon={<GoogleIcon />} />
+          <Button icon="favorite" />
           <Button label="Compact" compact />
           <Button label="Dense" dense />
+          <Button label="In progress" icon="favorite" inProgress />
+          <Button label="Confirm (Doesn't work because not rehydrated)" confirm="Are you sure ?" />
         </FlexItems>
       </FlexGrid>
     </Code>

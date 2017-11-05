@@ -1,2 +1,12 @@
 @import '../variables/mdc-compatibility';
 @import "~@material/button/mdc-button";
+
+.mdc-button--icon {
+  border-radius: 50%;
+  min-width: unset;
+  padding: 0 8px;
+
+  .mdc-button__icon {
+    margin-right: 0;
+  }
+}
