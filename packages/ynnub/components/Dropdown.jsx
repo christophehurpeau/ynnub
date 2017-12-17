@@ -11,6 +11,7 @@ type PropsType = {
   className?: string,
   label: Node,
   button?: ?boolean,
+  buttonClassName?: ?string,
   disabled?: ?boolean,
   children: Node,
 }
@@ -20,6 +21,7 @@ export default ({
   className,
   label,
   button,
+  buttonClassName,
   disabled,
   children,
   ...otherProps
@@ -51,18 +53,17 @@ export default ({
           className,
         ].filter(Boolean).join(' ')}
       >
-        {!button ? label : (
-          <Button
-            label={[label, <span key="arrow" className={s.arrow}>▼</span>]}
-            disabled={disabled}
-            className={[
-              s.dropdown,
-              s.button,
-              disabled && s.disabled,
-            ].filter(Boolean).join(' ')}
-            {...otherProps}
-          />
-        )}
+        <Button
+          label={[label, <span key="arrow" className={s.arrow}>▼</span>]}
+          disabled={disabled}
+          className={[
+            s.dropdown,
+            s.button,
+            disabled && s.disabled,
+            buttonClassName,
+          ].filter(Boolean).join(' ')}
+          {...otherProps}
+        />
         <List className={s.list} dense={otherProps.dense}>
           {children}
         </List>
