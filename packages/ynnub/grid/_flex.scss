@@ -2,6 +2,8 @@
 
 .flex {
   display: flex;
+
+  &[hidden] { display: none; }
 }
 
 .withGutter {
@@ -16,6 +18,8 @@
   @media (max-width: $small-screen) {
     display: block;
     // flex-wrap: wrap;
+
+    &[hidden] { display: none; }
 
     > * {
       display: block;

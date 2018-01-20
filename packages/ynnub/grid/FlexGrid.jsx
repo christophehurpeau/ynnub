@@ -4,6 +4,7 @@ import s from './_flex.scss';
 type PropsType = {
   className?: string,
   responsive?: ?boolean,
+  withGutter?: ?boolean,
   justifyContent?: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly',
   alignItems?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline',
   alignContent?: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'stretch',
