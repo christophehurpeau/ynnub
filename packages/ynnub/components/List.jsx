@@ -17,6 +17,7 @@ type PropsType = {
   multiline?: null,
   avatar?: ?boolean,
   dense?: ?boolean,
+  interactive?: ?boolean,
   links?: null,
   children: Node,
 }
@@ -26,6 +27,7 @@ export default ({
   className,
   avatar,
   dense,
+  interactive,
   twoLine,
   children,
   ...otherProps
@@ -36,6 +38,7 @@ export default ({
       avatar && 'mdc-list--avatar-list',
       dense && 'mdc-list--dense',
       twoLine && 'mdc-list--two-line',
+      !interactive && 'mdc-list--non-interactive',
       className,
     ].filter(Boolean).join(' ')}
     {...otherProps}

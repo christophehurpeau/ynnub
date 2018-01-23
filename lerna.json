@@ -1,6 +1,6 @@
 {
   "private": true,
-  "lerna": "2.4.0",
+  "lerna": "2.8.0",
   "npmClient": "yarn",
   "useWorkspaces": false,
   "version": "independent",

@@ -31,6 +31,7 @@ const createScssModuleRule = function(
         {
           loader: 'postcss-loader',
           options: {
+            ident: 'postcss',
             sourceMap: false,
             plugins: () => plugins,
           },
@@ -64,6 +65,7 @@ const createCssModuleRule = function({ extract, global = false, plugins, publicP
         {
           loader: 'postcss-loader',
           options: {
+            ident: 'postcss',
             sourceMap: false,
             plugins: () => plugins,
           },

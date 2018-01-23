@@ -16,19 +16,19 @@
     "release": "pob-repository-check-clean && pob-release"
   },
   "devDependencies": {
-    "babel-plugin-flow-runtime": "^0.11.1",
-    "flow-runtime": "^0.14.0",
+    "babel-plugin-flow-runtime": "^0.15.0",
+    "flow-runtime": "^0.16.0",
     "pob-release": "^3.1.0",
-    "react": "^16.0.0"
+    "react": "^16.2.0"
   },
   "peerDependencies": {
     "react": "^16.0.0"
   },
   "dependencies": {
-    "@material/button": "^0.23.0",
-    "@material/list": "^0.23.0",
-    "@material/tabs": "^0.23.0",
-    "@material/theme": "^0.4.0",
-    "@material/typography": "^0.3.0"
+    "@material/button": "^0.29.0",
+    "@material/list": "^0.29.0",
+    "@material/tabs": "^0.29.0",
+    "@material/theme": "^0.29.0",
+    "@material/typography": "^0.28.0"
   }
 }

@@ -165,7 +165,7 @@ export default () => (
     <h2 className={typography.title}>Link list</h2>
 
     <Code render={RenderCode}>
-      <List>
+      <List interactive>
         <ListItem href="#" text="Item 1" />
         <ListItem href="#" text="Item 2" />
         <ListItem href="#" text="Item 3" className="current" />

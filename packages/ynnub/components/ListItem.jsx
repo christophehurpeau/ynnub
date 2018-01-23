@@ -36,7 +36,7 @@ export default ({
     {wrapWithClassName(startDetail, 'mdc-list-item__start-detail')}
     <span className={'mdc-list-item__text'}>
       {text}
-      {secondaryText && <span className={'mdc-list-item__text__secondary'}>{secondaryText}</span>}
+      {secondaryText && <span className={'mdc-list-item__secondary-text'}>{secondaryText}</span>}
       {children}
     </span>
     {wrapWithClassName(endDetail, 'mdc-list-item__end-detail')}
