@@ -16,8 +16,8 @@
     "release": "pob-repository-check-clean && pob-release"
   },
   "devDependencies": {
-    "babel-plugin-flow-runtime": "^0.15.0",
-    "flow-runtime": "^0.16.0",
+    "babel-plugin-flow-runtime": "^0.17.0",
+    "flow-runtime": "^0.17.0",
     "pob-release": "^3.1.0",
     "react": "^16.2.0"
   },

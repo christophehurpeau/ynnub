@@ -1,16 +1,14 @@
 const path = require('path');
-const babelPresetPob = require('babel-preset-pob');
-const babelPresetReact = require('babel-preset-pob-react');
-const babelPresetStages = require('babel-preset-pob-stages');
-const babelPluginFlowRuntime = require('babel-plugin-flow-runtime');
+const babelPresetPobEnv = require('babel-preset-pob-env');
+const babelPresetPobReact = require('babel-preset-pob-react');
 const babelPluginJSXCode = require('babel-plugin-jsx-code');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { createModuleRules, createExtractPlugin } = require('ynnub/webpack-config');
 
 module.exports = function (config, options) {
   const production = config.env === 'production';
-  return config({
+  const webpackConfig = config({
     ...options,
 
     includeModules: ['ynnub'],
@@ -20,33 +18,35 @@ module.exports = function (config, options) {
 
     babel: {
       presets: [
-        require('pobpack-node/babel').default,
-        [babelPresetPob, { production }],
-        [babelPresetReact, { production }],
-        babelPresetStages,
+        [babelPresetPobReact, { production }],
+        [
+          babelPresetPobEnv,
+          { production, target: 'node', version: 'current', flow: true, modules: false, exportDefaultName: false },
+        ],
       ],
       plugins: [
-        !production && [babelPluginFlowRuntime.default, { assert: true, annotate: false }],
         babelPluginJSXCode.default,
-      ].filter(Boolean),
+      ],
     },
 
     moduleRules: [
       ...createModuleRules({
-        ExtractTextPlugin,
+        MiniCssExtractPlugin,
         production,
-        publicPath: path.resolve('public'),
         themeFile: './src/theme.scss',
         plugins: [require('autoprefixer')],
         includePaths: [
-          path.resolve('../ynnub/node_modules'),
           path.resolve('./node_modules'),
+          path.resolve('../../node_modules'),
+          path.resolve('../ynnub/node_modules'),
         ],
       }),
     ],
 
     plugins: [
-      createExtractPlugin(ExtractTextPlugin, { filename: '../public/styles.css' }),
+      createExtractPlugin(MiniCssExtractPlugin, {
+        filename: `../public/[name].css`,
+      }),
       new OptimizeCssAssetsPlugin({
         cssProcessorOptions: {
           zindex: false,
@@ -59,4 +59,7 @@ module.exports = function (config, options) {
       }),
     ],
   });
+
+  webpackConfig.cache = false;
+  return webpackConfig;
 };

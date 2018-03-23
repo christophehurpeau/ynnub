@@ -17,99 +17,91 @@ const cssLoaderOptions = function(importLoaders, global, production) {
 };
 
 const createScssModuleRule = function(
-  { extract, global = false, plugins, publicPath, production, themeFile, includePaths = [] } = {},
+  { miniCssExtractPluginLoader, global = false, plugins, production, themeFile, includePaths = [] } = {},
 ) {
   return {
     test: global ? /\.global\.scss$/ : /^((?!\.global).)*\.scss$/,
-    loader: extract({
-      publicPath,
-      use: [
-        {
-          loader: 'css-loader',
-          options: cssLoaderOptions(2, global, production),
+    use: [
+      miniCssExtractPluginLoader,
+      {
+        loader: 'css-loader',
+        options: cssLoaderOptions(2, global, production),
+      },
+      {
+        loader: 'postcss-loader',
+        options: {
+          ident: 'postcss',
+          sourceMap: false,
+          plugins: () => plugins,
         },
-        {
-          loader: 'postcss-loader',
-          options: {
-            ident: 'postcss',
-            sourceMap: false,
-            plugins: () => plugins,
-          },
+      },
+      {
+        loader: 'sass-loader',
+        options: {
+          sourceMap: false,
+          outputStyle: production !== false && 'compressed',
+          data: `$env: ${process.env.NODE_ENV};${themeFile
+            ? `@import '${path.resolve(themeFile)}';`
+            : ''}`,
+          includePaths,
         },
-        {
-          loader: 'sass-loader',
-          options: {
-            sourceMap: false,
-            outputStyle: production !== false && 'compressed',
-            data: `$env: ${process.env.NODE_ENV};${themeFile
-              ? `@import '${path.resolve(themeFile)}';`
-              : ''}`,
-            includePaths,
-          },
-        },
-      ].filter(Boolean),
-    }),
+      },
+    ].filter(Boolean),
   };
 };
 
-const createCssModuleRule = function({ extract, global = false, plugins, publicPath, production } = {}) {
+const createCssModuleRule = function({ miniCssExtractPluginLoader, global = false, plugins, production } = {}) {
   return {
     test: /\.css$/,
-    loader: extract({
-      publicPath,
-      use: [
-        {
-          loader: 'css-loader',
-          options: cssLoaderOptions(1, global, production),
+    use: [
+      miniCssExtractPluginLoader,
+      {
+        loader: 'css-loader',
+        options: cssLoaderOptions(1, global, production),
+      },
+      {
+        loader: 'postcss-loader',
+        options: {
+          ident: 'postcss',
+          sourceMap: false,
+          plugins: () => plugins,
         },
-        {
-          loader: 'postcss-loader',
-          options: {
-            ident: 'postcss',
-            sourceMap: false,
-            plugins: () => plugins,
-          },
-        },
-      ].filter(Boolean),
-    }),
+      },
+    ].filter(Boolean),
   };
 };
 
 exports.createModuleRules = function(
-  { ExtractTextPlugin, plugins, publicPath, production, themeFile, includePaths } = {},
+  { MiniCssExtractPlugin, plugins, production, themeFile, includePaths } = {},
 ) {
-  const extract = ExtractTextPlugin ? ExtractTextPlugin.extract.bind(ExtractTextPlugin) : x => x;
   return [
     createScssModuleRule({
-      extract,
+      miniCssExtractPluginLoader: MiniCssExtractPlugin.loader,
       global: true,
       plugins,
-      publicPath,
       production,
       themeFile,
       includePaths,
     }),
 
     createScssModuleRule({
-      extract,
+      miniCssExtractPluginLoader: MiniCssExtractPlugin.loader,
       global: false,
       plugins,
-      publicPath,
       production,
       themeFile,
       includePaths,
     }),
 
     createCssModuleRule({
-      extract,
+      miniCssExtractPluginLoader: MiniCssExtractPlugin.loader,
       global: false,
       plugins,
-      publicPath,
       production,
     }),
   ];
 };
 
-exports.createExtractPlugin = function(ExtractTextPlugin, options) {
-  return new ExtractTextPlugin(Object.assign({}, { allChunks: true }, options));
+exports.createExtractPlugin = function(MiniCssExtractPlugin, options) {
+  return new MiniCssExtractPlugin(options);
 };

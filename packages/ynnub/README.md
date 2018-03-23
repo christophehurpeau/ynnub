@@ -25,7 +25,7 @@ yarn add ynnub extract-text-webpack-plugin css-loader postcss-loader sass-loader
 ```
 
 ```js
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { createModuleRules, createExtractPlugin } = require('ynnub/webpack-config');
 
@@ -36,7 +36,7 @@ module.exports = {
 
     // css modules scss rule
     ...createModuleRules({
-      ExtractTextPlugin,
+      MiniCssExtractPlugin,
       // optional: global: true|false,
       // optional: production: true|false,
       // optional: themeFile: string,
@@ -50,7 +50,7 @@ module.exports = {
   ],
 
   plugins: [
-    createExtractPlugin(ExtractTextPlugin, {
+    createExtractPlugin(MiniCssExtractPlugin, {
     }),
     new OptimizeCssAssetsPlugin(),
   ]

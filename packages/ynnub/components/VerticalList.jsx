@@ -1,7 +1,7 @@
 import List from './List';
 import s from './list/vertical.scss';
 
-export { ListItem } from './List';
+export ListItem from './ListItem';
 
 type PropsType = {
   className?: string,

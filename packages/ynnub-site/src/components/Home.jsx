@@ -38,7 +38,7 @@ module.exports = {
   },
 
   plugins: [
-    createExtractPlugin(ExtractTextPlugin, '../public/styles.css'),
+    createExtractPlugin(ExtractTextPlugin, '../public/index.css'),
   ]
 }
     `.trim()}</code></pre>

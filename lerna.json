@@ -1,18 +1,13 @@
 {
-  "private": true,
-  "lerna": "2.8.0",
+  "lerna": "2.9.0",
   "npmClient": "yarn",
-  "useWorkspaces": false,
+  "useWorkspaces": true,
   "version": "independent",
   "commands": {
     "publish": {
-      "registry": "https://registry.npmjs.org/",
       "ignore": [
         "ynnub-site"
       ]
     }
-  },
-  "packages": [
-    "packages/*"
-  ]
+  }
 }

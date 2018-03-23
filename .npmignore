@@ -1,5 +1,14 @@
-node_modules
+/.circleci
 /build
+/docs
+/examples
+/git-hooks
+/samples
+/test
+.babelrc
+.codeclimate.yml
+.yo-rc.json
+jsdoc.config.js
 
 /.settings
 /.project

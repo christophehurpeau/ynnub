@@ -18,7 +18,7 @@ const app = new Alp();
 const reactredux = createReactredux()(app);
 const renderApp = reactredux.createApp(App, {
   scriptName: false,
-  styleName: 'styles',
+  styleName: 'index',
 });
 
 // middlewares
