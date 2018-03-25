@@ -9,7 +9,6 @@ const clickDisabled = (e) => {
 };
 
 const createConfirm = (confirm: string, onClick: ?Function) => {
-  console.log('createConfirm');
   return (e) => {
     console.log('clicked');
     if (!window.confirm(confirm)) {
