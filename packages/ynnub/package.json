@@ -11,14 +11,11 @@
   },
   "homepage": "https://github.com/christophehurpeau/ynnub",
   "scripts": {
-    "flow": "flow",
-    "version": "pob-version",
-    "release": "pob-repository-check-clean && pob-release"
+    "flow": "flow"
   },
   "devDependencies": {
     "babel-plugin-flow-runtime": "^0.17.0",
     "flow-runtime": "^0.17.0",
-    "pob-release": "^3.1.0",
     "react": "^16.2.0"
   },
   "peerDependencies": {
