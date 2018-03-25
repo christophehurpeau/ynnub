@@ -5,6 +5,7 @@ export ListItem from './ListItem';
 
 type ListDividerPropsType = {|
   inset?: boolean,
+  children: void,
 |};
 
 export const ListDivider = ({ inset }: ListDividerPropsType) =>
