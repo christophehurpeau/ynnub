@@ -1,6 +1,8 @@
 /* eslint-disable no-nested-ternary */
 const path = require('path');
 
+const defaultResolveLoader = loader => loader;
+
 const cssLoaderOptions = function(importLoaders, global, production) {
   return {
     sourceMap: false,
@@ -17,18 +19,18 @@ const cssLoaderOptions = function(importLoaders, global, production) {
 };
 
 const createScssModuleRule = function(
-  { miniCssExtractPluginLoader, global = false, plugins, production, themeFile, includePaths = [] } = {},
+  { miniCssExtractPluginLoader, global = false, plugins, production, themeFile, includePaths = [], resolveLoader = defaultResolveLoader } = {},
 ) {
   return {
     test: global ? /\.global\.scss$/ : /^((?!\.global).)*\.scss$/,
     use: [
       miniCssExtractPluginLoader,
       {
-        loader: 'css-loader',
+        loader: resolveLoader('css-loader'),
         options: cssLoaderOptions(2, global, production),
       },
       {
-        loader: 'postcss-loader',
+        loader: resolveLoader('postcss-loader'),
         options: {
           ident: 'postcss',
           sourceMap: false,
@@ -36,7 +38,7 @@ const createScssModuleRule = function(
         },
       },
       {
-        loader: 'sass-loader',
+        loader: resolveLoader('sass-loader'),
         options: {
           sourceMap: false,
           outputStyle: production !== false && 'compressed',
@@ -50,17 +52,17 @@ const createScssModuleRule = function(
   };
 };
 
-const createCssModuleRule = function({ miniCssExtractPluginLoader, global = false, plugins, production } = {}) {
+const createCssModuleRule = function({ miniCssExtractPluginLoader, global = false, plugins, production, resolveLoader = defaultResolveLoader } = {}) {
   return {
     test: /\.css$/,
     use: [
       miniCssExtractPluginLoader,
       {
-        loader: 'css-loader',
+        loader: resolveLoader('css-loader'),
         options: cssLoaderOptions(1, global, production),
       },
       {
-        loader: 'postcss-loader',
+        loader: resolveLoader('postcss-loader'),
         options: {
           ident: 'postcss',
           sourceMap: false,
@@ -72,7 +74,7 @@ const createCssModuleRule = function({ miniCssExtractPluginLoader, global = fals
 };
 
 exports.createModuleRules = function(
-  { MiniCssExtractPlugin, plugins, production, themeFile, includePaths } = {},
+  { MiniCssExtractPlugin, plugins, production, themeFile, includePaths, resolveLoader = defaultResolveLoader } = {},
 ) {
   return [
     createScssModuleRule({
@@ -82,6 +84,7 @@ exports.createModuleRules = function(
       production,
       themeFile,
       includePaths,
+      resolveLoader,
     }),
 
     createScssModuleRule({
@@ -91,6 +94,7 @@ exports.createModuleRules = function(
       production,
       themeFile,
       includePaths,
+      resolveLoader,
     }),
 
     createCssModuleRule({
@@ -98,6 +102,7 @@ exports.createModuleRules = function(
       global: false,
       plugins,
       production,
+      resolveLoader,
     }),
   ];
 };
