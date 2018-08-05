@@ -1,6 +1,6 @@
-import 'nightingale-app-console/src';
-import Alp from 'alp-node/src';
-import createReactredux from 'alp-react-redux/src';
+import 'nightingale-app-console';
+import Alp from 'alp-node';
+import createReactredux from 'alp-react-redux';
 import { match, createRoutes } from 'react-router';
 import App from './App';
 import Routes from './Routes';

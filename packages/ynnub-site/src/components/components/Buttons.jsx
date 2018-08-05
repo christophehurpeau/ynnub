@@ -53,11 +53,15 @@ import Button from 'ynnub/components/Button';
     <Code render={RenderCode}>
       <FlexGrid flow="row wrap">
         <FlexItems padding="1rem">
-          <Button flat label="Flat" />
+          <Button flat label="Click me !" />
           <Button flat label="Disabled" disabled />
           <Button flat label="Icon" icon="favorite" />
+          <Button flat label="Icon" icon={<GoogleIcon />} />
+          <Button icon="favorite" />
           <Button flat label="Compact" compact />
           <Button flat label="Dense" dense />
+          <Button flat label="In progress" icon="favorite" inProgress />
+          <Button flat label="Confirm (Doesn't work because not rehydrated)" confirm="Are you sure ?" />
         </FlexItems>
       </FlexGrid>
     </Code>

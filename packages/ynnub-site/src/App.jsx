@@ -1,7 +1,7 @@
 // @flow
 
 import React, { type Element } from 'react';
-import { connect, Helmet, AppContainer, classNames } from 'alp-react-redux/src';
+import { connect, Helmet, AppContainer, classNames } from 'alp-react-redux';
 import 'ynnub/reset.global.scss';
 import 'ynnub/layout/page.global.scss';
 import sHolyGrail from 'ynnub/layout/holygrail.scss';

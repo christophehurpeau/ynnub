@@ -1,4 +1,4 @@
-import { classNames } from 'alp-react-redux/src';
+import { classNames } from 'alp-react-redux';
 import sAside from 'ynnub/layout/aside.scss';
 import typography from 'ynnub/text/typography';
 import List, { ListItem } from 'ynnub/components/List';
