@@ -8,6 +8,6 @@ type PropsType = {
 }
 
 export default ({ value, className = '', ...props }: PropsType): Node => {
-  if (typeof value ==='string') return <span className={`material-icons ${className}`}>{value}</span>;
+  if (typeof value ==='string') return <span className={`material-icons ${className}`} {...props}>{value}</span>;
   return React.cloneElement(value, { className: `${className} ${value.className || ''}`, style: { verticalAlign: 'text-bottom' } });
 }
