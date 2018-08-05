@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.6.2"></a>
+## [0.6.2](https://github.com/christophehurpeau/ynnub/compare/ynnub@0.6.1...ynnub@0.6.2) (2018-08-05)
+
+
+### Bug Fixes
+
+* Icon component missing props when material icon ([ef6517b](https://github.com/christophehurpeau/ynnub/commit/ef6517b))
+
+
+
+
 <a name="0.6.1"></a>
 ## [0.6.1](https://github.com/christophehurpeau/ynnub/compare/ynnub@0.6.0...ynnub@0.6.1) (2018-04-20)
 
