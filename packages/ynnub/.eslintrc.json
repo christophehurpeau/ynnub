@@ -1,0 +1,30 @@
+{
+  "extends": [
+    "pob/babel",
+    "pob/react",
+    "pob/typescript"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "src/**/*.test.{ts,tsx}",
+        "src/__tests__/**/*.{ts,tsx}"
+      ],
+      "env": {
+        "jest": true
+      },
+      "rules": {
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": true
+          }
+        ]
+      }
+    }
+  ],
+  "parser": "typescript-eslint-parser",
+  "plugins": [
+    "typescript"
+  ]
+}

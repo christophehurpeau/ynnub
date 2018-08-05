@@ -1,11 +1,13 @@
-import type { Node } from 'react';
+import { ReactNode } from 'react';
+import classNames from 'classnames';
 import t from './typography';
 
-type PropsType = {
+export interface Props {
   as?: string,
-  children: Node,
+  children: ReactNode,
   className?: string,
+  [prop: string]: any,
 }
 
-export default ({ as: As = 'span', children, className, ...rest}: PropsType) =>
-  <As className={`${t.caption}${className ? ' ' + className : ''}`} {...rest}>{children}</As>;
+export default ({ as: As = 'span', children, className, ...rest}: Props) =>
+  <As className={classNames(t.caption, className)} {...rest}>{children}</As>;

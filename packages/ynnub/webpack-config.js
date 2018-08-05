@@ -25,7 +25,13 @@ const createScssModuleRule = function(
     test: global ? /\.global\.scss$/ : /^((?!\.global).)*\.scss$/,
     use: [
       miniCssExtractPluginLoader,
-      {
+      !global ? {
+        loader: resolveLoader('typings-for-css-modules-loader'),
+        options: {
+          namedExports: true,
+          ...cssLoaderOptions(2, global, production),
+        }
+      } : {
         loader: resolveLoader('css-loader'),
         options: cssLoaderOptions(2, global, production),
       },
@@ -58,8 +64,11 @@ const createCssModuleRule = function({ miniCssExtractPluginLoader, global = fals
     use: [
       miniCssExtractPluginLoader,
       {
-        loader: resolveLoader('css-loader'),
-        options: cssLoaderOptions(1, global, production),
+        loader: resolveLoader('typings-for-css-modules-loader'),
+        options: {
+          namedExports: true,
+          ...cssLoaderOptions(1, global, production),
+        },
       },
       {
         loader: resolveLoader('postcss-loader'),

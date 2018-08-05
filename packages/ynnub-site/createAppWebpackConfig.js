@@ -1,17 +1,19 @@
 const path = require('path');
-const babelPresetFlow = require('@babel/preset-flow');
-const babelPresetReact = require('@babel/preset-react');
-const babelPresetPobEnv = require('babel-preset-pob-env');
-const babelPluginJSXCode = require('babel-plugin-jsx-code');
-const babelPluginReactRequire = require('babel-plugin-react-require');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { createModuleRules, createExtractPlugin } = require('ynnub/webpack-config');
+const webpack = require('webpack');
 
 module.exports = function (config, options) {
   const production = config.env === 'production';
   const webpackConfig = config({
     ...options,
+
+    typescript: true,
+
+    entries: [
+      { key: 'index', path: 'index.ts' }
+    ],
 
     includeModules: ['ynnub'],
     includePaths: [
@@ -20,15 +22,12 @@ module.exports = function (config, options) {
 
     babel: {
       presets: [
-        // flow
-        babelPresetFlow,
-        // add react preset with jsx
-        [babelPresetReact, { development: !production, useBuiltIns: true }],
+        [require.resolve('@babel/preset-react'), { development: !production, useBuiltIns: true }],
         [
-          babelPresetPobEnv,
+          require.resolve('babel-preset-pob-env'),
           {
             production,
-            typescript: false,
+            typescript: true,
             exportDefaultName: false,
             optimizations: true,
             target: 'node',
@@ -39,8 +38,9 @@ module.exports = function (config, options) {
         ],
       ],
       plugins: [
-        babelPluginJSXCode.default,
-        babelPluginReactRequire,
+        require.resolve('babel-plugin-react-require'),
+        require.resolve('babel-plugin-jsx-code'),
+        require.resolve('babel-plugin-inline-classnames-babel7'),
       ],
     },
 
