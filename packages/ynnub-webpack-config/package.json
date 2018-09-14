@@ -1,8 +1,9 @@
 {
-  "name": "ynnub",
-  "version": "0.6.2",
-  "description": "A css module framework in less. Written for `react` and `webpack` with css modules.",
+  "name": "ynnub-webpack-config",
+  "version": "0.0.0",
+  "description": "webpack config for ynnub",
   "main": "index.js",
+  "typings": "index.d.ts",
   "repository": "git://github.com/christophehurpeau/ynnub.git",
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "MIT",
@@ -11,24 +12,18 @@
   },
   "homepage": "https://github.com/christophehurpeau/ynnub",
   "scripts": {
-    "lint": "tsc --noEmit && eslint components form grid interactions layout text utils *.tsx"
+    "lint": "tsc --noEmit"
   },
   "devDependencies": {
     "eslint": "^5.5.0",
-    "eslint-config-airbnb": "^17.1.0",
     "eslint-config-pob": "^22.0.3",
-    "eslint-config-prettier": "^3.0.1",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-prettier": "^2.6.2",
-    "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-typescript": "^0.12.0",
     "prettier": "^1.14.2",
-    "react": "^16.5.1",
     "typescript": "^3.0.3"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "webpack": "^4.19.0"
   },
   "dependencies": {
     "@material/button": "^0.29.0",
@@ -36,6 +31,8 @@
     "@material/tabs": "^0.29.0",
     "@material/theme": "^0.29.0",
     "@material/typography": "^0.28.0",
-    "@types/react": "^16.4.13"
+    "@types/mini-css-extract-plugin": "^0.2.0",
+    "@types/react": "^16.4.13",
+    "@types/webpack": "^4.4.11"
   }
 }

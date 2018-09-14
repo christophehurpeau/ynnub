@@ -19,12 +19,12 @@ const cssLoaderOptions = function(importLoaders, global, production) {
 };
 
 const createScssModuleRule = function(
-  { miniCssExtractPluginLoader, global = false, plugins, production, themeFile, includePaths = [], resolveLoader = defaultResolveLoader } = {},
+  { extractLoader, global = false, plugins, production, themeFile, includePaths = [], resolveLoader = defaultResolveLoader } = {},
 ) {
   return {
     test: global ? /\.global\.scss$/ : /^((?!\.global).)*\.scss$/,
     use: [
-      miniCssExtractPluginLoader,
+      extractLoader,
       !global ? {
         loader: resolveLoader('typings-for-css-modules-loader'),
         options: {
@@ -58,11 +58,11 @@ const createScssModuleRule = function(
   };
 };
 
-const createCssModuleRule = function({ miniCssExtractPluginLoader, global = false, plugins, production, resolveLoader = defaultResolveLoader } = {}) {
+const createCssModuleRule = function({ extractLoader, global = false, plugins, production, resolveLoader = defaultResolveLoader }) {
   return {
     test: /\.css$/,
     use: [
-      miniCssExtractPluginLoader,
+      extractLoader,
       {
         loader: resolveLoader('typings-for-css-modules-loader'),
         options: {
@@ -83,11 +83,11 @@ const createCssModuleRule = function({ miniCssExtractPluginLoader, global = fals
 };
 
 exports.createModuleRules = function(
-  { MiniCssExtractPlugin, plugins, production, themeFile, includePaths, resolveLoader = defaultResolveLoader } = {},
+  { extractLoader, plugins, production, themeFile, includePaths, resolveLoader = defaultResolveLoader } = {},
 ) {
   return [
     createScssModuleRule({
-      miniCssExtractPluginLoader: MiniCssExtractPlugin.loader,
+      extractLoader,
       global: true,
       plugins,
       production,
@@ -97,7 +97,7 @@ exports.createModuleRules = function(
     }),
 
     createScssModuleRule({
-      miniCssExtractPluginLoader: MiniCssExtractPlugin.loader,
+      extractLoader,
       global: false,
       plugins,
       production,
@@ -107,15 +107,11 @@ exports.createModuleRules = function(
     }),
 
     createCssModuleRule({
-      miniCssExtractPluginLoader: MiniCssExtractPlugin.loader,
+      extractLoader,
       global: false,
       plugins,
       production,
       resolveLoader,
     }),
   ];
-};
-
-exports.createExtractPlugin = function(MiniCssExtractPlugin, options) {
-  return new MiniCssExtractPlugin(options);
 };

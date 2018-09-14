@@ -21,13 +21,14 @@ export default () => (
 ## Webpack Configuration
 
 ```bash
-yarn add ynnub extract-text-webpack-plugin css-loader postcss-loader sass-loader optimize-css-assets-webpack-plugin
+yarn add ynnub
+yarn add --dev ynnub-webpack-config extract-text-webpack-plugin css-loader postcss-loader sass-loader optimize-css-assets-webpack-plugin
 ```
 
 ```js
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const { createModuleRules, createExtractPlugin } = require('ynnub/webpack-config');
+const { createModuleRules, createExtractPlugin } = require('ynnub-webpack-config');
 
 module.exports = {
   moduleRules: [

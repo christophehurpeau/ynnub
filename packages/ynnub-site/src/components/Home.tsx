@@ -23,7 +23,7 @@ yarn add ynnub
 
     <pre><code>{`
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const { createModuleRule, createExtractPlugin } = require('../webpack-config');
+const { createModuleRule, createExtractPlugin } = require('ynnub-webpack-config');
 
 module.exports = {
   module: {

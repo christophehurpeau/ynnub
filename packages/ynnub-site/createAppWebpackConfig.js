@@ -1,8 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const { createModuleRules, createExtractPlugin } = require('ynnub/webpack-config');
-const webpack = require('webpack');
+const { createModuleRules } = require('ynnub-webpack-config');
 
 module.exports = function (config, options) {
   const production = config.env === 'production';
@@ -46,7 +45,7 @@ module.exports = function (config, options) {
 
     moduleRules: [
       ...createModuleRules({
-        MiniCssExtractPlugin,
+        extractLoader: MiniCssExtractPlugin.loader,
         production,
         themeFile: './src/theme.scss',
         plugins: [require('autoprefixer')],
@@ -59,7 +58,7 @@ module.exports = function (config, options) {
     ],
 
     plugins: [
-      createExtractPlugin(MiniCssExtractPlugin, {
+      new MiniCssExtractPlugin({
         filename: `../public/[name].css`,
       }),
       new OptimizeCssAssetsPlugin({
