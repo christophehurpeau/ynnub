@@ -1,0 +1,136 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8" class="next-head"/><link rel="preload" href="/_next/static/lOGq3YVfRzuC92YgHWSbH/pages/base/form.js" as="script"/><link rel="preload" href="/_next/static/lOGq3YVfRzuC92YgHWSbH/pages/_app.js" as="script"/><link rel="preload" href="/_next/static/lOGq3YVfRzuC92YgHWSbH/pages/_error.js" as="script"/><link rel="preload" href="/_next/static/runtime/webpack-89179faa512dd01fbb62.js" as="script"/><link rel="preload" href="/_next/static/chunks/commons.75c47b7f15575357e6ce.js" as="script"/><link rel="preload" href="/_next/static/chunks/styles.86028f8ca4171627c5f4.js" as="script"/><link rel="preload" href="/_next/static/runtime/main-ad091769d512c328accf.js" as="script"/><link rel="stylesheet" href="/_next/static/css/commons.9d6bb7d7.chunk.css"/><link rel="stylesheet" href="/_next/static/css/styles.6ed9814d.chunk.css"/><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>$<link href="https://fonts.googleapis.com/css?family=Material+Icons|Roboto:400,700,500,300,400italic" rel="stylesheet" type="text/css"/><script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,es2015,es2016"></script></head><body class="_document-loaded"><div id="__next"><div class="_2gCZUlGYufIUanVoRRikim _3XXxHnzGM8Krb4xQVJfKDG" data-reactroot=""><aside class="_2L7Dc1ptrhJRs9kFvwXnC1 _1F0ttA6VZwR99iR-_Ju-wG" style="flex-basis:200px"><nav><ul class="mdc-list    mdc-list--non-interactive "><li><a href="/" class="mdc-list-item mdc-typography--title"><span class="mdc-list-item__text"><code>ynnub</code></span></a></li><li><a href="/base/layout" class="mdc-list-item undefined"><span class="mdc-list-item__text">Layout</span></a></li><li>Text<ul class="mdc-list    mdc-list--non-interactive "><li><a href="/base/text/typography" class="mdc-list-item undefined"><span class="mdc-list-item__text">Typography</span></a></li><li><a href="/base/text/paragraphs" class="mdc-list-item undefined"><span class="mdc-list-item__text">Paragraphs</span></a></li><li><a href="/base/text/citations" class="mdc-list-item undefined"><span class="mdc-list-item__text">Citations</span></a></li><li><a href="/base/text/code" class="mdc-list-item undefined"><span class="mdc-list-item__text">Code</span></a></li><li><a href="/base/text/inline" class="mdc-list-item undefined"><span class="mdc-list-item__text">Inline</span></a></li></ul></li><li><a href="/base/form" class="mdc-list-item undefined"><span class="mdc-list-item__text">Form</span></a></li><li>Components<ul class="mdc-list    mdc-list--non-interactive "><li><a href="/components/badges" class="mdc-list-item undefined"><span class="mdc-list-item__text">Badges</span></a></li><li><a href="/components/blocks" class="mdc-list-item undefined"><span class="mdc-list-item__text">Blocks</span></a></li><li><a href="/components/buttons" class="mdc-list-item undefined"><span class="mdc-list-item__text">Buttons</span></a></li><li><a href="/components/cards" class="mdc-list-item undefined"><span class="mdc-list-item__text">Cards</span></a></li><li><a href="/components/dropdown" class="mdc-list-item undefined"><span class="mdc-list-item__text">Dropdown</span></a></li><li><a href="/components/labels" class="mdc-list-item undefined"><span class="mdc-list-item__text">Labels</span></a></li><li><a href="/components/lists" class="mdc-list-item undefined"><span class="mdc-list-item__text">Lists</span></a></li><li><a href="/components/loading-bar" class="mdc-list-item undefined"><span class="mdc-list-item__text">Loading Bar</span></a></li><li><a href="/components/tables" class="mdc-list-item undefined"><span class="mdc-list-item__text">Tables</span></a></li><li><a href="/components/tabs" class="mdc-list-item undefined"><span class="mdc-list-item__text">Tabs</span></a></li></ul></li></ul></nav></aside><div class="_2a4U84JMqFMJuHpzr9ZwR5 _3aJ92LandBWmPzplWar6gW"><h1 class="mdc-typography--headline">Form</h1><h2 class="mdc-typography--title">Imports</h2><pre><code>import { InputText, Textarea, Select, Radio, Checkbox, RadioSelect, Fieldset } from  &#x27;ynnub/form&#x27;;</code></pre><h2 class="mdc-typography--title">InputText</h2><div class="J_BbBA2bZJRYc72iefh1U"><div class="_1_x7o-qQektPQiOF5DjSQJ"><div class="_8ybXTy85JV-RLZ7O3ZR6R">Code</div><pre><code>&lt;FlexGrid justifyContent=&quot;space-around&quot; flow=&quot;row wrap&quot;&gt;
+  &lt;FlexItem basis=&quot;45%&quot;&gt;
+    &lt;InputText required id=&quot;user-firstname&quot; label=&quot;First Name&quot; /&gt;
+  &lt;/FlexItem&gt;
+  &lt;FlexItem basis=&quot;45%&quot;&gt;
+    &lt;InputText required id=&quot;user-lastname&quot; label=&quot;Last Name&quot; /&gt;
+  &lt;/FlexItem&gt;
+  &lt;FlexItem basis=&quot;45%&quot;&gt;
+    &lt;InputText
+required
+id=&quot;user-email&quot;
+type=&quot;email&quot;
+label=&quot;Email&quot;
+placeholder=&quot;Email (Placeholder)&quot; /&gt;
+
+  &lt;/FlexItem&gt;
+  &lt;FlexItem basis=&quot;45%&quot;&gt;
+    &lt;InputText
+required
+id=&quot;user-phone&quot;
+type=&quot;phone&quot;
+icon=&quot;phone&quot;
+label=&quot;Phone&quot; /&gt;
+
+  &lt;/FlexItem&gt;
+  &lt;FlexItem basis=&quot;45%&quot;&gt;
+    &lt;InputText disabled id=&quot;user-disabled&quot; label=&quot;Disabled&quot; /&gt;
+  &lt;/FlexItem&gt;
+&lt;/FlexGrid&gt;</code></pre></div><div class="_1Bbw2T6Q7uGWZ9iLWNxIX7"><div class="_8ybXTy85JV-RLZ7O3ZR6R">Result</div><div class="_1LhQkhVRHh3p1b0dZwAJOf   " style="justify-content:space-around;align-items:stretch;align-content:stretch;flex-flow:row wrap"><div style="flex:0 0 45%"><div class="_1msxM4Fcf5WmcfiR9A4Qw4 YYZaq3T_lTJHcO407yVOY YYZaq3T_lTJHcO407yVOY   "><input type="text" id="user-firstname" placeholder="" required=""/><label class="_1Z_PYpFGz-JFoiHpB3ACec" for="user-firstname">First Name</label></div></div><div style="flex:0 0 45%"><div class="_1msxM4Fcf5WmcfiR9A4Qw4 YYZaq3T_lTJHcO407yVOY YYZaq3T_lTJHcO407yVOY   "><input type="text" id="user-lastname" placeholder="" required=""/><label class="_1Z_PYpFGz-JFoiHpB3ACec" for="user-lastname">Last Name</label></div></div><div style="flex:0 0 45%"><div class="_1msxM4Fcf5WmcfiR9A4Qw4 YYZaq3T_lTJHcO407yVOY    "><input type="email" id="user-email" placeholder="Email (Placeholder)" required=""/><label class="_1Z_PYpFGz-JFoiHpB3ACec" for="user-email">Email</label></div></div><div style="flex:0 0 45%"><div class="_1msxM4Fcf5WmcfiR9A4Qw4 YYZaq3T_lTJHcO407yVOY  _1KftwEM9oPqmysXdmjBvyT  "><input type="phone" id="user-phone" placeholder="" required=""/><label class="_1Z_PYpFGz-JFoiHpB3ACec" for="user-phone">Phone</label><label class="material-icons _2swxZyhTwuCRTIBxJdkYGR" for="user-phone">phone</label></div></div><div style="flex:0 0 45%"><div class="_1msxM4Fcf5WmcfiR9A4Qw4 YYZaq3T_lTJHcO407yVOY YYZaq3T_lTJHcO407yVOY   "><input type="text" id="user-disabled" placeholder="" disabled=""/><label class="_1Z_PYpFGz-JFoiHpB3ACec" for="user-disabled">Disabled</label></div></div></div></div></div><h2 class="mdc-typography--title">Textarea</h2><div class="J_BbBA2bZJRYc72iefh1U"><div class="_1_x7o-qQektPQiOF5DjSQJ"><div class="_8ybXTy85JV-RLZ7O3ZR6R">Code</div><pre><code>&lt;Textarea
+id=&quot;user-talents&quot;
+style={{ height: &#x27;10rem&#x27; }}
+</code></pre></div><div class="_1Bbw2T6Q7uGWZ9iLWNxIX7"><div class="_8ybXTy85JV-RLZ7O3ZR6R">Result</div><div class="_1msxM4Fcf5WmcfiR9A4Qw4 YYZaq3T_lTJHcO407yVOY _3RAzP_GD3m92M6A26fKW3T"><textarea id="user-talents" placeholder="Type anything you like here" style="height:10rem"></textarea></div></div></div><div class="J_BbBA2bZJRYc72iefh1U"><div class="_1_x7o-qQektPQiOF5DjSQJ"><div class="_8ybXTy85JV-RLZ7O3ZR6R">Code</div><pre><code>&lt;Textarea
+label=&quot;Your biography&quot;
+id=&quot;user-bio&quot;
+style={{ height: &#x27;10rem&#x27; }}
+</code></pre></div><div class="_1Bbw2T6Q7uGWZ9iLWNxIX7"><div class="_8ybXTy85JV-RLZ7O3ZR6R">Result</div><div class="_1msxM4Fcf5WmcfiR9A4Qw4 YYZaq3T_lTJHcO407yVOY "><textarea id="user-bio" placeholder="Type anything you like here" style="height:10rem"></textarea><label class="_1Z_PYpFGz-JFoiHpB3ACec" for="user-bio">Your biography</label></div></div></div><h2 class="mdc-typography--title">Select</h2><div class="J_BbBA2bZJRYc72iefh1U"><div class="_1_x7o-qQektPQiOF5DjSQJ"><div class="_8ybXTy85JV-RLZ7O3ZR6R">Code</div><pre><code>&lt;FlexGrid withGutter&gt;
+  &lt;FlexItems&gt;
+    &lt;Select id=&quot;select&quot;&gt;
+      &lt;option&gt;Value1&lt;/option&gt;
+      &lt;option&gt;Value2&lt;/option&gt;
+      &lt;option&gt;Value3&lt;/option&gt;
+    &lt;/Select&gt;
+
+    &lt;Select id=&quot;select&quot; label=&quot;Select Label&quot;&gt;
+      &lt;option&gt;Value1&lt;/option&gt;
+      &lt;option&gt;Value2&lt;/option&gt;
+      &lt;option&gt;Value3&lt;/option&gt;
+    &lt;/Select&gt;
+
+    &lt;Select id=&quot;select-withIcon&quot; icon=&quot;favorite&quot;&gt;
+      &lt;option&gt;Value1&lt;/option&gt;
+      &lt;option&gt;Value2&lt;/option&gt;
+      &lt;option&gt;Value3&lt;/option&gt;
+    &lt;/Select&gt;
+  &lt;/FlexItems&gt;
+&lt;/FlexGrid&gt;</code></pre></div><div class="_1Bbw2T6Q7uGWZ9iLWNxIX7"><div class="_8ybXTy85JV-RLZ7O3ZR6R">Result</div><div class="_1LhQkhVRHh3p1b0dZwAJOf _1tvuK0OYKJ3stPlPC8qaHy  " style="justify-content:flex-start;align-items:stretch;align-content:stretch;flex-flow:row nowrap"><div style="flex:0 0 auto"><div class="_1msxM4Fcf5WmcfiR9A4Qw4 _3XWKU2MfJSZbtQQqrEHL_l  _3RAzP_GD3m92M6A26fKW3T"><select id="select"><option>Value1</option><option>Value2</option><option>Value3</option></select></div></div><div style="flex:0 0 auto"><div class="_1msxM4Fcf5WmcfiR9A4Qw4 _3XWKU2MfJSZbtQQqrEHL_l  "><select id="select"><option>Value1</option><option>Value2</option><option>Value3</option></select><label class="_1Z_PYpFGz-JFoiHpB3ACec" for="select">Select Label</label></div></div><div style="flex:0 0 auto"><div class="_1msxM4Fcf5WmcfiR9A4Qw4 _3XWKU2MfJSZbtQQqrEHL_l _1KftwEM9oPqmysXdmjBvyT _3RAzP_GD3m92M6A26fKW3T"><select id="select-withIcon"><option>Value1</option><option>Value2</option><option>Value3</option></select><label class="material-icons _2swxZyhTwuCRTIBxJdkYGR" for="select-withIcon">favorite</label></div></div></div></div></div><div class="J_BbBA2bZJRYc72iefh1U"><div class="_1_x7o-qQektPQiOF5DjSQJ"><div class="_8ybXTy85JV-RLZ7O3ZR6R">Code</div><pre><code>&lt;Select disabled id=&quot;select&quot;&gt;
+  &lt;option&gt;Value1&lt;/option&gt;
+&lt;/Select&gt;</code></pre></div><div class="_1Bbw2T6Q7uGWZ9iLWNxIX7"><div class="_8ybXTy85JV-RLZ7O3ZR6R">Result</div><div class="_1msxM4Fcf5WmcfiR9A4Qw4 _3XWKU2MfJSZbtQQqrEHL_l  _3RAzP_GD3m92M6A26fKW3T"><select id="select" disabled=""><option>Value1</option></select></div></div></div><h2 class="mdc-typography--title">Radio buttons</h2><div class="J_BbBA2bZJRYc72iefh1U"><div class="_1_x7o-qQektPQiOF5DjSQJ"><div class="_8ybXTy85JV-RLZ7O3ZR6R">Code</div><pre><code>&lt;FlexGrid flow=&quot;row wrap&quot;&gt;
+  &lt;RadioSelect
+name=&quot;radiobutton&quot;
+label=&quot;Radio buttons&quot;
+prefixId=&quot;radioselect&quot;&gt;
+
+    &lt;RadioSelect.Radio value=&quot;value1&quot; label=&quot;Value 1&quot; /&gt;
+    &lt;RadioSelect.Radio value=&quot;value2&quot; label=&quot;Value 2&quot; /&gt;
+    &lt;RadioSelect.Radio value=&quot;value3&quot; label=&quot;Value 3&quot; /&gt;
+    &lt;RadioSelect.Radio value=&quot;value4&quot; label=&quot;Value 4&quot; /&gt;
+  &lt;/RadioSelect&gt;
+  &lt;RadioSelect
+flex
+name=&quot;radiobuttonvertical&quot;
+label=&quot;Vertical Radio buttons&quot;
+prefixId=&quot;radioselectvertical&quot;&gt;
+
+    &lt;RadioSelect.Radio value=&quot;value1&quot; label=&quot;Value 1&quot; /&gt;
+    &lt;RadioSelect.Radio value=&quot;value2&quot; label=&quot;Value 2&quot; /&gt;
+    &lt;RadioSelect.Radio value=&quot;value3&quot; label=&quot;Value 3&quot; /&gt;
+    &lt;RadioSelect.Radio value=&quot;value4&quot; label=&quot;Value 4&quot; /&gt;
+  &lt;/RadioSelect&gt;
+&lt;/FlexGrid&gt;</code></pre></div><div class="_1Bbw2T6Q7uGWZ9iLWNxIX7"><div class="_8ybXTy85JV-RLZ7O3ZR6R">Result</div><div class="_1LhQkhVRHh3p1b0dZwAJOf   " style="justify-content:flex-start;align-items:stretch;align-content:stretch;flex-flow:row wrap"><div class="_2USe_pTJhgJZAO1Efn2PMj"><div class="mdc-typography--subheading2 _4_cX7-kaI2UBBH7mtH9-X">Radio buttons</div><div class="_1msxM4Fcf5WmcfiR9A4Qw4  _144R91TrfLvlHcvuNywsHQ   _3lxPutFZGImSuNszzva1pS "><input type="radio" id="radioselect-value1" placeholder="" name="radiobutton" value="value1"/><label class="_1Z_PYpFGz-JFoiHpB3ACec" for="radioselect-value1">Value 1</label></div><div class="_1msxM4Fcf5WmcfiR9A4Qw4  _144R91TrfLvlHcvuNywsHQ   _3lxPutFZGImSuNszzva1pS "><input type="radio" id="radioselect-value2" placeholder="" name="radiobutton" value="value2"/><label class="_1Z_PYpFGz-JFoiHpB3ACec" for="radioselect-value2">Value 2</label></div><div class="_1msxM4Fcf5WmcfiR9A4Qw4  _144R91TrfLvlHcvuNywsHQ   _3lxPutFZGImSuNszzva1pS "><input type="radio" id="radioselect-value3" placeholder="" name="radiobutton" value="value3"/><label class="_1Z_PYpFGz-JFoiHpB3ACec" for="radioselect-value3">Value 3</label></div><div class="_1msxM4Fcf5WmcfiR9A4Qw4  _144R91TrfLvlHcvuNywsHQ   _3lxPutFZGImSuNszzva1pS "><input type="radio" id="radioselect-value4" placeholder="" name="radiobutton" value="value4"/><label class="_1Z_PYpFGz-JFoiHpB3ACec" for="radioselect-value4">Value 4</label></div></div><div class="_2USe_pTJhgJZAO1Efn2PMj"><div class="mdc-typography--subheading2 _4_cX7-kaI2UBBH7mtH9-X">Vertical Radio buttons</div><div class="_1LhQkhVRHh3p1b0dZwAJOf   _1h5dyIwqiV1OpPlDt1z9E" style="justify-content:flex-start;align-items:stretch;align-content:stretch;flex-flow:row wrap"><div class="_1msxM4Fcf5WmcfiR9A4Qw4  _144R91TrfLvlHcvuNywsHQ   _3lxPutFZGImSuNszzva1pS "><input type="radio" id="radioselectvertical-value1" placeholder="" name="radiobuttonvertical" value="value1"/><label class="_1Z_PYpFGz-JFoiHpB3ACec" for="radioselectvertical-value1">Value 1</label></div><div class="_1msxM4Fcf5WmcfiR9A4Qw4  _144R91TrfLvlHcvuNywsHQ   _3lxPutFZGImSuNszzva1pS "><input type="radio" id="radioselectvertical-value2" placeholder="" name="radiobuttonvertical" value="value2"/><label class="_1Z_PYpFGz-JFoiHpB3ACec" for="radioselectvertical-value2">Value 2</label></div><div class="_1msxM4Fcf5WmcfiR9A4Qw4  _144R91TrfLvlHcvuNywsHQ   _3lxPutFZGImSuNszzva1pS "><input type="radio" id="radioselectvertical-value3" placeholder="" name="radiobuttonvertical" value="value3"/><label class="_1Z_PYpFGz-JFoiHpB3ACec" for="radioselectvertical-value3">Value 3</label></div><div class="_1msxM4Fcf5WmcfiR9A4Qw4  _144R91TrfLvlHcvuNywsHQ   _3lxPutFZGImSuNszzva1pS "><input type="radio" id="radioselectvertical-value4" placeholder="" name="radiobuttonvertical" value="value4"/><label class="_1Z_PYpFGz-JFoiHpB3ACec" for="radioselectvertical-value4">Value 4</label></div></div></div></div></div></div><div class="J_BbBA2bZJRYc72iefh1U"><div class="_1_x7o-qQektPQiOF5DjSQJ"><div class="_8ybXTy85JV-RLZ7O3ZR6R">Code</div><pre><code>&lt;div&gt;
+  &lt;Radio
+disabled
+checked
+id=&quot;radiodisabled1&quot;
+name=&quot;radiobutton-disabled&quot;
+value=&quot;value1&quot;
+label=&quot;Value 1&quot; /&gt;
+
+  &lt;Radio
+disabled
+id=&quot;radiodisabled2&quot;
+name=&quot;radiobutton-disabled&quot;
+value=&quot;value2&quot;
+label=&quot;Value 2&quot; /&gt;
+
+&lt;/div&gt;</code></pre></div><div class="_1Bbw2T6Q7uGWZ9iLWNxIX7"><div class="_8ybXTy85JV-RLZ7O3ZR6R">Result</div><div><div class="_1msxM4Fcf5WmcfiR9A4Qw4  _144R91TrfLvlHcvuNywsHQ   "><input type="radio" id="radiodisabled1" placeholder="" disabled="" checked="" name="radiobutton-disabled" value="value1"/><label class="_1Z_PYpFGz-JFoiHpB3ACec" for="radiodisabled1">Value 1</label></div><div class="_1msxM4Fcf5WmcfiR9A4Qw4  _144R91TrfLvlHcvuNywsHQ   "><input type="radio" id="radiodisabled2" placeholder="" disabled="" name="radiobutton-disabled" value="value2"/><label class="_1Z_PYpFGz-JFoiHpB3ACec" for="radiodisabled2">Value 2</label></div></div></div></div><h2 class="mdc-typography--title">Checkboxes</h2><div class="J_BbBA2bZJRYc72iefh1U"><div class="_1_x7o-qQektPQiOF5DjSQJ"><div class="_8ybXTy85JV-RLZ7O3ZR6R">Code</div><pre><code>&lt;div&gt;
+  &lt;Checkbox id=&quot;checkbox1&quot; value=&quot;value1&quot; label=&quot;Value 1&quot; /&gt;
+  &lt;Checkbox id=&quot;checkbox2&quot; value=&quot;value2&quot; label=&quot;Value 2&quot; /&gt;
+  &lt;Checkbox id=&quot;checkbox3&quot; value=&quot;value3&quot; label=&quot;Value 3&quot; /&gt;
+  &lt;Checkbox id=&quot;checkbox4&quot; value=&quot;value4&quot; label=&quot;Value 4&quot; /&gt;
+&lt;/div&gt;</code></pre></div><div class="_1Bbw2T6Q7uGWZ9iLWNxIX7"><div class="_8ybXTy85JV-RLZ7O3ZR6R">Result</div><div><div class="_1msxM4Fcf5WmcfiR9A4Qw4  _2FSaPcFPDkseX90H0replo   "><input type="checkbox" id="checkbox1" placeholder="" value="value1"/><label class="_1Z_PYpFGz-JFoiHpB3ACec" for="checkbox1">Value 1</label></div><div class="_1msxM4Fcf5WmcfiR9A4Qw4  _2FSaPcFPDkseX90H0replo   "><input type="checkbox" id="checkbox2" placeholder="" value="value2"/><label class="_1Z_PYpFGz-JFoiHpB3ACec" for="checkbox2">Value 2</label></div><div class="_1msxM4Fcf5WmcfiR9A4Qw4  _2FSaPcFPDkseX90H0replo   "><input type="checkbox" id="checkbox3" placeholder="" value="value3"/><label class="_1Z_PYpFGz-JFoiHpB3ACec" for="checkbox3">Value 3</label></div><div class="_1msxM4Fcf5WmcfiR9A4Qw4  _2FSaPcFPDkseX90H0replo   "><input type="checkbox" id="checkbox4" placeholder="" value="value4"/><label class="_1Z_PYpFGz-JFoiHpB3ACec" for="checkbox4">Value 4</label></div></div></div></div><div class="J_BbBA2bZJRYc72iefh1U"><div class="_1_x7o-qQektPQiOF5DjSQJ"><div class="_8ybXTy85JV-RLZ7O3ZR6R">Code</div><pre><code>&lt;div&gt;
+  &lt;Checkbox
+checked
+disabled
+id=&quot;checkboxdisabled1&quot;
+value=&quot;value1&quot;
+label=&quot;Value 1&quot; /&gt;
+
+  &lt;Checkbox
+disabled
+id=&quot;checkboxdisabled2&quot;
+value=&quot;value2&quot;
+label=&quot;Value 2&quot; /&gt;
+
+&lt;/div&gt;</code></pre></div><div class="_1Bbw2T6Q7uGWZ9iLWNxIX7"><div class="_8ybXTy85JV-RLZ7O3ZR6R">Result</div><div><div class="_1msxM4Fcf5WmcfiR9A4Qw4  _2FSaPcFPDkseX90H0replo   "><input type="checkbox" id="checkboxdisabled1" placeholder="" checked="" disabled="" value="value1"/><label class="_1Z_PYpFGz-JFoiHpB3ACec" for="checkboxdisabled1">Value 1</label></div><div class="_1msxM4Fcf5WmcfiR9A4Qw4  _2FSaPcFPDkseX90H0replo   "><input type="checkbox" id="checkboxdisabled2" placeholder="" disabled="" value="value2"/><label class="_1Z_PYpFGz-JFoiHpB3ACec" for="checkboxdisabled2">Value 2</label></div></div></div></div><h2 class="mdc-typography--title">Fieldset</h2><div class="J_BbBA2bZJRYc72iefh1U"><div class="_1_x7o-qQektPQiOF5DjSQJ"><div class="_8ybXTy85JV-RLZ7O3ZR6R">Code</div><pre><code>&lt;div&gt;
+  &lt;Fieldset legend=&quot;Fieldset 1&quot;&gt;
+    &lt;InputText id=&quot;fieldsetinput&quot; placeholder=&quot;Input 1&quot; /&gt;
+    &lt;InputText id=&quot;fieldsetinput2&quot; placeholder=&quot;Input 2&quot; /&gt;
+  &lt;/Fieldset&gt;
+
+  &lt;Fieldset legend=&quot;Fieldset 2&quot;&gt;
+    &lt;InputText id=&quot;fieldsetinput&quot; placeholder=&quot;Input 1&quot; /&gt;
+    &lt;InputText id=&quot;fieldsetinput2&quot; placeholder=&quot;Input 2&quot; /&gt;
+  &lt;/Fieldset&gt;
+&lt;/div&gt;</code></pre></div><div class="_1Bbw2T6Q7uGWZ9iLWNxIX7"><div class="_8ybXTy85JV-RLZ7O3ZR6R">Result</div><div><fieldset><legend>Fieldset 1</legend><div class="_1msxM4Fcf5WmcfiR9A4Qw4 YYZaq3T_lTJHcO407yVOY YYZaq3T_lTJHcO407yVOY  _3RAzP_GD3m92M6A26fKW3T "><input type="text" id="fieldsetinput" placeholder="Input 1"/></div><div class="_1msxM4Fcf5WmcfiR9A4Qw4 YYZaq3T_lTJHcO407yVOY YYZaq3T_lTJHcO407yVOY  _3RAzP_GD3m92M6A26fKW3T "><input type="text" id="fieldsetinput2" placeholder="Input 2"/></div></fieldset><fieldset><legend>Fieldset 2</legend><div class="_1msxM4Fcf5WmcfiR9A4Qw4 YYZaq3T_lTJHcO407yVOY YYZaq3T_lTJHcO407yVOY  _3RAzP_GD3m92M6A26fKW3T "><input type="text" id="fieldsetinput" placeholder="Input 1"/></div><div class="_1msxM4Fcf5WmcfiR9A4Qw4 YYZaq3T_lTJHcO407yVOY YYZaq3T_lTJHcO407yVOY  _3RAzP_GD3m92M6A26fKW3T "><input type="text" id="fieldsetinput2" placeholder="Input 2"/></div></fieldset></div></div></div><h2 class="mdc-typography--title">With <code>redux-form</code></h2><pre><code>
+import { InputText } from &#x27;ynnub&#x27;;
+import { Field } from &#x27;redux-form&#x27;;
+
+const renderInputText = (field) =&gt; (
+  &lt;InputText {...field.input} label=&quot;Firstname&quot; /&gt;
+);
+
+export default () =&gt; (
+  &lt;Field name=&quot;firstname&quot; component={renderInputText} /&gt;
+);
+</code></pre></div></div></div><script>__NEXT_DATA__ = {"props":{"pageProps":{}},"page":"/base/form","query":{},"buildId":"lOGq3YVfRzuC92YgHWSbH","nextExport":true};__NEXT_LOADED_PAGES__=[];__NEXT_REGISTER_PAGE=function(r,f){__NEXT_LOADED_PAGES__.push([r, f])}</script><script async="" id="__NEXT_PAGE__/base/form" src="/_next/static/lOGq3YVfRzuC92YgHWSbH/pages/base/form.js"></script><script async="" id="__NEXT_PAGE__/_app" src="/_next/static/lOGq3YVfRzuC92YgHWSbH/pages/_app.js"></script><script async="" id="__NEXT_PAGE__/_error" src="/_next/static/lOGq3YVfRzuC92YgHWSbH/pages/_error.js"></script><script src="/_next/static/runtime/webpack-89179faa512dd01fbb62.js" async=""></script><script src="/_next/static/chunks/commons.75c47b7f15575357e6ce.js" async=""></script><script src="/_next/static/chunks/styles.86028f8ca4171627c5f4.js" async=""></script><script src="/_next/static/runtime/main-ad091769d512c328accf.js" async=""></script></body></html>
