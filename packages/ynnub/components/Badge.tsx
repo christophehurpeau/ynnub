@@ -1,5 +1,12 @@
-import sBadge from './badge.scss';
+import React, { ReactChild, DOMAttributes } from 'react';
+import * as s from './badge.scss';
 
-export default ({ value, children, ...otherProps }) => (
-  <span className={sBadge.badge} {...otherProps}>{value || children}</span>
+interface Props extends DOMAttributes<HTMLSpanElement> {
+  value?: ReactChild;
+}
+
+export default ({ value, children, ...otherProps }: Props) => (
+  <span className={s.badge} {...otherProps}>
+    {value || children}
+  </span>
 );

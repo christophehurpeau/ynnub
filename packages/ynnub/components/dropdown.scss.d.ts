@@ -1,12 +1,7 @@
-export interface IDropdownScss {
-  'list': string;
-  'resetButton': string;
-  'dropdownContainer': string;
-  'disabled': string;
-  'dropdown': string;
-  'button': string;
-  'arrow': string;
-}
-
-export const locals: IDropdownScss;
-export default locals;
+export const list: string;
+export const resetButton: string;
+export const dropdownContainer: string;
+export const disabled: string;
+export const dropdown: string;
+export const button: string;
+export const arrow: string;

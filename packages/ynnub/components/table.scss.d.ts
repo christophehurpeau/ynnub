@@ -1,10 +1,5 @@
-export interface ITableScss {
-  'table': string;
-  'bordered': string;
-  'striped': string;
-  'centered': string;
-  'shrink': string;
-}
-
-export const locals: ITableScss;
-export default locals;
+export const table: string;
+export const bordered: string;
+export const striped: string;
+export const centered: string;
+export const shrink: string;

@@ -1,20 +1,30 @@
-import React from 'react';
 import classNames from 'classnames';
-import { ComponentType, ReactElement, ReactType, ReactNode } from 'react';
+import React, { ComponentType, ReactType, ReactNode } from 'react';
 import './list.global.scss';
-import wrapWithClassName from '../utils/wrapWithClassName';
+import wrapWithClassName, {
+  AsProps as WrapWithClassNameAsProps,
+} from '../utils/wrapWithClassName';
+
+export type StartDetailProps = WrapWithClassNameAsProps;
+export type EndDetailProps = WrapWithClassNameAsProps;
+
+export interface AsProps {
+  href?: string;
+  className: string;
+  [prop: string]: any;
+}
 
 export interface Props {
-  as?: ReactType,
-  className?: string,
-  startDetail?: ReactNode | ComponentType,
-  endDetail?: ReactNode | ComponentType,
-  text: ReactNode,
-  secondaryText?: ReactNode,
-  badge?: null,
-  href?: string,
-  children?: ReactNode,
-  [prop: string]: any,
+  as?: ReactType<AsProps>;
+  className?: string;
+  startDetail?: ReactNode | ComponentType;
+  endDetail?: ReactNode | ComponentType;
+  text: ReactNode;
+  secondaryText?: ReactNode;
+  badge?: null;
+  href?: string;
+  children?: ReactNode;
+  [prop: string]: any;
 }
 
 export default ({
@@ -27,28 +37,28 @@ export default ({
   secondaryText,
   children,
   ...otherProps
-}: Props): ReactElement<'li'> => {
-  const item = <As
-    href={href}
-    className={classNames(
-      'mdc-list-item',
-      className,
-    )}
-    {...otherProps}
-  >
-    {wrapWithClassName(startDetail, 'mdc-list-item__start-detail')}
-    <span className={'mdc-list-item__text'}>
-      {text}
-      {secondaryText && <span className={'mdc-list-item__secondary-text'}>{secondaryText}</span>}
-      {children}
-    </span>
-    {wrapWithClassName(endDetail, 'mdc-list-item__end-detail')}
-  </As>;
-
+}: Props) => {
+  const item = (
+    <As
+      href={href}
+      className={classNames('mdc-list-item', className)}
+      {...otherProps}
+    >
+      {wrapWithClassName(startDetail, 'mdc-list-item__graphic')}
+      <span className="mdc-list-item__text">
+        {text}
+        {secondaryText && (
+          <span className="mdc-list-item__secondary-text">{secondaryText}</span>
+        )}
+        {children}
+      </span>
+      {wrapWithClassName(endDetail, 'mdc-list-item__meta')}
+    </As>
+  );
 
   if (As !== 'li') {
     return <li>{item}</li>;
   }
 
   return item;
-}
+};

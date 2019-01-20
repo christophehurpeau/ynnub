@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { PureComponent } from 'react';
 import s from './loadingBar.scss';
 
 /* number between 0 and 1 */
@@ -11,7 +11,7 @@ const random = () => Math.ceil(Math.random() * 100) / 100;
  * at 2s 60%
  * at 3s 80%
  */
-const calculatePercent = (percent) => {
+const calculatePercent = (percent: number) => {
   if (percent < 60) return percent + random() * 10 + 5;
   if (percent < 70) return percent + random() * 10 + 3;
   else if (percent < 80) return percent + random() + 5;
@@ -20,16 +20,98 @@ const calculatePercent = (percent) => {
   else return percent;
 };
 
-export default class LoadingBar extends Component {
+interface Props {
+  hidden: boolean;
+}
 
-  constructor(props) {
-    super(props);
-    this.state = this.calcState(props);
+interface ProgressState {
+  value: number;
+  willChange: string | undefined;
+}
+
+interface LoadingBarState {
+  prevHidden: boolean;
+  containerStyle: any;
+  progress: ProgressState;
+}
+
+const finalShownState = {
+  prevHidden: false,
+  containerStyle: {},
+  progress: {
+    value: 1,
+    willChange: 'width',
+  },
+};
+
+const finalHiddenState = {
+  prevHidden: true,
+  containerStyle: {
+    display: 'none',
+    willChange: 'display',
+  },
+  progress: {
+    value: 1,
+    willChange: undefined,
+  },
+};
+
+export default class LoadingBar extends PureComponent<Props, LoadingBarState> {
+  /* eslint-disable react/sort-comp */
+  fadeOffTimeout?: any;
+
+  resetTimeout?: any;
+
+  first20Timeout?: any;
+
+  progressTimer?: any;
+  /* eslint-enable react/sort-comp */
+
+  state = this.props.hidden ? finalHiddenState : finalShownState;
+
+  static getDerivedStateFromProps(
+    nextProps: Props,
+    prevState: LoadingBarState,
+  ) {
+    if (nextProps.hidden !== prevState.prevHidden) {
+      return nextProps.hidden
+        ? {
+            prevHidden: true,
+            containerStyle: {
+              willChange: 'height, opacity',
+            },
+            progress: {
+              value: 100,
+              willChange: undefined,
+            },
+          }
+        : {
+            prevHidden: false,
+            containerStyle: {},
+            progress: {
+              value: 1,
+              willChange: 'width',
+            },
+          };
+    }
+
+    return null;
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.hidden === (this.state.containerStyle.display === 'none')) return;
-    this.setState(this.calcState(nextProps));
+  componentDidMount(): void {
+    if (!this.props.hidden) {
+      this.showBar();
+    }
+  }
+
+  componentDidUpdate(prevProps: Props, prevState: LoadingBarState) {
+    if (prevState.prevHidden !== this.state.prevHidden) {
+      if (this.props.hidden) {
+        this.hideBar();
+      } else {
+        this.showBar();
+      }
+    }
   }
 
   componentWillUnmount() {
@@ -39,93 +121,13 @@ export default class LoadingBar extends Component {
     clearInterval(this.progressTimer);
   }
 
-  calcState(props) {
-    if (process.env.POB_TARGET === 'browser' && !props.hidden) {
-
-      clearTimeout(this.fadeOffTimeout);
-      clearTimeout(this.resetTimeout);
-
-      if (process.env.POB_TARGET === 'browser') {
-        this.first20Timeout = setTimeout(() => {
-          this.setState({ progress: { value: 20, willChange: 'width' } });
-        }, 100);
-
-        this.progressTimer = setInterval(() => {
-          const newValue = calculatePercent(this.state.progress.value);
-          this.setState({ progress: { value: newValue, willChange: 'width' } });
-        }, 500);
-      }
-
-      return {
-        containerStyle: {
-        },
-        progress: {
-          value: 1,
-          willChange: 'width',
-        }
-      };
-    }
-
-    if (!this.state) {
-      return {
-        containerStyle: {
-          display: 'none',
-          willChange: 'display',
-        },
-        progress: {
-          value: 1,
-          willChange: '',
-        },
-      };
-    } else {
-      clearTimeout(this.first20Timeout);
-      clearInterval(this.progressTimer);
-
-
-      this.fadeOffTimeout = setTimeout(() => {
-        this.setState({
-          containerStyle: {
-            height: 0,
-            opacity: 0,
-            willChange: 'display',
-          },
-          progress: {
-            value: 100,
-            willChange: '',
-          },
-        });
-      }, 500);
-
-      this.resetTimeout = setTimeout(() => {
-        this.setState({
-          containerStyle: {
-            display: 'none',
-            willChange: 'display',
-          },
-          progress: {
-            value: 1,
-            willChange: '',
-          },
-        });
-      }, 1000);
-
-      return {
-        containerStyle: {
-          willChange: 'height, opacity',
-        },
-        progress: {
-          value: 100,
-          willChange: '',
-        },
-      };
-    }
-  }
-
   render() {
-    return <div
-      className={s.loadingBar}
-      style={this.state.containerStyle}
-    >
+    return (
+      <div
+        hidden={this.props.hidden}
+        className={s.loadingBar}
+        style={this.state.containerStyle}
+      >
         <div
           className={s.progress}
           style={{
@@ -133,6 +135,55 @@ export default class LoadingBar extends Component {
             willChange: this.state.progress.willChange,
           }}
         />
-      </div>;
+      </div>
+    );
+  }
+
+  private showBar() {
+    clearTimeout(this.fadeOffTimeout);
+    clearTimeout(this.resetTimeout);
+
+    this.first20Timeout = setTimeout(() => {
+      this.setState({ progress: { value: 20, willChange: 'width' } });
+    }, 100);
+
+    this.progressTimer = setInterval(() => {
+      this.setState((prevState) => {
+        const newValue = calculatePercent(prevState.progress.value);
+        return { progress: { value: newValue, willChange: 'width' } };
+      });
+    }, 500);
+  }
+
+  private hideBar() {
+    clearTimeout(this.first20Timeout);
+    clearInterval(this.progressTimer);
+
+    this.fadeOffTimeout = setTimeout(() => {
+      this.setState({
+        containerStyle: {
+          height: 0,
+          opacity: 0,
+          willChange: 'display',
+        },
+        progress: {
+          value: 100,
+          willChange: undefined,
+        },
+      });
+    }, 500);
+
+    this.resetTimeout = setTimeout(() => {
+      this.setState({
+        containerStyle: {
+          display: 'none',
+          willChange: 'display',
+        },
+        progress: {
+          value: 1,
+          willChange: undefined,
+        },
+      });
+    }, 1000);
   }
 }

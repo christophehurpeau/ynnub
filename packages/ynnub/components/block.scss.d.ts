@@ -1,7 +1,2 @@
-export interface IBlockScss {
-  'block': string;
-  'primary': string;
-}
-
-export const locals: IBlockScss;
-export default locals;
+export const block: string;
+export const primary: string;

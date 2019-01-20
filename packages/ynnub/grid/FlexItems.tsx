@@ -1,16 +1,20 @@
-import { ReactElement, ReactChild } from 'react';
-import FlexItem from './FlexItem';
+import React, { ReactChild } from 'react';
+import FlexItem, { FlexItemProps } from './FlexItem';
 
 export { FlexItem };
 
-export interface Props {
-  children: Array<ReactChild>,
-  [prop: string]: any,
+export interface Props extends FlexItemProps {
+  children: Array<ReactChild>;
 }
 
-export default ({
-  children,
-  ...otherProps
-}: Props): Array<ReactElement<FlexItem>> => (
-  children.map(child => <FlexItem {...otherProps}>{child}</FlexItem>)
-)
+export default ({ children, ...otherProps }: Props) => (
+  // https://github.com/Microsoft/TypeScript/issues/21699
+  <>
+    {children.map((child, index) => (
+      // eslint-disable-next-line react/no-array-index-key
+      <FlexItem key={index} {...otherProps}>
+        {child}
+      </FlexItem>
+    ))}
+  </>
+);

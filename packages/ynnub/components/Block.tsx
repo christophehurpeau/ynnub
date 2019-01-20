@@ -1,23 +1,16 @@
-import { ReactElement, ReactType } from 'react';
 import classNames from 'classnames';
+import React, { ReactChild, ReactHTML } from 'react';
 import s from './block.scss';
 
-export interface Props<T extends ReactType> {
-  as: ReactType,
-  className?: string,
-  primary?: boolean,
-  children?: ReactNode,
+export interface Props {
+  as?: keyof ReactHTML;
+  className?: string;
+  primary?: boolean;
+  children?: ReactChild;
 }
 
-export default <T extends ReactType>({
-  as: As = 'div',
-  className,
-  primary,
-  children,
-}: Props<T>): ReactElement<T> => {
-  return <As className={classNames(
-    s.block,
-    primary && s.primary,
-    className,
-  )}>{children}</As>
-}
+export default ({ as: As = 'div', className, primary, children }: Props) => (
+  <As className={classNames(s.block, primary && s.primary, className)}>
+    {children}
+  </As>
+);

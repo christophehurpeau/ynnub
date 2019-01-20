@@ -1,51 +1,36 @@
-import { ReactElement, ReactNode, ReactType, SyntheticEvent } from 'react';
 import classNames from 'classnames';
+import React, { ReactNode, ReactType, SyntheticEvent } from 'react';
 import Icon, { IconType } from './Icon';
 import { SpinnerIcon } from './Spinner';
 import './button.global.scss';
 
-const clickDisabled = (e: SyntheticEvent<HTMLAnchorElement | HTMLButtonElement | any>): false => {
+const clickDisabled = (
+  e: SyntheticEvent<HTMLAnchorElement | HTMLButtonElement | any>,
+): false => {
   e.preventDefault();
   return false;
 };
 
-type OnClick = (e: any) => any;
-
-const createConfirm = (confirm: string, onClick?: OnClick) => {
-  return (e: SyntheticEvent<HTMLAnchorElement | HTMLButtonElement | any>): false | void => {
-    console.log('clicked');
-    if (!window.confirm(confirm)) {
-      return clickDisabled(e);
-    }
-
-    if (onClick) onClick(e);
-  }
-};
-
-export interface Props<T> {
-  as?: T,
-  className?: string,
-  containerClassName?: never,
-  icon?: IconType,
-  label?: ReactNode,
-  href?: string,
-  flat?: boolean,
-  unelevated?: boolean,
-  stroked?: boolean,
-  compact?: boolean,
-  dense?: boolean,
-  disabled?: boolean,
-  inProgress?: boolean,
-  confirm?: string,
-  children?: ReactNode,
-  [prop: string]: any,
+export interface ButtonProps {
+  as?: ReactType;
+  className?: string;
+  containerClassName?: never;
+  icon?: IconType;
+  label?: ReactNode;
+  href?: string;
+  flat?: boolean;
+  unelevated?: boolean;
+  stroked?: boolean;
+  compact?: boolean;
+  dense?: boolean;
+  disabled?: boolean;
+  inProgress?: boolean;
+  confirm?: never;
+  children?: ReactNode;
+  [prop: string]: any;
 }
 
-interface ButtonProps {
-  [prop: string]: any
-}
-
-export default <T extends ReactType<ButtonProps>>({
+export default ({
   href,
   as: As = href ? 'a' : 'button',
   className,
@@ -62,7 +47,7 @@ export default <T extends ReactType<ButtonProps>>({
   confirm,
   onClick,
   ...otherProps
-}: Props<T>): ReactElement<T> => {
+}: ButtonProps) => {
   if (As !== 'button' && disabled) throw new Error('Cannot disable a link');
   if (!label) label = children;
   return (
@@ -79,11 +64,17 @@ export default <T extends ReactType<ButtonProps>>({
         className,
       )}
       disabled={inProgress || disabled}
-      onClick={inProgress ? clickDisabled : (confirm ? createConfirm(confirm, onClick) : onClick)}
+      onClick={inProgress ? clickDisabled : onClick}
       {...otherProps}
     >
-      {(inProgress || icon) && <Icon key="icon" value={inProgress ? <SpinnerIcon /> : icon} className="mdc-button__icon" />}
+      {(inProgress || icon) && (
+        <Icon
+          key="icon"
+          value={(inProgress ? <SpinnerIcon /> : icon) as IconType}
+          className="mdc-button__icon"
+        />
+      )}
       {label}
     </As>
   );
-}
+};

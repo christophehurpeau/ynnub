@@ -1,80 +1,113 @@
 /* eslint-disable no-nested-ternary */
+
+'use strict';
+
 const path = require('path');
 
-const defaultResolveLoader = loader => loader;
+const defaultResolveLoader = (loader) => loader;
 
-const cssLoaderOptions = function(importLoaders, global, production) {
+const cssLoaderOptions = function(
+  importLoaders,
+  global,
+  production,
+  targetIsNode
+) {
   return {
-    sourceMap: false,
-    modules: !global,
-    minimize: production !== false,
+    exportOnlyLocals: targetIsNode,
+    sourceMap: !production,
+    modules: global ? 'global' : 'local',
     importLoaders,
     localIdentName: global
       ? undefined
-      : production !== false ? '[hash:base64]' : '[name]__[local]___[hash:base64:5]',
-    discardComments: {
-      removeAll: production !== false,
+      : production !== false
+      ? '[hash:base64]'
+      : '[name]__[local]___[hash:base64:5]',
+  };
+};
+
+const createScssModuleUse = function({
+  target,
+  extractLoader,
+  global = false,
+  plugins,
+  production,
+  themeFile,
+  includePaths = [],
+  resolveLoader = defaultResolveLoader,
+} = {}) {
+  if (global && target === 'node') {
+    return [resolveLoader('ignore-loader')];
+  }
+
+  return [
+    !production &&
+      target !== 'node' && { loader: resolveLoader('extracted-loader') },
+    target !== 'node' && extractLoader,
+    {
+      loader: resolveLoader('css-loader'),
+      options: cssLoaderOptions(2, global, production, target === 'node'),
     },
-  };
+    !global &&
+      !production &&
+      target !== 'node' && {
+        loader: resolveLoader('typed-css-modules-loader'),
+        options: { noEmit: true },
+      },
+    {
+      loader: resolveLoader('postcss-loader'),
+      options: {
+        ident: 'postcss',
+        sourceMap: !production,
+        plugins: () => plugins,
+      },
+    },
+    {
+      loader: resolveLoader('sass-loader'),
+      options: {
+        sourceMap: !production,
+        outputStyle: production !== false && 'compressed',
+        data: `$env: ${process.env.NODE_ENV};${
+          themeFile ? `@import '${path.resolve(themeFile)}';` : ''
+        }`,
+        includePaths,
+      },
+    },
+  ].filter(Boolean);
 };
 
-const createScssModuleRule = function(
-  { extractLoader, global = false, plugins, production, themeFile, includePaths = [], resolveLoader = defaultResolveLoader } = {},
-) {
-  return {
-    test: global ? /\.global\.scss$/ : /^((?!\.global).)*\.scss$/,
-    use: [
-      extractLoader,
-      !global ? {
-        loader: resolveLoader('typings-for-css-modules-loader'),
-        options: {
-          namedExports: true,
-          ...cssLoaderOptions(2, global, production),
-        }
-      } : {
-        loader: resolveLoader('css-loader'),
-        options: cssLoaderOptions(2, global, production),
-      },
-      {
-        loader: resolveLoader('postcss-loader'),
-        options: {
-          ident: 'postcss',
-          sourceMap: false,
-          plugins: () => plugins,
-        },
-      },
-      {
-        loader: resolveLoader('sass-loader'),
-        options: {
-          sourceMap: false,
-          outputStyle: production !== false && 'compressed',
-          data: `$env: ${process.env.NODE_ENV};${themeFile
-            ? `@import '${path.resolve(themeFile)}';`
-            : ''}`,
-          includePaths,
-        },
-      },
-    ].filter(Boolean),
-  };
-};
+const createCssModuleRule = function({
+  target,
+  extractLoader,
+  global = false,
+  plugins,
+  production,
+  resolveLoader = defaultResolveLoader,
+}) {
+  if (global && target === 'node') {
+    return [resolveLoader('ignore-loader')];
+  }
 
-const createCssModuleRule = function({ extractLoader, global = false, plugins, production, resolveLoader = defaultResolveLoader }) {
   return {
     test: /\.css$/,
     use: [
-      extractLoader,
+      !production &&
+        target !== 'node' && { loader: resolveLoader('extracted-loader') },
+      target !== 'node' && extractLoader,
       {
-        loader: resolveLoader('typings-for-css-modules-loader'),
-        options: {
-          namedExports: true,
-          ...cssLoaderOptions(1, global, production),
-        },
+        loader: resolveLoader('css-loader'),
+        options: cssLoaderOptions(1, global, production, target === 'node'),
       },
+      !global &&
+        !production &&
+        target !== 'node' && {
+          loader: resolveLoader('typed-css-modules-loader'),
+          options: { noEmit: true },
+        },
       {
         loader: resolveLoader('postcss-loader'),
         options: {
           ident: 'postcss',
-          sourceMap: false,
+          sourceMap: !production,
           plugins: () => plugins,
         },
       },
@@ -82,31 +115,57 @@ const createCssModuleRule = function({ extractLoader, global = false, plugins, p
   };
 };
 
-exports.createModuleRules = function(
-  { extractLoader, plugins, production, themeFile, includePaths, resolveLoader = defaultResolveLoader } = {},
-) {
-  return [
-    createScssModuleRule({
-      extractLoader,
-      global: true,
-      plugins,
-      production,
-      themeFile,
-      includePaths,
-      resolveLoader,
-    }),
+const fileExtensions = ['css', 'scss'];
+exports.stylesCacheGroups = {
+  name: 'styles',
+  test: new RegExp(`\\.+(${[...fileExtensions].join('|')})$`),
+  chunks: 'all',
+  enforce: true,
+};
 
-    createScssModuleRule({
-      extractLoader,
-      global: false,
-      plugins,
-      production,
-      themeFile,
-      includePaths,
-      resolveLoader,
-    }),
+exports.createModuleRules = function({
+  target,
+  extractLoader,
+  plugins,
+  production,
+  themeFile,
+  includePaths,
+  resolveLoader = defaultResolveLoader,
+} = {}) {
+  return [
+    {
+      test: /\.scss$/,
+      oneOf: [
+        {
+          test: /\.global\.scss$/,
+          use: createScssModuleUse({
+            target,
+            extractLoader,
+            global: true,
+            plugins,
+            production,
+            themeFile,
+            includePaths,
+            resolveLoader,
+          }),
+        },
+        {
+          use: createScssModuleUse({
+            target,
+            extractLoader,
+            global: false,
+            plugins,
+            production,
+            themeFile,
+            includePaths,
+            resolveLoader,
+          }),
+        },
+      ],
+    },
 
     createCssModuleRule({
+      target,
       extractLoader,
       global: false,
       plugins,

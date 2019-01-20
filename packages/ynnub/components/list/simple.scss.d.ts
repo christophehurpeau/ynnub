@@ -1,7 +1,2 @@
-export interface ISimpleScss {
-  'simple': string;
-  'ordered': string;
-}
-
-export const locals: ISimpleScss;
-export default locals;
+export const simple: string;
+export const ordered: string;

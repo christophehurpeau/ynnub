@@ -1,5 +1,5 @@
-import { Element, ReactType, ReactNode } from 'react';
 import classNames from 'classnames';
+import React, { ReactType, ReactNode } from 'react';
 import Button from './Button';
 import List from './List';
 import s from './dropdown.scss';
@@ -7,19 +7,19 @@ import s from './dropdown.scss';
 export { ListItem } from './List';
 
 export interface Props {
-  as?: ReactType,
-  tagName?: null,
-  className?: string,
-  label: ReactNode,
-  button?: boolean,
-  buttonClassName?: string,
-  disabled?: boolean,
-  children: ReactNode,
-  [prop: string]: any,
+  as?: ReactType;
+  tagName?: null;
+  className?: string;
+  label: ReactNode;
+  button?: boolean;
+  buttonClassName?: string;
+  disabled?: boolean;
+  children: ReactNode;
+  [prop: string]: any;
 }
 
 export default ({
-  as: AsType = 'div',
+  as: As = 'div',
   className,
   label,
   button,
@@ -27,10 +27,10 @@ export default ({
   disabled,
   children,
   ...otherProps
-}: Props): Element => {
+}: Props) => {
   if (!button) {
     return (
-      <AsType
+      <As
         className={classNames(
           s.dropdownContainer,
           s.dropdown,
@@ -39,24 +39,31 @@ export default ({
         )}
       >
         {label}
-        <span key="arrow" className={s.arrow}>▼</span>
+        <span key="arrow" className={s.arrow}>
+          ▼
+        </span>
         <List className={s.list} {...otherProps}>
           {children}
         </List>
-      </AsType>
-    )
+      </As>
+    );
   } else {
     return (
-      <AsType
+      <As
         className={classNames(
           s.dropdownContainer,
           s.resetButton,
           disabled && s.disabled,
           className,
-          )}
+        )}
       >
         <Button
-          label={[label, <span key="arrow" className={s.arrow}>▼</span>]}
+          label={[
+            label,
+            <span key="arrow" className={s.arrow}>
+              ▼
+            </span>,
+          ]}
           disabled={disabled}
           className={classNames(
             s.dropdown,
@@ -69,7 +76,7 @@ export default ({
         <List className={s.list} dense={otherProps.dense}>
           {children}
         </List>
-      </AsType>
-    )
+      </As>
+    );
   }
 };

@@ -1,15 +1,15 @@
-import { ReactElement, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
-export interface Props {
-  className?: string,
-  align?: 'flex-start' | 'flex-end' | 'center' | 'stretch',
-  grow?: true | number,
-  shrink?: true | number,
-  basis?: string,
-  order?: number,
-  padding?: string,
-  children: ReactNode,
-  [prop: string]: any,
+export interface FlexItemProps {
+  className?: string;
+  align?: 'flex-start' | 'flex-end' | 'center' | 'stretch';
+  grow?: true | number;
+  shrink?: true | number;
+  basis?: string;
+  order?: number;
+  padding?: string;
+  children: ReactNode;
+  [prop: string]: any;
 }
 
 const valueToNumber = (value: any) => {
@@ -26,11 +26,16 @@ export default ({
   padding,
   children,
   ...otherProps
-}: Props): ReactElement<'div'> => (
+}: FlexItemProps) => (
   <div
-    style={{ alignSelf: align, flex: `${valueToNumber(grow)} ${valueToNumber(shrink)} ${basis}`, order, padding }}
+    style={{
+      alignSelf: align,
+      flex: `${valueToNumber(grow)} ${valueToNumber(shrink)} ${basis}`,
+      order,
+      padding,
+    }}
     {...otherProps}
   >
     {children}
   </div>
-)
+);

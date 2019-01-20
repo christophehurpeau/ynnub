@@ -1,9 +1,4 @@
-export interface ISpinnerScss {
-  'spinner': string;
-  'rotator': string;
-  'path': string;
-  'dash': string;
-}
-
-export const locals: ISpinnerScss;
-export default locals;
+export const spinner: string;
+export const rotator: string;
+export const path: string;
+export const dash: string;

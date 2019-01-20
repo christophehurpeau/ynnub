@@ -1,6 +1,15 @@
-# ynnub
+<h3 align="center">
+  ynnub
+</h3>
 
-A css module framework in less. Written for `react` and `webpack` with css modules.
+<p align="center">
+  A css module framework in less. Written for `react` and `webpack` with css modules.
+</p>
+
+<p align="center">
+  <a href="https://npmjs.org/package/ynnub"><img src="https://img.shields.io/npm/v/ynnub.svg?style=flat-square"></a>
+  <a href="https://david-dm.org/christophehurpeau/ynnub?path=packages/ynnub"><img src="https://david-dm.org/christophehurpeau/ynnub?path=packages/ynnub.svg?style=flat-square"></a>
+</p>
 
 ## What does `ynnub` means ?
 
@@ -28,7 +37,7 @@ yarn add --dev ynnub-webpack-config extract-text-webpack-plugin css-loader postc
 ```js
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const { createModuleRules, createExtractPlugin } = require('ynnub-webpack-config');
+const { createModuleRules } = require('ynnub-webpack-config');
 
 module.exports = {
   moduleRules: [
@@ -51,8 +60,11 @@ module.exports = {
   ],
 
   plugins: [
-    createExtractPlugin(MiniCssExtractPlugin, {
+     new MiniCssExtractPlugin({
+      // disable: target === 'node',
+      filename: `styles.css`,
     }),
+
     new OptimizeCssAssetsPlugin(),
   ]
 }
