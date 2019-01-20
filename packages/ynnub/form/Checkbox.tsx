@@ -1,5 +1,8 @@
-import InputText, { Props as InputTextProps } from './InputText';
+import React from 'react';
+import InputText, { InputTextProps } from './InputText';
 
-type Props = InputTextProps & { type: never };
+export interface Props extends InputTextProps {
+  type?: never;
+}
 
 export default (props: Props) => <InputText type="checkbox" {...props} />;

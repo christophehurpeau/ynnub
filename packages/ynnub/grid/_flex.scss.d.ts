@@ -1,8 +1,3 @@
-export interface I_flexScss {
-  'flex': string;
-  'withGutter': string;
-  'responsive': string;
-}
-
-export const locals: I_flexScss;
-export default locals;
+export const flex: string;
+export const withGutter: string;
+export const responsive: string;

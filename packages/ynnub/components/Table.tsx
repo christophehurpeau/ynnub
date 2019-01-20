@@ -1,14 +1,14 @@
-import { ReactElement, ReactNode } from 'react';
 import classNames from 'classnames';
+import React, { ReactNode } from 'react';
 import s from './table.scss';
 
 export interface Props {
-  className?: string,
-  centered?: boolean,
-  bordered?: boolean,
-  striped?: boolean,
-  children: ReactNode,
-  [prop: string]: any,
+  className?: string;
+  centered?: boolean;
+  bordered?: boolean;
+  striped?: boolean;
+  children: ReactNode;
+  [prop: string]: any;
 }
 
 export default ({
@@ -18,7 +18,7 @@ export default ({
   centered,
   children,
   ...otherProps
-}: Props): ReactElement<'table'> => (
+}: Props) => (
   <table
     className={classNames(
       s.table,
@@ -31,4 +31,4 @@ export default ({
   >
     {children}
   </table>
-)
+);

@@ -1,9 +1,4 @@
-export interface IHolygrailScss {
-  'container': string;
-  'body': string;
-  'content': string;
-  'aside': string;
-}
-
-export const locals: IHolygrailScss;
-export default locals;
+export const container: string;
+export const body: string;
+export const content: string;
+export const aside: string;

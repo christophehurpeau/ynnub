@@ -1,9 +1,4 @@
-export interface IRadioSelectScss {
-  'container': string;
-  'heading': string;
-  'flexContainer': string;
-  'radio': string;
-}
-
-export const locals: IRadioSelectScss;
-export default locals;
+export const container: string;
+export const heading: string;
+export const flexContainer: string;
+export const radio: string;

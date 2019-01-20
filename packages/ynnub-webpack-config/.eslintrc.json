@@ -1,0 +1,6 @@
+{
+  "extends": [
+    "pob",
+    "pob/node"
+  ]
+}

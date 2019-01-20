@@ -2,40 +2,50 @@
   "name": "ynnub",
   "version": "0.6.2",
   "description": "A css module framework in less. Written for `react` and `webpack` with css modules.",
-  "main": "index.js",
-  "repository": "git://github.com/christophehurpeau/ynnub.git",
+  "keywords": [],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "MIT",
+  "repository": "git@github.com:christophehurpeau/ynnub.git",
+  "homepage": "https://github.com/christophehurpeau/ynnub",
   "bugs": {
     "url": "https://github.com/christophehurpeau/ynnub/issues"
   },
-  "homepage": "https://github.com/christophehurpeau/ynnub",
-  "scripts": {
-    "lint": "tsc --noEmit && eslint components form grid interactions layout text utils *.tsx"
+  "engines": {
+    "node": ">=6.5.0"
   },
-  "devDependencies": {
-    "eslint": "^5.5.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-pob": "^22.0.3",
-    "eslint-config-prettier": "^3.0.1",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-prettier": "^2.6.2",
-    "eslint-plugin-react": "^7.11.1",
-    "eslint-plugin-typescript": "^0.12.0",
-    "prettier": "^1.14.2",
-    "react": "^16.5.1",
-    "typescript": "^3.0.3"
+  "main": "index.js",
+  "scripts": {
+    "lint": "tsc --noEmit && eslint --ext ts,tsx components form grid layout text utils *.tsx"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true,
+    "arrowParens": "always"
+  },
+  "dependencies": {
+    "@material/button": "0.29.0",
+    "@material/list": "0.29.0",
+    "@material/tabs": "0.29.0",
+    "@material/theme": "0.29.0",
+    "@material/typography": "0.28.0"
   },
   "peerDependencies": {
     "react": "^16.0.0"
   },
-  "dependencies": {
-    "@material/button": "^0.29.0",
-    "@material/list": "^0.29.0",
-    "@material/tabs": "^0.29.0",
-    "@material/theme": "^0.29.0",
-    "@material/typography": "^0.28.0",
-    "@types/react": "^16.4.13"
+  "devDependencies": {
+    "@types/react": "^16.7.20",
+    "babel-eslint": "^10.0.1",
+    "eslint": "5.12.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-pob": "25.0.0",
+    "eslint-config-prettier": "^3.6.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-typescript": "^0.14.0",
+    "prettier": "^1.16.0",
+    "react": "^16.7.0",
+    "typescript": "^3.3.0-dev.20190119"
   }
 }

@@ -1,5 +1,8 @@
-import Button from './Button';
+import React from 'react';
+import Button, { ButtonProps } from './Button';
 
-export default (props) => (
-  <Button flat {...props} />
-)
+interface FlatButtonProps extends ButtonProps {
+  flat: never;
+}
+
+export default (props: FlatButtonProps) => <Button flat {...props} />;

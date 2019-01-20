@@ -1,20 +1,14 @@
-import { ReactElement, ReactNode } from 'react';
-import s from '@material/button/dist/mdc.button.min.css';
+import React, { ReactNode } from 'react';
 
 export interface Props {
-  className?: string,
-  dark?: boolean,
-  children: ReactNode,
-  [prop: string]: any,
+  className?: string;
+  dark?: boolean;
+  children: ReactNode;
+  [prop: string]: any;
 }
 
-export default ({
-  className,
-  dark,
-  children,
-  ...otherProps
-}: Props): ReactElement<'div'> => (
-  <div {...otherProps} className={s['mdc-theme--dark']}>
+export default ({ className, dark, children, ...otherProps }: Props) => (
+  <div {...otherProps} className={dark ? 'mdc-theme--dark' : undefined}>
     {children}
   </div>
-)
+);

@@ -1,12 +1,12 @@
-import React, { ReactType, ReactElement, ReactNode } from 'react';
 import classNames from 'classnames';
+import React, { ReactType, ReactNode } from 'react';
 import './tabbar.global.scss';
 
 export interface Props {
-  as?: ReactType,
-  className?: string,
-  children: ReactNode,
-  [prop: string]: any,
+  as?: ReactType;
+  className?: string;
+  children: ReactNode;
+  [prop: string]: any;
 }
 
 export default ({
@@ -14,26 +14,20 @@ export default ({
   className,
   children,
   ...otherProps
-}: Props): ReactElement<any> => (
-  <As
-    className={classNames(
-      'mdc-tab-bar',
-      className,
-    )}
-    {...otherProps}
-  >
+}: Props) => (
+  <As className={classNames('mdc-tab-bar', className)} {...otherProps}>
     {children}
   </As>
 );
 
 export type TabItemPropsType = {
-  as?: ReactType,
-  className?: string,
-  active?: boolean,
-  label?: ReactNode,
-  children?: ReactNode,
-  [prop: string]: any,
-}
+  as?: ReactType;
+  className?: string;
+  active?: boolean;
+  label?: ReactNode;
+  children?: ReactNode;
+  [prop: string]: any;
+};
 
 export const Tab = ({
   as: As = 'a',
@@ -42,12 +36,11 @@ export const Tab = ({
   active,
   children,
   ...otherProps
-}: TabItemPropsType): ReactElement<any> => (
-  <As className={classNames(
-    'mdc-tab',
-    active && 'mdc-tab--active',
-    className,
-  )} {...otherProps}>
+}: TabItemPropsType) => (
+  <As
+    className={classNames('mdc-tab', active && 'mdc-tab--active', className)}
+    {...otherProps}
+  >
     {children || label}
   </As>
 );

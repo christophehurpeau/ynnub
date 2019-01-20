@@ -1,9 +1,22 @@
 {
   "extends": [
     "pob/babel",
-    "pob/react",
-    "pob/typescript"
+    "pob/typescript",
+    "pob/typescript-react"
   ],
+  "parser": "typescript-eslint-parser",
+  "plugins": [
+    "typescript"
+  ],
+  "settings": {
+    "import/core-modules": [
+      "classnames",
+      "babel-plugin-jsx-code/Component"
+    ]
+  },
+  "rules": {
+    "jsx-a11y/label-has-for": "off"
+  },
   "overrides": [
     {
       "files": [
@@ -22,9 +35,5 @@
         ]
       }
     }
-  ],
-  "parser": "typescript-eslint-parser",
-  "plugins": [
-    "typescript"
   ]
 }
