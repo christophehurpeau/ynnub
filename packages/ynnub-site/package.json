@@ -1,7 +1,7 @@
 {
   "name": "ynnub-site",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "",
   "keywords": [],
   "author": "Christophe Hurpeau <christophe@hurpeau.com>",
@@ -30,7 +30,7 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-icons": "^3.3.0",
-    "ynnub": "^0.6.0"
+    "ynnub": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -64,6 +64,6 @@
     "typed-css-modules-loader": "^0.0.17",
     "typescript": "3.3.0-dev.20190119",
     "typescript-eslint-parser": "21.0.2",
-    "ynnub-webpack-config": "0.0.0"
+    "ynnub-webpack-config": "^1.0.0"
   }
 }

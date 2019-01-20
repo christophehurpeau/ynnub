@@ -1,6 +1,6 @@
 {
   "name": "ynnub-webpack-config",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "webpack config for ynnub",
   "main": "index.js",
   "typings": "index.d.ts",
