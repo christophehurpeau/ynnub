@@ -4,7 +4,7 @@ import FlexItem, { FlexItemProps } from './FlexItem';
 export { FlexItem };
 
 export interface Props extends FlexItemProps {
-  children: Array<ReactChild>;
+  children: ReactChild[];
 }
 
 export default ({ children, ...otherProps }: Props) => (

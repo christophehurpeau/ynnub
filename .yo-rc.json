@@ -4,6 +4,15 @@
       "authorName": "Christophe Hurpeau",
       "authorEmail": "christophe@hurpeau.com",
       "authorUrl": "https://christophe.hurpeau.com"
+    },
+    "monorepo": {
+      "ci": false,
+      "packageNames": [
+        "ynnub",
+        "ynnub-site",
+        "ynnub-webpack-config"
+      ],
+      "typescript": false
     }
   }
 }

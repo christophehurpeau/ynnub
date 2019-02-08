@@ -18,13 +18,14 @@
   },
   "scripts": {},
   "devDependencies": {
-    "eslint": "^5.12.1",
-    "eslint-config-pob": "^25.0.0",
+    "eslint": "^5.13.0",
+    "eslint-config-pob": "^26.0.8",
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-typescript": "^0.14.0",
-    "prettier": "^1.16.0",
-    "typescript": "^3.3.0-dev.20190119"
+    "prettier": "^1.16.4",
+    "typescript": "^3.3.3",
+    "webpack": "^4.29.3"
   },
   "peerDependencies": {
     "webpack": "^4.19.0"
@@ -36,7 +37,7 @@
     "@material/theme": "^0.29.0",
     "@material/typography": "^0.28.0",
     "@types/mini-css-extract-plugin": "^0.2.0",
-    "@types/react": "^16.7.20",
-    "@types/webpack": "^4.4.23"
+    "@types/react": "^16.8.2",
+    "@types/webpack": "^4.4.24"
   }
 }

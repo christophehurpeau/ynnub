@@ -20,14 +20,14 @@ export default ({
   </As>
 );
 
-export type TabItemPropsType = {
+export interface TabItemPropsType {
   as?: ReactType;
   className?: string;
   active?: boolean;
   label?: ReactNode;
   children?: ReactNode;
   [prop: string]: any;
-};
+}
 
 export const Tab = ({
   as: As = 'a',

@@ -34,7 +34,7 @@ export interface Props {
   flex?: boolean;
   flexFlow?: FlexGridProps['flow'];
   name: string;
-  children: Array<ReactElement<RadioPropsForSelect>>;
+  children: ReactElement<RadioPropsForSelect>[];
   value?: any;
   [prop: string]: any;
 }

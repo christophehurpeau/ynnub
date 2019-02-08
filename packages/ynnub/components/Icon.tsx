@@ -4,7 +4,7 @@ export type IconType = string | ReactElement<IconProps>;
 
 export interface IconProps {
   className?: string;
-  style?: Object;
+  style?: Record<string, any>;
 }
 
 export interface Props {
