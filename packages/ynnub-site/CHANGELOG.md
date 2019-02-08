@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/christophehurpeau/ynnub/compare/ynnub-site@1.0.0...ynnub-site@1.1.0) (2019-02-08)
+
+
+### Features
+
+* update dependencies ([3052722](https://github.com/christophehurpeau/ynnub/commit/3052722))
+
+
+
+
+
 # 1.0.0 (2019-01-20)
 
 
