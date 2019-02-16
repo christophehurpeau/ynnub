@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/christophehurpeau/ynnub/compare/ynnub@1.1.0...ynnub@1.1.1) (2019-02-16)
+
+
+### Bug Fixes
+
+* add reset.global.scss in Head ([55fe4fc](https://github.com/christophehurpeau/ynnub/commit/55fe4fc))
+
+
+
+
+
 # [1.1.0](https://github.com/christophehurpeau/ynnub/compare/ynnub@1.0.0...ynnub@1.1.0) (2019-02-08)
 
 
