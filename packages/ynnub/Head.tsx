@@ -1,4 +1,5 @@
 import React from 'react';
+import './reset.global.scss';
 import './layout/page.global.scss';
 
 export default () => (
