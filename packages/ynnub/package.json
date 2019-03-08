@@ -23,11 +23,11 @@
     "arrowParens": "always"
   },
   "dependencies": {
-    "@material/button": "0.29.0",
-    "@material/list": "0.29.0",
-    "@material/tabs": "0.29.0",
-    "@material/theme": "0.29.0",
-    "@material/typography": "0.28.0",
+    "@material/button": "0.44.1",
+    "@material/list": "0.44.1",
+    "@material/tabs": "0.44.1",
+    "@material/theme": "0.43.0",
+    "@material/typography": "0.44.1",
     "@types/classnames": "^2.2.7"
   },
   "peerDependencies": {
