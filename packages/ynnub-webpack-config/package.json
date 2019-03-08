@@ -2,30 +2,30 @@
   "name": "ynnub-webpack-config",
   "version": "1.1.0",
   "description": "webpack config for ynnub",
-  "main": "index.js",
-  "typings": "index.d.ts",
-  "repository": "git://github.com/christophehurpeau/ynnub.git",
+  "keywords": [],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
-  "license": "MIT",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com:christophehurpeau/ynnub.git",
+    "directory": "packages/ynnub-webpack-config"
+  },
+  "homepage": "https://github.com/christophehurpeau/ynnub",
   "bugs": {
     "url": "https://github.com/christophehurpeau/ynnub/issues"
   },
-  "homepage": "https://github.com/christophehurpeau/ynnub",
+  "engines": {
+    "node": ">=6.5.0"
+  },
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "lint": "eslint lib/"
+  },
   "prettier": {
     "trailingComma": "es5",
     "singleQuote": true,
     "arrowParens": "always"
-  },
-  "scripts": {},
-  "devDependencies": {
-    "eslint": "^5.13.0",
-    "eslint-config-pob": "^26.0.8",
-    "eslint-plugin-node": "^8.0.1",
-    "eslint-plugin-prettier": "^3.0.1",
-    "eslint-plugin-typescript": "^0.14.0",
-    "prettier": "^1.16.4",
-    "typescript": "^3.3.3",
-    "webpack": "^4.29.3"
   },
   "peerDependencies": {
     "webpack": "^4.19.0"
@@ -37,7 +37,15 @@
     "@material/theme": "^0.29.0",
     "@material/typography": "^0.28.0",
     "@types/mini-css-extract-plugin": "^0.2.0",
-    "@types/react": "^16.8.2",
-    "@types/webpack": "^4.4.24"
+    "@types/react": "^16.8.7",
+    "@types/webpack": "^4.4.25"
+  },
+  "devDependencies": {
+    "@pob/eslint-config": "29.0.1",
+    "@pob/eslint-config-node": "29.0.1",
+    "eslint": "5.15.1",
+    "eslint-plugin-node": "^8.0.1",
+    "prettier": "1.16.4",
+    "webpack": "^4.29.6"
   }
 }

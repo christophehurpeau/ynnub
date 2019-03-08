@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="https://david-dm.org/christophehurpeau/ynnub?path=packages/ynnub-site"><img src="https://david-dm.org/christophehurpeau/ynnub?path=packages/ynnub-site.svg?style=flat-square"></a>
+  <a href="https://david-dm.org/christophehurpeau/ynnub?path=packages/ynnub-site"><img src="https://david-dm.org/christophehurpeau/ynnub.svg?path=packages/ynnub-site?style=flat-square"></a>
 </p>
 
 ## Install

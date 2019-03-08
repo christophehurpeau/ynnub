@@ -5,7 +5,11 @@
   "keywords": [],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",
   "license": "MIT",
-  "repository": "git@github.com:christophehurpeau/ynnub.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com:christophehurpeau/ynnub.git",
+    "directory": "packages/ynnub"
+  },
   "homepage": "https://github.com/christophehurpeau/ynnub",
   "bugs": {
     "url": "https://github.com/christophehurpeau/ynnub/issues"
@@ -22,6 +26,9 @@
     "singleQuote": true,
     "arrowParens": "always"
   },
+  "peerDependencies": {
+    "react": "^16.0.0"
+  },
   "dependencies": {
     "@material/button": "0.29.0",
     "@material/list": "0.29.0",
@@ -30,24 +37,15 @@
     "@material/typography": "0.28.0",
     "@types/classnames": "^2.2.7"
   },
-  "peerDependencies": {
-    "react": "^16.0.0"
-  },
   "devDependencies": {
-    "@types/react": "^16.8.2",
-    "@typescript-eslint/eslint-plugin": "1.3.0",
-    "@typescript-eslint/parser": "1.3.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "5.13.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-pob": "26.0.8",
-    "eslint-config-prettier": "^4.0.0",
-    "eslint-plugin-import": "2.16.0",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-prettier": "^3.0.1",
-    "eslint-plugin-react": "^7.12.4",
-    "prettier": "^1.16.4",
-    "react": "^16.8.1",
-    "typescript": "^3.3.3"
+    "@pob/eslint-config": "29.0.1",
+    "@pob/eslint-config-babel": "29.0.1",
+    "@pob/eslint-config-typescript": "29.0.1",
+    "@pob/eslint-config-typescript-react": "29.0.1",
+    "@types/react": "16.8.7",
+    "eslint": "5.15.1",
+    "prettier": "1.16.4",
+    "react": "16.8.4",
+    "typescript": "3.3.3333"
   }
 }

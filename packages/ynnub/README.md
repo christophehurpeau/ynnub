@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://npmjs.org/package/ynnub"><img src="https://img.shields.io/npm/v/ynnub.svg?style=flat-square"></a>
-  <a href="https://david-dm.org/christophehurpeau/ynnub?path=packages/ynnub"><img src="https://david-dm.org/christophehurpeau/ynnub?path=packages/ynnub.svg?style=flat-square"></a>
+  <a href="https://david-dm.org/christophehurpeau/ynnub?path=packages/ynnub"><img src="https://david-dm.org/christophehurpeau/ynnub.svg?path=packages/ynnub?style=flat-square"></a>
 </p>
 
 ## What does `ynnub` means ?
