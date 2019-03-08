@@ -1,7 +1,7 @@
 {
   "name": "ynnub-site",
   "private": true,
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "",
   "keywords": [],
   "author": "Christophe Hurpeau <christophe@hurpeau.com>",
@@ -33,7 +33,7 @@
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-icons": "^3.3.0",
-    "ynnub": "^1.1.1"
+    "ynnub": "^1.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",

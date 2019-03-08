@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/christophehurpeau/ynnub/compare/ynnub@1.1.1...ynnub@1.1.2) (2019-03-08)
+
+
+### Bug Fixes
+
+* add [@types](https://github.com/types)/classnames as dependency ([14bb6df](https://github.com/christophehurpeau/ynnub/commit/14bb6df))
+
+
+
+
+
 ## [1.1.1](https://github.com/christophehurpeau/ynnub/compare/ynnub@1.1.0...ynnub@1.1.1) (2019-02-16)
 
 
