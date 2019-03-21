@@ -43,7 +43,7 @@
     "@babel/core": "^7.3.4",
     "@babel/preset-typescript": "^7.3.3",
     "@pob/eslint-config-babel": "29.0.1",
-    "@pob/eslint-config-babel-node": "29.0.1",
+    "@pob/eslint-config-babel-node": "29.1.0",
     "@pob/eslint-config-typescript": "29.0.1",
     "@pob/eslint-config-typescript-react": "29.0.1",
     "@types/classnames": "^2.2.7",
