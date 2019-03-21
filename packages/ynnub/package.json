@@ -41,7 +41,7 @@
     "@pob/eslint-config": "29.0.1",
     "@pob/eslint-config-babel": "29.0.1",
     "@pob/eslint-config-typescript": "29.0.1",
-    "@pob/eslint-config-typescript-react": "29.0.1",
+    "@pob/eslint-config-typescript-react": "29.1.0",
     "@types/react": "16.8.7",
     "eslint": "5.15.1",
     "prettier": "1.16.4",
