@@ -45,7 +45,7 @@
     "@types/react": "16.8.7",
     "eslint": "5.15.1",
     "prettier": "1.16.4",
-    "react": "16.8.4",
+    "react": "16.8.6",
     "typescript": "3.3.3333"
   }
 }
