@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import React from 'react';
 import typography from '../text/typography';
 import s from './card.scss';
@@ -20,10 +21,11 @@ function Content({ children }: ContentProps) {
 }
 
 interface CardProps {
+  className?: string;
   children: NonNullable<React.ReactNode>;
 }
-export default function Card({ children }: CardProps) {
-  return <div className={s.card}>{children}</div>;
+export default function Card({ className, children }: CardProps) {
+  return <div className={classNames(s.card, className)}>{children}</div>;
 }
 
 Card.Content = Content;
