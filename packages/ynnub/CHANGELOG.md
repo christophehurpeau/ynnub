@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/christophehurpeau/ynnub/compare/ynnub@1.1.2...ynnub@1.2.0) (2019-03-29)
+
+
+### Features
+
+* add Card component ([58b0f99](https://github.com/christophehurpeau/ynnub/commit/58b0f99))
+
+
+
+
+
 ## [1.1.2](https://github.com/christophehurpeau/ynnub/compare/ynnub@1.1.1...ynnub@1.1.2) (2019-03-08)
 
 
