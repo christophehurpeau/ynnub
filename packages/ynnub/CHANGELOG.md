@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/christophehurpeau/ynnub/compare/ynnub@1.2.0...ynnub@1.3.0) (2019-03-29)
+
+
+### Features
+
+* allow className prop in Card ([e7f309f](https://github.com/christophehurpeau/ynnub/commit/e7f309f))
+
+
+
+
+
 # [1.2.0](https://github.com/christophehurpeau/ynnub/compare/ynnub@1.1.2...ynnub@1.2.0) (2019-03-29)
 
 
