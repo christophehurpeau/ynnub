@@ -12,6 +12,15 @@
       "documentation": false,
       "testing": false,
       "envs": []
+    },
+    "app": {
+      "type": "next.js",
+      "export": true
+    }
+  },
+  "ynnub-site": {
+    "type": {
+      "type": "app"
     }
   }
 }

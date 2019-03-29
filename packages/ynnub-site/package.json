@@ -2,8 +2,6 @@
   "name": "ynnub-site",
   "private": true,
   "version": "1.1.2",
-  "description": "",
-  "keywords": [],
   "author": "Christophe Hurpeau <christophe@hurpeau.com>",
   "license": "ISC",
   "repository": {
@@ -18,11 +16,10 @@
   "scripts": {
     "build": "npm run clean && NODE_ENV=production next build && NODE_ENV=production next export && touch out/.nojekyll",
     "clean": "rm -rf .next out",
-    "lint": "npm run typescript-check && eslint --ext .ts,.tsx src/",
+    "lint": "tsc && eslint --ext .ts,.tsx src/",
     "serve": "serve out",
-    "start": "next dev",
-    "start-prod": "next start",
-    "typescript-check": "tsc --noEmit"
+    "start": "next dev --port=3100",
+    "start-prod": "next start"
   },
   "prettier": {
     "trailingComma": "all",
@@ -34,35 +31,34 @@
     "next": "^7.0.2-canary.43",
     "nightingale-app-console": "^3.1.0",
     "prop-types": "^15.7.2",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
     "react-icons": "^3.5.0",
     "ynnub": "^1.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/preset-typescript": "^7.3.3",
-    "@pob/eslint-config-babel": "29.0.1",
-    "@pob/eslint-config-babel-node": "29.0.1",
-    "@pob/eslint-config-typescript": "29.0.1",
-    "@pob/eslint-config-typescript-react": "29.0.1",
+    "@pob/eslint-config-babel": "29.1.0",
+    "@pob/eslint-config-typescript": "29.1.0",
+    "@pob/eslint-config-typescript-react": "29.1.0",
     "@types/classnames": "^2.2.7",
     "@types/next": "^7.0.9",
-    "@types/react": "^16.8.7",
+    "@types/react": "16.8.10",
     "@types/react-icons": "^3.0.0",
     "autoprefixer": "^9.4.10",
     "babel-plugin-inline-classnames-babel7": "^1.1.9",
     "babel-plugin-jsx-code": "^1.0.1",
     "babel-preset-pob-env": "^2.15.3",
     "cssnano": "^4.1.10",
-    "eslint": "5.15.1",
+    "eslint": "5.15.3",
     "node-sass": "^4.11.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
     "prettier": "1.16.4",
     "sass-loader": "^7.1.0",
     "typed-css-modules-loader": "^0.0.17",
-    "typescript": "^3.3.3333",
+    "typescript": "3.3.4000",
     "ynnub-webpack-config": "^1.1.0"
   }
 }

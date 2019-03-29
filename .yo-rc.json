@@ -13,6 +13,9 @@
         "ynnub-webpack-config"
       ],
       "typescript": false
+    },
+    "renovate": {
+      "enable": true
     }
   }
 }

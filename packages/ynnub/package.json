@@ -38,14 +38,14 @@
     "@types/classnames": "^2.2.7"
   },
   "devDependencies": {
-    "@pob/eslint-config": "29.0.1",
-    "@pob/eslint-config-babel": "29.0.1",
-    "@pob/eslint-config-typescript": "29.0.1",
-    "@pob/eslint-config-typescript-react": "29.0.1",
-    "@types/react": "16.8.7",
-    "eslint": "5.15.1",
+    "@pob/eslint-config": "29.1.0",
+    "@pob/eslint-config-babel": "29.1.0",
+    "@pob/eslint-config-typescript": "29.1.0",
+    "@pob/eslint-config-typescript-react": "29.1.0",
+    "@types/react": "16.8.10",
+    "eslint": "5.15.3",
     "prettier": "1.16.4",
-    "react": "16.8.4",
-    "typescript": "3.3.3333"
+    "react": "16.8.6",
+    "typescript": "3.3.4000"
   }
 }
