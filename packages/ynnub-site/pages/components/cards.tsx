@@ -1,6 +1,7 @@
+import React from 'react';
 import Code from 'babel-plugin-jsx-code/Component';
 import typography from 'ynnub/text/typography';
-import sCard from 'ynnub/components/card.scss';
+import Card from 'ynnub/components/Card';
 import Layout, { RenderCode } from '../../components/Layout';
 
 export default () => (
@@ -20,14 +21,12 @@ import sCard from 'ynnub/components/card.scss';
     <h2 className={typography.title}>Basic card</h2>
 
     <Code render={RenderCode}>
-      <div className={sCard.card}>
-        <div className={sCard.content}>
-          <h3 className={[typography.headline, sCard.title].join(' ')}>
-            title
-          </h3>
+      <Card>
+        <Card.Content>
+          <Card.Title>title</Card.Title>
           content
-        </div>
-      </div>
+        </Card.Content>
+      </Card>
     </Code>
   </Layout>
 );

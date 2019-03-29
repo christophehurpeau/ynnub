@@ -8,6 +8,9 @@
     "@pob/eslint-config-typescript-react"
   ],
   "settings": {
-    "import/core-modules": ["classnames"]
+    "import/core-modules": [
+      "classnames",
+      "babel-plugin-jsx-code/Component"
+    ]
   }
 }
