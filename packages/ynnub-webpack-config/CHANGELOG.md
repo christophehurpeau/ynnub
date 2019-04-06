@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/christophehurpeau/ynnub/compare/ynnub-webpack-config@1.1.2...ynnub-webpack-config@1.1.3) (2019-04-06)
+
+
+### Bug Fixes
+
+* update .d.ts ynnub-webpack-config ([cc239ae](https://github.com/christophehurpeau/ynnub/commit/cc239ae))
+
+
+
+
+
 ## [1.1.2](https://github.com/christophehurpeau/ynnub/compare/ynnub-webpack-config@1.1.1...ynnub-webpack-config@1.1.2) (2019-04-06)
 
 **Note:** Version bump only for package ynnub-webpack-config

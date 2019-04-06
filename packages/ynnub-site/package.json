@@ -1,7 +1,7 @@
 {
   "name": "ynnub-site",
   "private": true,
-  "version": "1.2.2",
+  "version": "1.2.3",
   "author": "Christophe Hurpeau <christophe@hurpeau.com>",
   "license": "ISC",
   "repository": {
@@ -59,6 +59,6 @@
     "sass-loader": "^7.1.0",
     "typed-css-modules-loader": "^0.0.17",
     "typescript": "3.3.4000",
-    "ynnub-webpack-config": "^1.1.2"
+    "ynnub-webpack-config": "^1.1.3"
   }
 }
