@@ -25,16 +25,15 @@ const cssLoaderOptions = function(
   };
 };
 
-const createScssModuleUse = function({
+const createCssModuleUse = function({
   target,
   extractLoader,
   global = false,
   plugins,
   production,
-  themeFile,
-  includePaths = [],
   resolveLoader = defaultResolveLoader,
-} = {}) {
+  otherLoaders = [],
+}) {
   if (global && target === 'node') {
     return [resolveLoader('ignore-loader')];
   }
@@ -45,7 +44,12 @@ const createScssModuleUse = function({
     target !== 'node' && extractLoader,
     {
       loader: resolveLoader('css-loader'),
-      options: cssLoaderOptions(2, global, production, target === 'node'),
+      options: cssLoaderOptions(
+        otherLoaders.length + 1 + (!global && !production ? 1 : 0),
+        global,
+        production,
+        target === 'node'
+      ),
     },
     !global &&
       !production &&
@@ -61,57 +65,49 @@ const createScssModuleUse = function({
         plugins: () => plugins,
       },
     },
-    {
-      loader: resolveLoader('sass-loader'),
-      options: {
-        sourceMap: !production,
-        outputStyle: production !== false && 'compressed',
-        data: `$env: ${process.env.NODE_ENV};${
-          themeFile ? `@import '${path.resolve(themeFile)}';` : ''
-        }`,
-        includePaths,
-      },
-    },
+    ...otherLoaders,
   ].filter(Boolean);
 };
 
-const createCssModuleRule = function({
+exports.createCssModuleUse = createCssModuleUse;
+
+const createScssModuleUse = function({
   target,
   extractLoader,
   global = false,
   plugins,
   production,
+  themeFile,
+  includePaths = [],
   resolveLoader = defaultResolveLoader,
-}) {
-  if (global && target === 'node') {
-    return [resolveLoader('ignore-loader')];
-  }
+} = {}) {
+  return createCssModuleUse({
+    target,
+    extractLoader,
+    global,
+    plugins,
+    production,
+    resolveLoader,
+    otherLoaders: [
+      {
+        loader: resolveLoader('sass-loader'),
+        options: {
+          sourceMap: !production,
+          outputStyle: production !== false && 'compressed',
+          data: `$env: ${process.env.NODE_ENV};${
+            themeFile ? `@import '${path.resolve(themeFile)}';` : ''
+          }`,
+          includePaths,
+        },
+      },
+    ],
+  });
+};
 
+const createCssModuleRule = function(options) {
   return {
     test: /\.css$/,
-    use: [
-      !production &&
-        target !== 'node' && { loader: resolveLoader('extracted-loader') },
-      target !== 'node' && extractLoader,
-      {
-        loader: resolveLoader('css-loader'),
-        options: cssLoaderOptions(1, global, production, target === 'node'),
-      },
-      !global &&
-        !production &&
-        target !== 'node' && {
-          loader: resolveLoader('typed-css-modules-loader'),
-          options: { noEmit: true },
-        },
-      {
-        loader: resolveLoader('postcss-loader'),
-        options: {
-          ident: 'postcss',
-          sourceMap: !production,
-          plugins: () => plugins,
-        },
-      },
-    ].filter(Boolean),
+    use: createCssModuleUse(options),
   };
 };
 
