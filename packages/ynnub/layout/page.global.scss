@@ -2,6 +2,7 @@
 @import "~@material/theme/_variables";
 @import '../variables/page';
 @import '../variables/responsive';
+@import '../polyfills';
 
 :global {
   html {
@@ -25,8 +26,4 @@
     color: $body-color;
     background: $body-background;
   }
-
-  // polyfills
-
-  *[hidden] { display: none; }
 }
