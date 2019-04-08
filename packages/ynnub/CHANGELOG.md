@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/christophehurpeau/ynnub/compare/ynnub@1.3.0...ynnub@1.4.0) (2019-04-08)
+
+
+### Features
+
+* export polyfills separatly ([7597cad](https://github.com/christophehurpeau/ynnub/commit/7597cad))
+
+
+
+
+
 # [1.3.0](https://github.com/christophehurpeau/ynnub/compare/ynnub@1.2.0...ynnub@1.3.0) (2019-03-29)
 
 

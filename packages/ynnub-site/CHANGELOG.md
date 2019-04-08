@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.4](https://github.com/christophehurpeau/ynnub/compare/ynnub-site@1.2.3...ynnub-site@1.2.4) (2019-04-08)
+
+**Note:** Version bump only for package ynnub-site
+
+
+
+
+
 ## [1.2.3](https://github.com/christophehurpeau/ynnub/compare/ynnub-site@1.2.2...ynnub-site@1.2.3) (2019-04-06)
 
 **Note:** Version bump only for package ynnub-site
