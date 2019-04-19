@@ -39,8 +39,6 @@ const createCssModuleUse = function({
   }
 
   return [
-    !production &&
-      target !== 'node' && { loader: resolveLoader('extracted-loader') },
     target !== 'node' && extractLoader,
     {
       loader: resolveLoader('css-loader'),
