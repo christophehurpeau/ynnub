@@ -105,6 +105,7 @@ const createScssModuleUse = function({
 const createCssModuleRule = function(options) {
   return {
     test: /\.css$/,
+    sideEffects: true,
     use: createCssModuleUse(options),
   };
 };
@@ -132,6 +133,7 @@ exports.createModuleRules = function({
       oneOf: [
         {
           test: /\.global\.scss$/,
+          sideEffects: true,
           use: createScssModuleUse({
             target,
             extractLoader,
@@ -144,6 +146,7 @@ exports.createModuleRules = function({
           }),
         },
         {
+          sideEffects: true,
           use: createScssModuleUse({
             target,
             extractLoader,
