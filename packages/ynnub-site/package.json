@@ -44,7 +44,7 @@
     "@pob/eslint-config-typescript-react": "29.1.0",
     "@types/classnames": "^2.2.7",
     "@types/next": "^7.0.9",
-    "@types/react": "16.8.10",
+    "@types/react": "16.9.2",
     "@types/react-icons": "^3.0.0",
     "autoprefixer": "^9.4.10",
     "babel-plugin-inline-classnames-babel7": "^1.1.9",
