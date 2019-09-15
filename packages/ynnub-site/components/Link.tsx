@@ -1,11 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
+import React from 'react';
 import Link from 'next/link';
 
 export default (
   props: React.DetailedHTMLProps<
     React.AnchorHTMLAttributes<HTMLAnchorElement>,
     HTMLAnchorElement
-  >,
+  > & { href: string },
 ) => (
   <Link
     href={props.href}

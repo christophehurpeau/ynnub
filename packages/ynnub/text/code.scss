@@ -1,6 +1,7 @@
 @import '../mixins/block';
-@import '../variables/page';
 @import '../variables/text';
+
+$font-monospace: 95% Menlo, Monaco, Consolas, monospace !default;
 
 :global {
   code, kbd, pre, samp {

@@ -1,13 +1,13 @@
 import Code from 'babel-plugin-jsx-code/Component';
 import 'ynnub/text/code.scss';
-import typography from 'ynnub/text/typography';
+import { Typography } from 'antd';
 import Layout, { RenderCode } from '../../../components/Layout';
 
 export default () => (
   <Layout>
-    <h1 className={typography.headline}>Paragraphs</h1>
+    <Typography.Title>Paragraphs</Typography.Title>
 
-    <h2 className={typography.title}>{'<p>'}: paragraph</h2>
+    <Typography.Title level={2}>{'<p>'}: paragraph</Typography.Title>
 
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
@@ -19,7 +19,7 @@ export default () => (
       penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </p>
 
-    <h2 className={typography.title}>{'<article>'}: article</h2>
+    <Typography.Title level={2}>{'<article>'}: article</Typography.Title>
 
     <p>
       The{' '}
@@ -39,7 +39,7 @@ export default () => (
     <Code render={RenderCode}>
       <article>
         <header>
-          <h1>Apple</h1>
+          <Typography.Title>Apple</Typography.Title>
           <p>
             Published: <time itemProp="datePublished">2009-10-09</time>
           </p>

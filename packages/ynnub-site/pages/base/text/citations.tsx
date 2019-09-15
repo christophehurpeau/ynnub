@@ -1,14 +1,17 @@
 import Code from 'babel-plugin-jsx-code/Component';
+import React from 'react';
+import { Typography } from 'antd';
 import Layout, { RenderCode } from '../../../components/Layout';
 import 'ynnub/text/blockquote.scss';
 import 'ynnub/text/quote.scss';
-import typography from 'ynnub/text/typography';
 
 export default () => (
   <Layout>
-    <h1 className={typography.headline}>Citations</h1>
+    <Typography.Title>Citations</Typography.Title>
 
-    <h2 className={typography.title}>{'<blockquote>'}: block quotation</h2>
+    <Typography.Title level={2}>
+      {'<blockquote>'}: block quotation
+    </Typography.Title>
 
     <pre>import 'ynnub/text/blockquote.scss';</pre>
 
@@ -23,7 +26,9 @@ export default () => (
       </blockquote>
     </Code>
 
-    <h2 className={typography.title}>{'<cite>'}: cited title of a work</h2>
+    <Typography.Title level={2}>
+      {'<cite>'}: cited title of a work
+    </Typography.Title>
 
     <p>
       The <a href="http://www.w3.org/TR/html-markup/cite.html">cite element</a>{' '}
@@ -41,7 +46,7 @@ export default () => (
       </p>
     </Code>
 
-    <h2 className={typography.title}>{'<q>'}: quoted text</h2>
+    <Typography.Title level={2}>{'<q>'}: quoted text</Typography.Title>
 
     <p>
       The <a href="http://www.w3.org/TR/html-markup/q.html">q element</a>{' '}

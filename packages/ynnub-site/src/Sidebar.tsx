@@ -1,67 +1,44 @@
-import classNames from 'classnames';
-import React from 'react';
-import sAside from 'ynnub/layout/aside.scss';
-import List, { ListItem } from 'ynnub/components/List';
-import typography from '../../ynnub/text/typography';
+import React, { useState, useEffect } from 'react';
+import { Layout, Menu } from 'antd';
+import Router from 'next/router';
 import Link from '../components/Link';
 
-export interface Props {
-  className?: string;
-}
+export default () => {
+  const [pathname, setPathname] = useState('/');
 
-export default ({ className }: Props) => (
-  <aside
-    className={classNames(className, sAside.aside)}
-    style={{ flexBasis: '200px' }}
-  >
-    <nav>
-      <List>
-        <ListItem
-          as={Link}
-          href="/"
-          className={typography.title}
-          text={<code>ynnub</code>}
-        />
-        <ListItem as={Link} href="/base/layout" text="Layout" />
-        <li>
-          Text
-          <List>
-            <ListItem
-              as={Link}
-              href="/base/text/typography"
-              text="Typography"
-            />
-            <ListItem
-              as={Link}
-              href="/base/text/paragraphs"
-              text="Paragraphs"
-            />
-            <ListItem as={Link} href="/base/text/citations" text="Citations" />
-            <ListItem as={Link} href="/base/text/code" text="Code" />
-            <ListItem as={Link} href="/base/text/inline" text="Inline" />
-          </List>
-        </li>
-        <ListItem as={Link} href="/base/form" text="Form" />
-        <li>
-          Components
-          <List>
-            <ListItem as={Link} href="/components/badges" text="Badges" />
-            <ListItem as={Link} href="/components/blocks" text="Blocks" />
-            <ListItem as={Link} href="/components/buttons" text="Buttons" />
-            <ListItem as={Link} href="/components/cards" text="Cards" />
-            <ListItem as={Link} href="/components/dropdown" text="Dropdown" />
-            <ListItem as={Link} href="/components/labels" text="Labels" />
-            <ListItem as={Link} href="/components/lists" text="Lists" />
-            <ListItem
-              as={Link}
-              href="/components/loading-bar"
-              text="Loading Bar"
-            />
-            <ListItem as={Link} href="/components/tables" text="Tables" />
-            <ListItem as={Link} href="/components/tabs" text="Tabs" />
-          </List>
-        </li>
-      </List>
-    </nav>
-  </aside>
-);
+  useEffect(() => {
+    setPathname(Router.pathname);
+  }, undefined);
+
+  return (
+    <Layout.Sider width={200} style={{ background: '#fff' }}>
+      <nav>
+        <Menu
+          mode="inline"
+          selectedKeys={[pathname]}
+          defaultOpenKeys={['text']}
+        >
+          <Menu.Item key="/">
+            <Link href="/">
+              <code>ynnub</code>
+            </Link>
+          </Menu.Item>
+          <Menu.SubMenu key="text" title="Text">
+            <Menu.Item key="/base/text/paragraphs">
+              <Link href="/base/text/paragraphs">Paragraphs</Link>
+            </Menu.Item>
+            <Menu.Item key="/base/text/citations">
+              <Link href="/base/text/citations">Citations</Link>
+            </Menu.Item>
+            <Menu.Item key="/base/text/code">
+              <Link href="/base/text/code">Code</Link>
+            </Menu.Item>
+            <Menu.Item key="/base/text/inline">
+              <Link href="/base/text/inline">Inline</Link>
+            </Menu.Item>
+          </Menu.SubMenu>
+        </Menu>
+      </nav>
+    </Layout.Sider>
+  );
+};

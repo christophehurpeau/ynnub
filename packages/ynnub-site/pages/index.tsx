@@ -1,16 +1,16 @@
 import React from 'react';
-import typography from 'ynnub/text/typography';
+import { Typography } from 'antd';
 import Layout from '../components/Layout';
 
 export default () => (
   <Layout>
-    <h1 className={typography.headline}>ynnub</h1>
+    <Typography.Title>ynnub</Typography.Title>
     <p>
       A css module framework in scss. Written for <code>react</code> and{' '}
       <code>webpack</code> with css modules.
     </p>
-    <h2 className={typography.title}>Getting started</h2>
-    <h3 className={typography.subheading2}>Installation</h3>
+    <Typography.Title level={2}>Getting started</Typography.Title>
+    <Typography.Title level={3}>Installation</Typography.Title>
     <pre>
       <code>
         {`
@@ -19,55 +19,38 @@ yarn add ynnub
     `.trim()}
       </code>
     </pre>
-    <h3 className={typography.subheading2}>Setup</h3>
+    <Typography.Title level={3}>Setup</Typography.Title>
     Create a new webpack/react project. (TODO: steps with create-react-app)
     <pre>
       <code>
         {`
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const { createModuleRule, createExtractPlugin } = require('ynnub-webpack-config');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { createModuleRules } = require('ynnub-webpack-config');
 
 module.exports = {
   module: {
     rules: [
-      createModuleRule(ExtractTextPlugin, {
+      ...createModuleRules({
+        extractLoader: {
+          loader: MiniCssExtractPlugin.loader as any,
+          options: { hmr: false },
+        },
         plugins: [
           require('autoprefixer'),
-          process.env.NODE_ENV === 'production' && require('cssnano'),
-        ].filter(Boolean)
+        ],
+        includePaths: [path.resolve('./node_modules')],
       }),
     ],
   },
 
   plugins: [
-    createExtractPlugin(ExtractTextPlugin, '../public/index.css'),
+    new MiniCssExtractPlugin({
+      // disable: target === 'node',
+      filename: \`styles.css\`,
+    }),
+    new OptimizeCssAssetsPlugin(),
   ]
 }
-    `.trim()}
-      </code>
-    </pre>
-    <h3 className={typography.subheading2}>Layout</h3>
-    Import only the global things you need in your layout:
-    <pre>
-      <code>
-        {`
-import 'ynnub/reset.global.scss';
-import 'ynnub/layout/page.global.scss';
-import 'ynnub/interactions/interactions.global.scss';
-import sHolyGrail from 'ynnub/layout/holygrail.scss';
-import { content as contentClassName } from 'ynnub/layout/content.scss';
-import Sidebar from './Sidebar';
-
-export default ({ content }) => (
-  <html>
-    <head>
-    </head>
-    <body className={[sHolyGrail.container, sHolyGrail.body].join(' ')}>
-      <Sidebar className={sHolyGrail.aside} />
-      <div className={[sHolyGrail.content, contentClassName].join(' ')} dangerouslySetInnerHTML={{ __html: content }} />
-    </body>
-  </html>
-);
     `.trim()}
       </code>
     </pre>
