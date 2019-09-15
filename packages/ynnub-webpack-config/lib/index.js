@@ -13,15 +13,17 @@ const cssLoaderOptions = function(
   targetIsNode
 ) {
   return {
-    exportOnlyLocals: targetIsNode,
+    onlyLocals: targetIsNode,
     sourceMap: !production,
-    modules: global ? 'global' : 'local',
+    modules: global
+      ? false
+      : {
+          localIdentName:
+            production !== false
+              ? '[hash:base64]'
+              : '[name]__[local]___[hash:base64:5]',
+        },
     importLoaders,
-    localIdentName: global
-      ? undefined
-      : production !== false
-      ? '[hash:base64]'
-      : '[name]__[local]___[hash:base64:5]',
   };
 };
 
