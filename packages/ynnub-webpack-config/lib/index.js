@@ -94,10 +94,10 @@ const createScssModuleUse = function({
         options: {
           sourceMap: !production,
           outputStyle: production !== false && 'compressed',
-          data: `$env: ${process.env.NODE_ENV};${
+          prependData: `$env: ${process.env.NODE_ENV};${
             themeFile ? `@import '${path.resolve(themeFile)}';` : ''
           }`,
-          includePaths,
+          sassOptions: { includePaths },
         },
       },
     ],
