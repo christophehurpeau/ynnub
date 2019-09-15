@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.1](https://github.com/christophehurpeau/ynnub/compare/ynnub-webpack-config@3.0.0...ynnub-webpack-config@3.0.1) (2019-09-15)
+
+
+### Bug Fixes
+
+* outputStyle in sassOptions ([a115d82](https://github.com/christophehurpeau/ynnub/commit/a115d82))
+
+
+
+
+
 # [3.0.0](https://github.com/christophehurpeau/ynnub/compare/ynnub-webpack-config@2.0.1...ynnub-webpack-config@3.0.0) (2019-09-15)
 
 
