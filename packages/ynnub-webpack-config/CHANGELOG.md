@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/christophehurpeau/ynnub/compare/ynnub-webpack-config@3.0.1...ynnub-webpack-config@3.1.0) (2019-09-15)
+
+
+### Features
+
+* css options for css-loader 3 ([f3c2dd7](https://github.com/christophehurpeau/ynnub/commit/f3c2dd7))
+
+
+
+
+
 ## [3.0.1](https://github.com/christophehurpeau/ynnub/compare/ynnub-webpack-config@3.0.0...ynnub-webpack-config@3.0.1) (2019-09-15)
 
 
