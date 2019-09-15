@@ -93,11 +93,13 @@ const createScssModuleUse = function({
         loader: resolveLoader('sass-loader'),
         options: {
           sourceMap: !production,
-          outputStyle: production !== false && 'compressed',
           prependData: `$env: ${process.env.NODE_ENV};${
             themeFile ? `@import '${path.resolve(themeFile)}';` : ''
           }`,
-          sassOptions: { includePaths },
+          sassOptions: {
+            outputStyle: production !== false && 'compressed',
+            includePaths,
+          },
         },
       },
     ],
