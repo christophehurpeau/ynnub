@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/christophehurpeau/ynnub/compare/ynnub@1.4.0...ynnub@2.0.0) (2019-09-15)
+
+
+### Features
+
+* clean, update next, use antd ([de2ec33](https://github.com/christophehurpeau/ynnub/commit/de2ec33))
+
+
+### BREAKING CHANGES
+
+* removed react components'
+
+
+
+
+
 # [1.4.0](https://github.com/christophehurpeau/ynnub/compare/ynnub@1.3.0...ynnub@1.4.0) (2019-04-08)
 
 

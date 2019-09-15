@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/christophehurpeau/ynnub/compare/ynnub-site@1.2.6...ynnub-site@2.0.0) (2019-09-15)
+
+
+### Features
+
+* clean, update next, use antd ([de2ec33](https://github.com/christophehurpeau/ynnub/commit/de2ec33))
+
+
+### BREAKING CHANGES
+
+* removed react components'
+
+
+
+
+
 ## [1.2.6](https://github.com/christophehurpeau/ynnub/compare/ynnub-site@1.2.5...ynnub-site@1.2.6) (2019-04-19)
 
 **Note:** Version bump only for package ynnub-site

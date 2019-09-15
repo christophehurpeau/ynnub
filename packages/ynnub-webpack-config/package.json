@@ -1,6 +1,6 @@
 {
   "name": "ynnub-webpack-config",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "webpack config for ynnub",
   "keywords": [],
   "author": "Christophe Hurpeau <christophe@hurpeau.com> (http://christophe.hurpeau.com/)",

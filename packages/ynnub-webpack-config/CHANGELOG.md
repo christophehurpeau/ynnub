@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/christophehurpeau/ynnub/compare/ynnub-webpack-config@2.0.1...ynnub-webpack-config@3.0.0) (2019-09-15)
+
+
+### Features
+
+* sass-loader 8 ([faf260a](https://github.com/christophehurpeau/ynnub/commit/faf260a))
+
+
+### BREAKING CHANGES
+
+* requires sass-loader 8
+
+
+
+
+
 ## [2.0.1](https://github.com/christophehurpeau/ynnub/compare/ynnub-webpack-config@2.0.0...ynnub-webpack-config@2.0.1) (2019-04-19)
 
 
