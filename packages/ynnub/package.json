@@ -24,6 +24,6 @@
     "arrowParens": "always"
   },
   "devDependencies": {
-    "prettier": "1.16.4"
+    "prettier": "2.0.5"
   }
 }
