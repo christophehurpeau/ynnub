@@ -37,7 +37,7 @@
     "ynnub": "^2.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.3.4",
+    "@babel/core": "7.12.9",
     "@babel/preset-typescript": "7.3.3",
     "@pob/eslint-config-babel": "29.1.0",
     "@pob/eslint-config-typescript": "29.1.0",
