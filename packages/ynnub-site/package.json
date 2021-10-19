@@ -45,7 +45,7 @@
     "@types/classnames": "2.2.7",
     "@types/react": "16.9.2",
     "@types/react-icons": "3.0.0",
-    "autoprefixer": "9.4.10",
+    "autoprefixer": "9.8.8",
     "babel-plugin-inline-classnames-babel7": "1.1.9",
     "babel-plugin-jsx-code": "1.0.1",
     "babel-preset-pob-env": "2.15.3",
