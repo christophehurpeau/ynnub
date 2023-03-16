@@ -50,7 +50,7 @@
     "babel-plugin-jsx-code": "1.0.1",
     "babel-preset-pob-env": "2.30.1",
     "cssnano": "4.1.11",
-    "eslint": "5.15.3",
+    "eslint": "5.16.0",
     "node-sass": "4.12.0",
     "optimize-css-assets-webpack-plugin": "5.0.8",
     "postcss-loader": "3.0.0",
