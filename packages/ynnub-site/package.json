@@ -49,7 +49,7 @@
     "babel-plugin-inline-classnames-babel7": "1.1.9",
     "babel-plugin-jsx-code": "1.0.1",
     "babel-preset-pob-env": "2.15.3",
-    "cssnano": "4.1.10",
+    "cssnano": "4.1.11",
     "eslint": "5.15.3",
     "node-sass": "4.12.0",
     "optimize-css-assets-webpack-plugin": "5.0.3",
