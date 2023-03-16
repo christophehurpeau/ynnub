@@ -55,7 +55,7 @@
     "optimize-css-assets-webpack-plugin": "5.0.8",
     "postcss-loader": "3.0.0",
     "prettier": "1.16.4",
-    "sass-loader": "8.0.0",
+    "sass-loader": "8.0.2",
     "typed-css-modules-loader": "0.0.17",
     "typescript": "3.6.3",
     "ynnub-webpack-config": "^3.1.0"
